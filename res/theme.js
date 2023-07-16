@@ -137,5 +137,6 @@ if (localStorage.getItem("theme") === "light") {
 } else if (localStorage.getItem("theme") === "dark") {
   darkTheme();
 } else {
+  toggleCodeBlockTheme(preference);
   preference.addEventListener("change", toggleCodeBlockTheme);
 }
