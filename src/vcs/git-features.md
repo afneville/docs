@@ -1,7 +1,7 @@
 ---
 author: Alex Neville
 date: 2023-03-15 Wed
-title: Working with the Commit History
+title: Helpful Git Features
 ---
 
 ## Tags
@@ -92,5 +92,3 @@ Changes not staged for commit:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
-
-See also: [git setup](introduction.org::*Setup).

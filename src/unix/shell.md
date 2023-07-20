@@ -23,9 +23,9 @@ Common examples include:
 - `#!/usr/bin/env bash`
 
 Very nearly every Unix system will make `/bin/sh` some POSIX compliant
-shell. If a script requires certain features not present in posix sh, a
+shell. If a script requires certain features not present in POSIX sh, a
 more explicit shebang should be selected. Some non-GNU systems will not
-have bash installed and it is of no garuntee that bash is installed as
+have bash installed and it is of no guarantee that bash is installed as
 `/bin/bash`. Equally, the `env` program and its path are not universal.
 
 To make a file executable add the appropriate permission. Run the newly
@@ -43,8 +43,8 @@ numbers. Shell has no concept of data types, all variables are really
 strings, but some may be treated as numbers by external programs.
 Variables are created when a value is assigned to a name. Variable names
 may contain letters and the `_` symbol. Single `=` is used for
-assignment. Variable names and values may not be space seperated during
-assignment. Quotes are required to preserve whitespace in strings.
+assignment. Variable names and values may not be space separated during
+assignment. Quotes are required to preserve white space in strings.
 
 ```sh
 letters=hello
@@ -87,7 +87,7 @@ echo "variable value: $variable" # updated value
 Executing the script in an interactive shell will result in the
 following output.
 
-``` {.language-plaintext}
+```{.language-plaintext}
 $ ./script.sh
 variable value:
 variable value: updated value
@@ -97,7 +97,7 @@ The value of `variable` in the script's output remains empty in the case
 that `variable` is declared in the interactive shell before the script
 is executed.
 
-``` {.language-plaintext}
+```{.language-plaintext}
 $ variable="initial value"
 $ echo "variable"
 variable
@@ -113,7 +113,7 @@ interpreter directive. The value of `variable` is not set in this new
 environment. To make the script inherit the value of a variable in the
 parent process, the variable must be _exported_.
 
-``` {.language-plaintext}
+```{.language-plaintext}
 $ variable="initial value"
 $ export variable
 $ ./script.sh
@@ -128,7 +128,7 @@ parent process after the script terminates. If this behaviour is desired
 the script should be _sourced_ within the interactive shell. The
 `source` or `.` built-ins are the way this is achieved.
 
-``` {.language-plaintext}
+```{.language-plaintext}
 $ variable="initial value"
 $ . ./script.sh
 variable value: initial value
@@ -146,6 +146,7 @@ echo "$#"
 echo "$0"
 echo "$@"
 ```
+
 In this script, the special variables are:
 
 - `$#` is the number of arguments passed to the script.
@@ -156,7 +157,7 @@ In this script, the special variables are:
 
 Evaluated in an interactive shell, this script outputs the following:
 
-``` {.language-plaintext}
+```{.language-plaintext}
 $ ./script.sh hello my name is alex
 5
 ./script.sh
@@ -232,3 +233,42 @@ done
 ```
 
 ## Test
+
+In shell scripting, the external program `test` is used to evaluate
+conditional expressions. It is often invoked as `[`. When called like
+this, test expects its argument list to be terminated with `]`. As with
+any program, arguments passed to test must be space separated. The
+`test` manual page lists its syntax and options.
+
+The `test` program sets its exit code according to the result of the
+condition. A `0` exit code indicates the expression is true, a `1`
+indicates the expression is false, in keeping with the exits success
+convention on Unix.
+
+```sh
+#!/bin/sh
+[ "hello" = "hello" ]
+echo $? # 0
+[ "hello" = "world" ]
+echo $? # 1
+```
+
+This value can be checked in one line.
+
+```sh
+#!/bin/sh
+[ "hello" = "hello" ] && echo "strings match"
+[ "hello" = "world" ] || echo "strings don't match"
+```
+
+For complicated behaviour, it is best to wrap the conditional statements
+in `if`/`then`/`fi`. Each of these keywords must appear on new lines, or
+separated by semi-colons.
+
+```sh
+#!/bin/sh
+if [ 1 -eq 1 ]
+then
+    echo "The expression is true."
+fi
+```

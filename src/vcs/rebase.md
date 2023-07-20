@@ -4,6 +4,11 @@ date: 2023-02-21
 title: Git Rebase
 ---
 
+Rebasing is an alternative to merging branches, as seen in [Local Git
+Branches](./branches.md).
+
+## Rebase onto main
+
 It's possible to rebase a topic branch onto a main branch. Initialise
 a new git project, create a commit and a new branch.
 
@@ -79,7 +84,7 @@ With the `dev` branch checked out, the following forms are equivalent:
 - `git rebase main`
 - `git rebase main dev`
 
-## Rebase Onto
+## Rebase Topic Branches
 
 It is possible to rebase a topic branch, created from another topic
 branch, onto a different branch altogether. For this example, initialise

@@ -1,7 +1,7 @@
 ---
 author: Alex Neville
 date: 2023-03-15
-title: Working with the Commit History
+title: The Commit History
 ---
 
 Reviewing the history of a project is possible with the `git log`
