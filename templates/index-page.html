@@ -35,7 +35,7 @@ $endif$
 <script>hljs.highlightAll();</script>
 <script>
   function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+    obj.style.height = obj.contentWindow.document.querySelector("ul").clientHeight + 'px';
   }
 </script>
 <link rel="stylesheet" href="https://cdn.alexneville.co.uk/nerd-fonts/nerd-fonts.css" />

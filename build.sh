@@ -6,6 +6,7 @@ mkdir -p out/res
 cp -r src/res/* out/res/
 cp -r res/* out/res/
 find src -mindepth 1 \( -name '.git' -o -name 'out' -o -name 'res' -o -name 'dot' \) -prune -o -type d | cut -d/ -f2- | xargs -i% mkdir -p out/%
+find out -mindepth 1 -maxdepth 1 -type d | xargs -n 1 -I {} cp ./redirect.html {}/index.html
 
 command="pandoc -f markdown -t html -s"
 mathjax_flag="--mathjax=https://cdn.alexneville.co.uk/mathjax/tex-svg.js"
