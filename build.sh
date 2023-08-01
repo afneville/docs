@@ -5,16 +5,19 @@ rm -rf out/*
 mkdir -p out/res
 cp -r src/res/* out/res/
 cp -r res/* out/res/
-find src \( -name '.git' -o -name 'out' -o -name 'res' -o -name 'dot' \) -prune -o -type d -exec mkdir -p out/{} \;
+find src -mindepth 1 \( -name '.git' -o -name 'out' -o -name 'res' -o -name 'dot' \) -prune -o -type d | cut -d/ -f2- | xargs -i% mkdir -p out/%
 
-build="pandoc -f markdown -t html -s --mathjax=https://cdn.alexneville.co.uk/mathjax/tex-svg.js --data-dir=\"./\" --template=templates/blog-post --lua-filter=md-to-html-links.lua --filter=pandoc-crossref --metadata-file=./metadata.yaml --no-highlight -o"
-buildiframe="pandoc -f markdown -t html -s --data-dir=\"./\" --template=templates/contents-iframe --lua-filter=md-to-html-links.lua --filter=pandoc-crossref --metadata-file=./metadata.yaml --no-highlight -o"
-buildindexsection="pandoc -f markdown -t html -s --data-dir=\"./\" --template=templates/index-section --lua-filter=md-to-html-links.lua --filter=pandoc-crossref --metadata-file=./metadata.yaml --no-highlight"
-buildindex="pandoc -f html -t html -s --data-dir=\"./\" --template=templates/index-page --lua-filter=md-to-html-links.lua --filter=pandoc-crossref --metadata-file=./metadata.yaml --no-highlight -o"
+command="pandoc -f markdown -t html -s"
+mathjax_flag="--mathjax=https://cdn.alexneville.co.uk/mathjax/tex-svg.js"
+constant_flags="--data-dir=$(pwd) --metadata-file=./metadata.yaml --lua-filter=md-to-html-links.lua --filter=pandoc-crossref --no-highlight"
 
-find src -mindepth 2 -type f -name '*.md' -exec $build out/{} {} \;
-find src -mindepth 2 -type f -name '_contents.md' -exec $buildiframe out/{} {} \;
-for f in $(find out -iname '*.md' -type f -print); do mv "$f" ${f%.md}.html; done
+buildblogpost="${command} ${constant_flags} ${mathjax_flag} --template=templates/blog-post -o"
+buildiframe="${command} ${constant_flags} --template=templates/contents-iframe -o"
+buildindexsection="${command} ${constant_flags} --template=templates/index-section"
+buildindex="${command} ${constant_flags} --template=templates/index-page -o"
+
+find src -mindepth 2 -type f -name '*.md' | grep -v '_contents' | cut -d'/' -f2- | cut -d'.' -f1 | xargs -I% $buildblogpost ./out/%.html ./src/%.md
+find src -mindepth 2 -type f -name '_contents.md' | cut -d'/' -f2- | cut -d'.' -f1 | xargs -I% $buildiframe out/%.html src/%.md
 
 echo "<div id=\"pages\">" >out/_index.html
 find src -type f -name '_contents.md' | xargs -n1 $buildindexsection >>out/_index.html
@@ -23,6 +26,4 @@ find out -mindepth 2 -type d -print | xargs -n 1 -I {} cp ./redirect.html {}/ind
 $buildindex out/index.html out/_index.html
 echo "" | pandoc -s -f html -t html --data-dir="./" --template=templates/error.html -o out/error.html
 
-mv out/src/* out/
 sass res/:out/res
-rm -rf out/src

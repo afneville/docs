@@ -19,9 +19,16 @@ function lightTheme() {
   } catch {}
   localStorage.setItem("theme", "light");
   try {
-    document
-      .getElementById("section-contents-iframe")
-      .contentDocument.location.reload(true);
+    let sectionIframe = document.querySelector("iframe");
+    sectionIframe.contentWindow.document.documentElement.classList.remove(
+      "system-theme"
+    );
+    sectionIframe.contentWindow.document.documentElement.classList.add(
+      "light-theme"
+    );
+    sectionIframe.contentWindow.document.documentElement.classList.remove(
+      "dark-theme"
+    );
   } catch {}
 }
 
@@ -29,6 +36,7 @@ function darkTheme() {
   preference.removeEventListener("change", toggleCodeBlockTheme);
   document.documentElement.classList.remove("system-theme");
   document.documentElement.classList.add("dark-theme");
+  document.documentElement.classList.remove("light-theme");
   try {
     var light_stylesheet = document.getElementById("code-blocks-light");
     var dark_stylesheet = document.getElementById("code-blocks-dark");
@@ -37,17 +45,23 @@ function darkTheme() {
   } catch {}
   localStorage.setItem("theme", "dark");
   try {
-    document
-      .getElementById("section-contents-iframe")
-      .contentDocument.location.reload(true);
+    let sectionIframe = document.querySelector("iframe");
+    sectionIframe.contentWindow.document.documentElement.classList.remove(
+      "system-theme"
+    );
+    sectionIframe.contentWindow.document.documentElement.classList.add(
+      "dark-theme"
+    );
+    sectionIframe.contentWindow.document.documentElement.classList.remove(
+      "light-theme"
+    );
   } catch {}
 }
 
 function systemTheme() {
-  console.log("systemTheme");
   document.documentElement.classList.remove("light-theme");
-  document.documentElement.classList.remove("dark-theme");
   document.documentElement.classList.remove("system-theme");
+  document.documentElement.classList.remove("dark-theme");
   document.documentElement.classList.add("system-theme");
   try {
     var light_stylesheet = document.getElementById("code-blocks-light");
@@ -64,9 +78,19 @@ function systemTheme() {
   localStorage.clear();
   preference.addEventListener("change", toggleCodeBlockTheme);
   try {
-    document
-      .getElementById("section-contents-iframe")
-      .contentDocument.location.reload(true);
+    let sectionIframe = document.querySelector("iframe");
+    sectionIframe.contentWindow.document.documentElement.classList.remove(
+      "light-theme"
+    );
+    sectionIframe.contentWindow.document.documentElement.classList.remove(
+      "dark-theme"
+    );
+    sectionIframe.contentWindow.document.documentElement.classList.remove(
+      "system-theme"
+    );
+    sectionIframe.contentWindow.document.documentElement.classList.add(
+      "system-theme"
+    );
   } catch {}
 }
 
@@ -96,9 +120,8 @@ document.querySelectorAll(".dark-theme-button").forEach((button) =>
   })
 );
 
-document
-  .querySelectorAll(".system-theme-button")
-  .forEach((button) => button.addEventListener("click", () => {
+document.querySelectorAll(".system-theme-button").forEach((button) =>
+  button.addEventListener("click", () => {
     systemTheme();
     if (
       window
@@ -107,7 +130,8 @@ document
     ) {
       toggleThemeMenu();
     }
-  }));
+  })
+);
 
 const toggleCodeBlockTheme = (setting) => {
   if (setting.matches) {

@@ -32,7 +32,6 @@ function closeCompactMenu(event) {
 }
 
 function _toggleCompactMainMenu() {
-  console.log("toggle compact menu")
   let menuIcon = document
     .getElementById("menu-button")
     .querySelector("i");
