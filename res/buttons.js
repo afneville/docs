@@ -1,4 +1,4 @@
-function hideMainMenuDropDownResize(event) {
+function hideMainMenuDropDownResizeScroll(event) {
   _toggleDropdownMainMenu();
 }
 
@@ -12,7 +12,7 @@ function hideMainMenuDropDownCLick(event) {
   }
 }
 
-function hideThemeMenuDropDownResize(event) {
+function hideThemeMenuDropDownResizeScroll(event) {
   toggleThemeMenu();
 }
 
@@ -92,10 +92,12 @@ function _toggleDropdownMainMenu() {
     menuIcon.style.color = "var(--fg-secondary)";
     menu.style.display = "block";
     window.addEventListener("click", hideMainMenuDropDownCLick);
-    window.addEventListener("resize", hideMainMenuDropDownResize, {once: true});
+    window.addEventListener("resize", hideMainMenuDropDownResizeScroll, {once: true});
+    window.addEventListener("scroll", hideMainMenuDropDownResizeScroll, {once: true});
   } else {
     window.removeEventListener("click", hideMainMenuDropDownCLick);
-    window.removeEventListener("resize", hideMainMenuDropDownResize);
+    window.removeEventListener("resize", hideMainMenuDropDownResizeScroll);
+    window.removeEventListener("scroll", hideMainMenuDropDownResizeScroll);
     menu.removeAttribute("style");
     // menuIcon.classList = "nf nf-md-menu";
     menuIcon.removeAttribute("style");
@@ -123,10 +125,12 @@ function _toggleThemeMenu() {
     menuIcon.style.color = "var(--fg-secondary)";
     menu.style.display = "block";
     window.addEventListener("click", hideThemeMenuDropDownClick);
-    window.addEventListener("resize", hideThemeMenuDropDownResize);
+    window.addEventListener("resize", hideThemeMenuDropDownResizeScroll);
+    window.addEventListener("scroll", hideThemeMenuDropDownResizeScroll);
   } else {
     window.removeEventListener("click", hideThemeMenuDropDownClick);
-    window.removeEventListener("resize", hideThemeMenuDropDownResize);
+    window.removeEventListener("resize", hideThemeMenuDropDownResizeScroll);
+    window.removeEventListener("scroll", hideThemeMenuDropDownResizeScroll);
     menu.removeAttribute("style");
     menuIcon.removeAttribute("style");
   }
