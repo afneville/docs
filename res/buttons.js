@@ -106,7 +106,7 @@ function _toggleDropdownMainMenu() {
 
 function toggleMainMenu() {
   if (
-    !document.getElementById("theme-switch-button").checkVisibility()
+    window.getComputedStyle(document.getElementById("theme-dropdown-container")).display === "none"
   ) {
     _toggleCompactMainMenu();
   } else {

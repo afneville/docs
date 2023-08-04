@@ -72,7 +72,7 @@ window.addEventListener("scroll", scrollFunction);
 
 let resizedIframe = false;
 
-if (document.getElementById("theme-switch-button").checkVisibility()) {
+if (window.getComputedStyle(document.getElementById("theme-dropdown-container")).display === "block") {
   resizedIframe = true;
 }
 
