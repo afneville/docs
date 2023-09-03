@@ -10,7 +10,7 @@ inside $\{$,$\}$ curly brackets. $\{2,4,6,8\}$ and
 $\{\text{Alex}, \text{Benjamin}, \text{Richard}, \text{Bethan}\}$ are
 examples of sets.
 
-## Membership & Equality
+# Membership & Equality
 
 The symbol $\in$ denotes set membership, so if $x$ is a member of set
 $A$ this can be written $x \in A$. The notation $x \notin A$ means that
@@ -19,7 +19,7 @@ same elements, formally:
 
 $$ A = B \iff (\forall x.x \in A \iff x \in B)$$
 
-## Subsets
+# Subsets
 
 A set $B$ is a _subset_ of another set $A$, written $B \subseteq A$, if
 all the elements of $B$ are also elements of $A$.
@@ -29,14 +29,16 @@ $$ B \subseteq A \iff (\forall x.x \in B \implies x \in A)$$
 Any set is a subset of itself $A \subseteq A$. If $B \subseteq A$ and
 $A \neq B$, then $B$ is a _proper subset_ of $A$, written $B \subset A$.
 
-$$ B \subset A \iff (\forall x.x \in B \implies x \in A) \land \neg (A =
-B)$$
+$$
+B \subset A \iff (\forall x.x \in B \implies x \in A) \land \neg (A =
+B)
+$$
 
 Two sets are equal if and only if they are subsets of each other.
 
 $$ A = B \iff (A \subseteq B \land B \subseteq A)$$
 
-## Set Operations
+# Set Operations
 
 Some common set operations:
 
@@ -47,14 +49,14 @@ Some common set operations:
 - $A \setminus B$ is the _difference_ of two sets, containing all the
   elements occurring in $B$ but not $A$.
 
-## Set Cardinality
+# Set Cardinality
 
 Every finite set $A$ has a natural number _cardinality_ $|A|$, its size
 or number of elements. The empty set is written $\emptyset$ or $\{\}$
 and has a cardinality of $0$. $\{\emptyset\}$ is not the empty set, as
 $1 \neq \{1\}$ it is the _singleton_ set, with cardinality $1$.
 
-## Set Builder Notation
+# Set Builder Notation
 
 Enumeration of a subset\'s elements is inconvenient for large subsets. A
 subset can be constructing concisely by selecting items from another set
@@ -64,7 +66,7 @@ symbol is read _\"such that\"_.
 $$\{n \in \mathbb{N} \text{ } |  \text{ }n \ge 10\} = \{10, 11, 12, \ldots\}$$
 $$\{n^2 \text{ } |  \text{ } n\in \mathbb{N}, n^3 \ge 8\} = \{4, 9, 25, \ldots\}$$
 
-## Product of Sets
+# Product of Sets
 
 A _tuple_ is a finite, ordered sequence of elements. An _ordered pair_
 is a _2-tuple_, while an _ordered triple_ is a _3-tuple_, in general an
@@ -79,14 +81,14 @@ $\{()\}$.
 
 $$A \times B \times C \stackrel{\text{def}}{=} \{(x,y,z) | x \in A, y \in B, z \in C\}$$
 
-## Special Sets
+# Special Sets
 
 - $A^\ast$ is the set of all (finite) lists of elements of $A$.
 - $A ^\omega$ is the set of all _streams_ (infinite sequences) of
   elements of $A$.
 - $\mathcal{P}A$ is the _powerset_ (set of all subsets) of $A$.
 
-## Subset Algebra
+# Subset Algebra
 
 For any set $S$, $\mathcal{P}S$ is the set of all subsets of $S$. If $A$
 and $B$ are elements of $\mathcal{P}S$ they are both subsets of $S$,

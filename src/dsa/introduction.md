@@ -15,7 +15,7 @@ stored and accessed. _Concrete_ data structures implement the _abstract
 data types_. For any program, the algorithms it implements and the
 organisation of its data are important components of the solution.
 
-## Algorithms
+# Algorithms
 
 If a computer is to execute the steps of an algorithm, the algorithm in
 question must be _implemented_ in a computer program. Programs are
@@ -35,7 +35,7 @@ pseudocode is often used as an abstract method for describing algorithms
 in a way that preserves some focus on the implementation and conveys
 more detail.
 
-## Data Types and Structures
+# Data Types and Structures
 
 In computer programming, a data type is a set of possible values and
 supported operations for a given piece of data. Many languages include a

@@ -45,7 +45,7 @@ to any node, _i.e._ the maximum depth of any node. The _size_ of a tree
 is the number of nodes it contains. An empty tree has 0 nodes and so a
 size of 0 and in conventional notation a height of -1.
 
-## Inductive Type Definition
+# Inductive Type Definition
 
 Each node in a tree is the root of a sub-tree rooted at that point. A
 tree can be built _inductively_ from the special _empty tree_ which has
@@ -61,22 +61,22 @@ tree, the ADT can be defined:
 
 A common implementation of the general tree with no constraint on the
 number of children of each node is the _sibling list_, illustrated in
-figure [@fig:sibling_list]. Each node has in addition
-to its value, a pointer to the list of its children and a second pointer
-to its next sibling.
+figure [@fig:sibling_list]. Each node has in addition to its value, a
+pointer to the list of its children and a second pointer to its next
+sibling.
 
 ![A general tree as a sibling
 list](../res/sibling_list.svg){#fig:sibling_list}
 
-## Binary Trees
+# Binary Trees
 
 A _binary tree_ is a type of _N_-ary tree in which each node has at most
-two children as in figure [@fig:binary_tree]. The
-general tree definition holds for binary trees, but the binary nature of
-the tree is not enforced. A proper binary tree definition states that
-building a new tree requires two child trees rather than a list of trees
-of unspecified length. Similarly, a binary tree node\'s children are
-returned by two specific accessor:
+two children as in figure [@fig:binary_tree]. The general tree
+definition holds for binary trees, but the binary nature of the tree is
+not enforced. A proper binary tree definition states that building a new
+tree requires two child trees rather than a list of trees of unspecified
+length. Similarly, a binary tree node\'s children are returned by two
+specific accessor:
 
 - `emptybinarytree() -> T`
 - `makebinarytree(E,T,T) -> T`
@@ -108,7 +108,7 @@ different levels.
 ![A binary tree as an
 array](../res/binary_tree_array.svg){#fig:binary_tree_array}
 
-## Binary Search Trees
+# Binary Search Trees
 
 A binary search tree is a type of binary tree with the additional
 constraint that a node\'s children are in order; keys with a lower value
@@ -125,14 +125,13 @@ the flattened left subtree and the value of the root in that order
 ![A flattened binary search
 tree](../res/small_bst.svg){#fig:binary_search_tree}
 
-### Node Deletion
+## Node Deletion
 
 To delete a non-leaf node with only one subtree child, replace the node
 to be deleted with the root of the subtree. If a node is a leaf node
 (has no children) it can be removed in a single step (figure
-[@fig:bst_delete_0_1_children]). Otherwise,
-if a node $x$ to be deleted has two children (figure
-[@fig:bst_delete_2_children]):
+[@fig:bst_delete_0_1_children]). Otherwise, if a node $x$ to be deleted
+has two children (figure [@fig:bst_delete_2_children]):
 
 - Identify the leftmost node $y$ in the right subtree of $x$.
 - Replace the value of $x$ with the value of $y$.
@@ -145,7 +144,7 @@ children](../res/bst_delete_0_1_children.svg){#fig:bst_delete_0_1_children}
 ![Deleting node $x$ with two
 children](../res/bst_delete_2_children.svg){#fig:bst_delete_2_children}
 
-### Verifying Binary Search Trees
+## Verifying Binary Search Trees
 
 There are many approaches to verify a tree is a binary search tree. The
 most simple (but computationally complex) is to traverse the left
@@ -168,7 +167,7 @@ then, taking the root of the tree:
         If this is not true, return _false_.
     3.  Return _true_.
 
-### Complexity
+## Complexity
 
 The _balance_ at any node is the difference in height between left and
 right subtrees. Insert and search operations on a search tree are faster
@@ -176,10 +175,9 @@ if the tree is balanced. Ideally, the median key is inserted first so
 that roughly half the keys are inserted to the left and half to the
 right, assuming the order of insertion is random. In the worst case,
 keys are inserted roughly in order, making the tree resemble a unary
-linked list. These two cases are compared in figure
-[@fig:bst_cases]. Search, insert and delete on a binary
-search tree with $n$ nodes are $O(\log n)$ in the average case and
-$O(n)$ in the worst case.
+linked list. These two cases are compared in figure [@fig:bst_cases].
+Search, insert and delete on a binary search tree with $n$ nodes are
+$O(\log n)$ in the average case and $O(n)$ in the worst case.
 
 ![Best and wort cases for a binary search
 tree](../res/bst_cases.svg){#fig:bst_cases}

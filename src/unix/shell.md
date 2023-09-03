@@ -4,7 +4,7 @@ date: 2023-06-25
 title: Shell Scripting
 ---
 
-## Shebang
+# Shebang
 
 If a plain text file is executed as a command and the first line begins
 `#!`, the remainder of the first line is treated as the _interpreter
@@ -36,7 +36,7 @@ chmod u+x script.sh
 ./script.sh
 ```
 
-## Variables
+# Variables
 
 Shell variables may contain characters, strings of characters or
 numbers. Shell has no concept of data types, all variables are really
@@ -87,7 +87,7 @@ echo "variable value: $variable" # updated value
 Executing the script in an interactive shell will result in the
 following output.
 
-```{.language-plaintext}
+```language-plaintext
 $ ./script.sh
 variable value:
 variable value: updated value
@@ -97,7 +97,7 @@ The value of `variable` in the script's output remains empty in the case
 that `variable` is declared in the interactive shell before the script
 is executed.
 
-```{.language-plaintext}
+```language-plaintext
 $ variable="initial value"
 $ echo "variable"
 variable
@@ -113,7 +113,7 @@ interpreter directive. The value of `variable` is not set in this new
 environment. To make the script inherit the value of a variable in the
 parent process, the variable must be _exported_.
 
-```{.language-plaintext}
+```language-plaintext
 $ variable="initial value"
 $ export variable
 $ ./script.sh
@@ -128,7 +128,7 @@ parent process after the script terminates. If this behaviour is desired
 the script should be _sourced_ within the interactive shell. The
 `source` or `.` built-ins are the way this is achieved.
 
-```{.language-plaintext}
+```language-plaintext
 $ variable="initial value"
 $ . ./script.sh
 variable value: initial value
@@ -157,7 +157,7 @@ In this script, the special variables are:
 
 Evaluated in an interactive shell, this script outputs the following:
 
-```{.language-plaintext}
+```language-plaintext
 $ ./script.sh hello my name is alex
 5
 ./script.sh
@@ -170,7 +170,7 @@ Some other special variables:
 - `$!` is the PID of the last run background process.
 - `$?` is the exit code of the last executed command.
 
-## Arrays
+# Arrays
 
 Arrays are named in the same fashion as variables. An array is written
 as a list of space-delimited values inside `()` brackets.
@@ -182,7 +182,7 @@ echo ${myArray[1]}  # "my name"
 echo ${#myArray[@]} # 4
 ```
 
-## Arithmetic Operations
+# Arithmetic Operations
 
 Use `$(())` syntax for arithmetic operations. The operators are as one
 might expect.
@@ -197,7 +197,7 @@ echo $(($b / 5)) # 1
 echo $(($b % 5)) # 3
 ```
 
-## String Operations
+# String Operations
 
 ```sh
 string="Hello, world!"
@@ -206,7 +206,7 @@ echo ${string:0:5} # Hello
 echo ${string:5} # , world!
 ```
 
-## Loops
+# Loops
 
 ```sh
 #!/bin/sh
@@ -232,7 +232,7 @@ do
 done
 ```
 
-## Test
+# Test
 
 In shell scripting, the external program `test` is used to evaluate
 conditional expressions. It is often invoked as `[`. When called like

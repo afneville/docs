@@ -1,7 +1,7 @@
 ---
-title: Object Orientation in C
-date: 2023-08-02
 author: Alex Neville
+date: 2023-08-02
+title: Object Orientation in C
 ---
 
 C and C++ are two system languages with support for dynamic memory
@@ -11,7 +11,7 @@ Types_ are, however, more difficult to implement; information hiding,
 encapsulation and other design patterns typically associated with object
 orientation are not present in the C specification.
 
-## Namespaces
+# Namespaces
 
 C has no built in support for user defined namespaces, while C++ does.
 This becomes problematic when two libraries, each with a separate header
@@ -56,7 +56,7 @@ resembles many other high level languages.
 int main() {Lib.F1(); Lib.F2();}
 ```
 
-## Encapsulation
+# Encapsulation
 
 If the purpose of a source file or library is to define a type, it is
 preferable that as little information about the type implementation is
@@ -120,7 +120,7 @@ int main() {
 }
 ```
 
-## Polymorphism
+# Polymorphism
 
 To create a polymorphic type, the behaviour of which depends on its
 type, a structure must remember its type and act accordingly. A `union`
@@ -219,7 +219,7 @@ free(string1); free(string2); free(c);
 
 The complete source file can be downloaded [here](../res/item.c).
 
-## Object Methods
+# Object Methods
 
 Object orientated languages typically use _dot-qualifier_ syntax for
 accessing object methods. This is a helpful organisational feature and

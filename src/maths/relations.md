@@ -11,7 +11,7 @@ _n-tuples_. Any subset $R$ is a relation. A relation can be represented
 as a set of ordered _n-tuples_ in tabular or graphical form or using
 set-builder notation.
 
-## Binary Relations
+# Binary Relations
 
 A binary relation associates elements of one set, the _domain_, to
 another set, the _codomain_. A binary relation over the sets $X$ and $Y$
@@ -34,7 +34,7 @@ _transpose_ relation of $R$.
 $$yR^\circ x \iff xRy$$
 $$R^\circ = \{(y, x) \in B \times A | (x, y) \in R\}$$
 
-## Functions
+# Functions
 
 A function is a type of binary relation which maps every element of the
 domain to exactly one element of the codomain. For a relation
@@ -113,7 +113,7 @@ illustrated in figure
 4.  Bijective function: both injective and surjective, the domain and
     co-domain have equal cardinality $|A| = |B|$.
 
-## Endorelations
+# Endorelations
 
 A binary relation $R$ from a set $A$ to itself is called an
 _endorelation_ on $A$, $R \subseteq A \times A$. A function from $A$ to
@@ -151,7 +151,7 @@ additional special properties.
 
   $$\forall x,y,z \in A. (x,y) \in R \land (y,z) \in R\implies (x,z) \in R$$
 
-## Equivalence Relations
+# Equivalence Relations
 
 An _equivalence relation_ is _reflexive_, _symmetric_ and _transitive_.
 The symbols $\approx$ and $\equiv$ are often used to denote equivalence

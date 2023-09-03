@@ -25,7 +25,7 @@ def new_plot():
     return fig, ax
 ```
 
-## Linear Separator
+# Linear Separator
 
 Linear functions can perform classification. Such a function is called
 the _decision boundary_ or _linear separator_. A data set admitting a
@@ -40,7 +40,7 @@ _percepton learning rule_ will converge on an exact solution.
 
 $$w_i \leftarrow w_i - \alpha (h_{\mathbf{w}}(\mathbf{x}) - y_j) \times x_{i}$$
 
-## Sigmoid Function
+# Sigmoid Function
 
 The _sigmoid_ or _logistic_ function returns a value in the interval
 $(0,1)$, representing the probability that the point has the
@@ -76,9 +76,10 @@ ax.plot(x, sigmoid(x), label="x")
 ax.legend(loc='lower right')
 ```
 
-![Sigmoid Function](../res/classification_6_1.png){#fig:sigmoid .nocaption}
+![Sigmoid Function](../res/classification_6_1.png){#fig:sigmoid
+.nocaption}
 
-## Cost Function
+# Cost Function
 
 Square loss remains a suitable cost function, but as the logistic
 function always returns a value between 0 and 1, _cross-entropy_ cost is
@@ -133,9 +134,9 @@ def logistic_regression(a, m, W, y, X):
 
 In this example, the points are labelled in advanced (logistic
 regression is always a supervised problem). The decision boundary is
-drawn between the two classes. Note that this problem is not
-linearly separable - the cost on the training set is not 0 - it is
-however a fairly good predictor.
+drawn between the two classes. Note that this problem is not linearly
+separable - the cost on the training set is not 0 - it is however a
+fairly good predictor.
 
 ```python
 X, y = sklearn.datasets.make_classification(n_samples=200,
@@ -158,4 +159,6 @@ ax.plot(X[:, 0],
         'green')
 ```
 
-![Linear Classification](../res/classification_10_1.png){#fig:linearclassification .nocaption}
+![Linear
+Classification](../res/classification_10_1.png){#fig:linearclassification
+.nocaption}

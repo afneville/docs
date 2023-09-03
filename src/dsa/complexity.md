@@ -32,7 +32,7 @@ list (constant time complexity); the _average case_, where the element
 is in the middle of the list ($n/2$ complexity) or the _worst case_,
 where the element to find doesn't appear in the list ($n$ complexity).
 
-## Big O Notation
+# Big O Notation
 
 Presented with a function expressing the exact complexity of an
 algorithm, _big O_ notation simplifies the complexity to its most
@@ -64,7 +64,7 @@ function with complexity $O(n)$ also belongs to $O(n^2)$ and $O(n^3)$.
 
 $$O(1) \subseteq O(\log_2 \log_2 n) \subseteq O(\log_2 n) \subseteq O(n) \subseteq O(n log_2 n) \subseteq O(n^2) \subseteq O(n^3) \subseteq O(2^n)$$
 
-## Little o Notation
+# Little o Notation
 
 Little $o$ notation is a stricter upper bound for a function\'s
 complexity. Functions that are $o(g(n))$ are also $O(g(n))$, but the
@@ -81,14 +81,14 @@ $$\lim_{n \to \infty} \dfrac{2n^2}{n^2} = 2$$
 
 $$\lim_{n \to \infty} \dfrac{2n^2}{n^3} = \lim_{n \to \infty} \dfrac{2}{n} = 0$$
 
-## Omega Notation
+# Omega Notation
 
 A lower bound on the growth of $f(n)$. A function grows _at least as
 fast_ as $g(n)$.
 
 $$f(n) = \Omega(g(n)) \iff |f(n)| \ge |Cg(n)|$$
 
-## Theta Notation
+# Theta Notation
 
 As an upper bound $f(n) = \Theta(g(n))$ is similar to big $O$, but
 additionally specifies a lower bound by a second constant multiple of
@@ -105,14 +105,14 @@ classes. This is not possible in theta notation.
 $$3n^2 + 2n + 1 = O(n^2)$$ $$3n^2 + 2n + 1 = \Theta(n^2)$$
 $$3n^2 + 2n + 1 = O(n^3)$$ $$3n^2 + 2n + 1 \neq \Theta(n^3)$$
 
-## Asymptotically Equal
+# Asymptotically Equal
 
 Asymptotically equal complexity has the same relationship with Theta, as
 little $o$ has to big $O$. It is a stricter upper and lower bound.
 
 $$f(n) \sim g(n) \iff \lim_{n \to \infty} \dfrac{f(n)}{g(n)} = 1$$
 
-## Amortized Complexity
+# Amortized Complexity
 
 The measures of best, average and worst case complexity quantify the
 performance of one operation on a given input size. In some cases, the

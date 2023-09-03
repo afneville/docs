@@ -19,7 +19,7 @@ import math
 %matplotlib inline
 ```
 
-## Convenience Functions
+# Convenience Functions
 
 Use the `make_regression` function of scikit learn to generate a sample
 dataset with a single feature (see _univariate_ below). Return the
@@ -47,14 +47,14 @@ def new_plot():
     return fig, ax
 ```
 
-## Univariable Linear Regression
+# Univariable Linear Regression
 
 The process of fitting a straight line to an $x$/$y$ dataset is called
-_univariate linear regression_, univariate referring to the single output
-variable $y$. In the most simple case, $x$ is a single value, though in
-more complicated cases $\mathbf{x}$ is a vector of values, linear
-regression applies to these cases equally well. Sometimes a function
-with a vector of inputs is called _multivariable_ or even
+_univariate linear regression_, univariate referring to the single
+output variable $y$. In the most simple case, $x$ is a single value,
+though in more complicated cases $\mathbf{x}$ is a vector of values,
+linear regression applies to these cases equally well. Sometimes a
+function with a vector of inputs is called _multivariable_ or even
 _multivariate_, despite having just one dependent variable.
 
 A simple linear function $h$ with one independent value is of the form
@@ -70,7 +70,7 @@ between $x$ and $y$, by minimising loss. First, create the regression
 algorithm in the special case that $x$ is a single value, then
 generalise to a _n_-dimensional vector.
 
-### Loss Function
+## Loss Function
 
 The loss for a single training example is a measure of how bad the
 current model is. Mean square loss is appropriate as it always returns a
@@ -108,7 +108,7 @@ print(mse(y, f(1, x, 0))) # large cost
     98.72505111720218
     4168.6452977282315
 
-### Stochastic Gradient Descent
+## Stochastic Gradient Descent
 
 To perform regression, a function must be fitted to a dataset. For
 univariate linear regression, the parameters can be computed exactly
@@ -125,8 +125,7 @@ preferred over hill-climbing.
 
 Where $\mathbf{w}$ is the vector of weights as before, the gradient
 descent algorithm updates each weight by taking the partial derivative
-of the loss function $L$ with respect to that weight for each point
-$x$.
+of the loss function $L$ with respect to that weight for each point $x$.
 
 $$w_i \leftarrow w_i - \alpha \frac{\delta}{\delta w_i}L(x)$$
 
@@ -151,9 +150,10 @@ ax.scatter(x,y, s=1)
 ax.plot(x, f(w_1, x, w_0), 'red')
 ```
 
-![Linear Regression](../res/regression_11_1.png){#fig:regression_11_1 .nocaption}
+![Linear Regression](../res/regression_11_1.png){#fig:regression_11_1
+.nocaption}
 
-### Deterministic Gradient Descent
+## Deterministic Gradient Descent
 
 Adopting the stochastic approach to gradient descent, the function is
 tuned after calculating the loss of each element in $x$. An _epoch_ is a
@@ -199,9 +199,10 @@ anim = animation.FuncAnimation(fig=fig, func=animate, frames=25, interval=10)
 anim.save('../animations/epochs.gif')
 ```
 
-![Linear Regression](../res/animations/epochs.gif){#fig:animation .nocaption}
+![Linear Regression](../res/animations/epochs.gif){#fig:animation
+.nocaption}
 
-### Mini-batch Gradient Descent
+## Mini-batch Gradient Descent
 
 The stochastic gradient descent algorithm seen before is a special case
 of _mini-batch_ gradient descent. The loss of all the points within a
@@ -234,9 +235,10 @@ ax.scatter(x,y, s=1)
 ax.plot(x, f(w_1, x, w_0), 'purple')
 ```
 
-![Linear Regression](../res/regression_19_1.png){#fig:regression_19_1 .nocaption}
+![Linear Regression](../res/regression_19_1.png){#fig:regression_19_1
+.nocaption}
 
-## Multivariable Linear Regression
+# Multivariable Linear Regression
 
 Multivariable linear regression applies to problems where each
 independent variable in the training dataset is a _n_-variable vector,
@@ -295,7 +297,8 @@ ax.scatter(X,y, s=1)
 ax.plot([Z[i][1] for i in range(Z.shape[0])], [h(W, Z[i]) for i in range(Z.shape[0])], 'lightblue')
 ```
 
-![Linear Regression](../res/regression_23_1.png){#fig:regression_23_1 .nocaption}
+![Linear Regression](../res/regression_23_1.png){#fig:regression_23_1
+.nocaption}
 
 A regression problem in which the input vector has two dimensions - the
 function's input has multiple variables - can be solved with this SGD
@@ -331,9 +334,10 @@ ax.plot([Z[i][1] for i in range(Z.shape[0])],
         color='magenta')
 ```
 
-![Linear Regression](../res/regression_25_1.png){#fig:regression_25_1 .nocaption}
+![Linear Regression](../res/regression_25_1.png){#fig:regression_25_1
+.nocaption}
 
-## Non-linear Regression
+# Non-linear Regression
 
 Here is an example of how you might generate some data for the
 non-linear version of this problem.
@@ -346,4 +350,5 @@ fig, ax = new_plot()
 ax.scatter(x,y, s=1)
 ```
 
-![Linear Regression](../res/regression_27_1.png){#fig:regression_27_1 .nocaption}
+![Linear Regression](../res/regression_27_1.png){#fig:regression_27_1
+.nocaption}

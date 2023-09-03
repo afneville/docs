@@ -33,7 +33,7 @@ _staging_ area is managed by git to calculate which files will be
 included in the next commit. This is technically referred to as the
 index.
 
-```{.text}
+```text
 pwd       staged      .git
  |          |           |
  |     <-checkout-      |
@@ -44,7 +44,7 @@ pwd       staged      .git
  |          |           |
 ```
 
-## Setup
+# Setup
 
 The `git config` command is used to set configuration options. The
 default behaviour matches `git config --local` and the options are set
@@ -58,7 +58,7 @@ options, which in turn take precedence over system-wide options.
 
 Some common configuration options:
 
-```{.text}
+```text
 $ git config --global user.name "Alexander Neville"
 $ git config --global user.email "dev@alexneville.co.uk"
 $ git config --global core.editor nvim
@@ -70,12 +70,12 @@ $ git config --global user.signingkey
 The list of configuration options which apply to the current directory
 can be shown with `git config --list`.
 
-## Command Line Help
+# Command Line Help
 
 There are three ways to retrieve the manual page for any git sub-command
 or _verb_, as they are often called.
 
-```{.text}
+```text
 $ git help <command>
 $ git <command> --help
 $ man git-<command>
@@ -84,7 +84,7 @@ $ man git-<command>
 All git commits have the `-h` flag which concisely shows usage options,
 rather than the complete manual page.
 
-## Creating a Git Repository
+# Creating a Git Repository
 
 To create a git repository, a `.git` directory must be created in a
 folder. To start versioning a project with git, change into the existing
@@ -92,7 +92,7 @@ project directory, or create a new directory and do the same. Then run
 `git init`. If required take a snapshot of the existing files as they
 are when the git directory is created:
 
-```{.text}
+```text
 $ git add *
 $ git commit -m "Initial Commit"
 ```
@@ -103,11 +103,11 @@ name of the repository, if not specified) and fetches the required git
 information for that project. The clone command also _checks out_ a copy
 of the current version to the working directory.
 
-```{.text}
+```text
 $ git clone https://github.com/alexanderneville/website <local-directory>
 ```
 
-## References
+# References
 
 - [Official Git Reference](https://git-scm.com/docs)
 - [Pro Git Book](https://git-scm.com/book/en/v2)

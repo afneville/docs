@@ -1,6 +1,6 @@
 ---
-title: Writing Makefiles
 date: 2023-07-24
+title: Writing Makefiles
 ---
 
 For many small to medium size C projects, it is very convenient to split
@@ -32,10 +32,10 @@ generated.
 ```
 
 The project root directory contains the makefile.
-`compile_commands.json` exists for language server
-configuration, GCC is used in the makefile. The clean target of make
-will fully remove the binary and object file directories. Fully
-rebuilding the project in a single command:
+`compile_commands.json` exists for language server configuration, GCC is
+used in the makefile. The clean target of make will fully remove the
+binary and object file directories. Fully rebuilding the project in a
+single command:
 
 ```make
 MKDIR   := mkdir
@@ -45,7 +45,7 @@ BIN     := ./bin
 OBJ     := ./obj
 INCLUDE := ./inc
 SRC     := ./src
-APP		:= ./run
+APP     := ./run
 SRCS    := $(wildcard $(SRC)/*.c)
 APPS    := $(wildcard $(APP)/*.c)
 TESTS   := $(wildcard ./tests/*.c)
@@ -59,20 +59,20 @@ LDLIBS  :=
 build: $(PROGS)
 
 $(OBJ)/%.o: $(SRC)/%.c | $(OBJ)
-	$(CC) $(CFLAGS) -c $< -o $@
+    $(CC) $(CFLAGS) -c $< -o $@
 
 $(BIN)/%: $(APP)/%.c $(OBJS) | $(BIN)
-	$(CC) $^ -o $@ $(LDLIBS)
+    $(CC) $^ -o $@ $(LDLIBS)
 
 $(BIN):
-	$(MKDIR) $@
+    $(MKDIR) $@
 
 $(OBJ):
-	$(MKDIR) $@
+    $(MKDIR) $@
 
 clean:
-	$(RMDIR) $(OBJ) $(BIN)
+    $(RMDIR) $(OBJ) $(BIN)
 
 lspconfig:
-	bear -- make 2> /dev/null
+    bear -- make 2> /dev/null
 ```

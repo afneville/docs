@@ -36,7 +36,7 @@ def new_plot():
     return fig, ax
 ```
 
-## Normalisation
+# Normalisation
 
 Unsupervised learning algorithms draw upon the similarity of elements in
 the training set to form predictions. The _distance metric_ is an
@@ -77,15 +77,15 @@ ax.set_title("Z-score Standardised")
 ax.scatter(z_score_standardise_feature(np.mean(X[:, 0]), np.std(X[:, 0]), X[:, 0]), z_score_standardise_feature(np.mean(X[:, 1]), np.std(X[:, 1]), X[:, 1]), marker=".", c=y, s=2, cmap=mpl.colors.ListedColormap(colors))
 
 
-
 ```
 
-![Normalisation](../res/unsupervised_5_1.png){#fig:normalisation .nocaption}
+![Normalisation](../res/unsupervised_5_1.png){#fig:normalisation
+.nocaption}
 
-## Minkowski distance
+# Minkowski distance
 
-If $X$ and $Y$ are vectors of size $n$, the Minkowski distance is defined
-as:
+If $X$ and $Y$ are vectors of size $n$, the Minkowski distance is
+defined as:
 
 $$D(X,Y) = (\sum_i^n|x_i-y_i|^p)^{\frac{1}{p}}$$
 
@@ -104,7 +104,7 @@ to itself is always 0 and the distance from one point to another is
 always less than or equal to the distance between them via a third
 (triangular).
 
-## Partitional Clustering
+# Partitional Clustering
 
 Assigns $N$ observations into $K < N$ clusters, maximising
 _intra-cluster similarity_ and minimising _inter-cluster_ similarity.
@@ -130,17 +130,17 @@ of squares_ (WCSS). Maximising the _between cluster sum of squares_.
 $$dissimilarity(\mathbf{C}) = \sum_{C \in \mathbf{C}}variability(C)$$
 $$\text{WCSS}(\mathbf{C}) = \sum_{C \in \mathbf{C}}\sum_{e \in C} d_{Euc}(e, centroid(C))^2$$
 
-### K-Means
+## K-Means
 
 K-Means is a greedy iterative descent algorithm for minimising
 dissimilarity.
 
 Given a number of clusters $K$ and $N$ observations:
 
-1. Select $K$ observations as centroids.
-2. Repeat:
-   1. Assign each observation to the cluster of the nearest centroid.
-   2. Calculate the new centroid position for each cluster.
+1.  Select $K$ observations as centroids.
+2.  Repeat:
+    1.  Assign each observation to the cluster of the nearest centroid.
+    2.  Calculate the new centroid position for each cluster.
 
 ```python
 def nearest_centroid(c_k, x):
@@ -192,10 +192,14 @@ anim = animation.FuncAnimation(fig=fig, func=animate_k_means, frames=9, interval
 anim.save('../animations/k_means.gif')
 ```
 
-![Optimal K-means](../res/animations/k_means.gif){#fig:optimalkmeans .nocaption}
+![Optimal K-means](../res/animations/k_means.gif){#fig:optimalkmeans
+.nocaption}
 
-K-Means is not optimal. The algorithm may not generate ideal cluster centroids, as
-is the case in the example below. Many strategies for evaluating
-clustering algorithms and finding more optimal solutions exist.
+K-Means is not optimal. The algorithm may not generate ideal cluster
+centroids, as is the case in the example below. Many strategies for
+evaluating clustering algorithms and finding more optimal solutions
+exist.
 
-![Sub-optimal K-means](../res/animations/sub_optimal_k_means.gif){#fig:suboptimalkmeans .nocaption}
+![Sub-optimal
+K-means](../res/animations/sub_optimal_k_means.gif){#fig:suboptimalkmeans
+.nocaption}

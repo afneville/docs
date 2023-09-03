@@ -4,11 +4,11 @@ date: 2023-03-15 Wed
 title: Helpful Git Features
 ---
 
-## Tags
+# Tags
 
 Create a lightweight tag without an annotation:
 
-```{.text}
+```text
 $ git tag v1.0
 $ git tag
 v1.0
@@ -22,7 +22,7 @@ Date:   Tue Mar 28 15:38:42 2023 +0100
 
 Deleting a tag:
 
-```{.text}
+```text
 $ git tag
 v1.0
 $ git tag -d v1.0
@@ -32,7 +32,7 @@ $ git tag
 
 Creating an annotated tag:
 
-```{.text}
+```text
 $ git tag
 $ git tag -a v1.1 -m "version 1.1 with CONTRIBUTING info"
 $ git tag
@@ -53,7 +53,7 @@ Date:   Tue Mar 28 15:57:50 2023 +0100
 
 Creating a tag for a previous commit:
 
-```{.text}
+```text
 $ git log --oneline
 f47ea70 (HEAD -> main, tag: v1.1) create CONTRIBUTING
 2c35a17 create README
@@ -66,7 +66,7 @@ f47ea70 (HEAD -> main, tag: v1.1) create CONTRIBUTING
 2c35a17 (tag: v1.0) create README
 ```
 
-## Aliases
+# Aliases
 
 Short aliases for common commands can be defined by git itself, using
 `git config`; these aliases can optionally be made global, with the
@@ -74,7 +74,7 @@ Short aliases for common commands can be defined by git itself, using
 The git operation to perform is specified in quotes. External commands
 are prefaced with a `!`.
 
-```{.text}
+```text
 $ git config alias.unstage 'restore --staged'
 $ git status
 On branch main

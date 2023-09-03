@@ -9,7 +9,7 @@ ordered values in which the same value may appear more than once. Lists
 are frequently implemented with array and linked list data structures,
 among others.
 
-## Arrays
+# Arrays
 
 An array is a simple data structure which stores items in sequential
 memory locations. Arrays can be written as a collection of items inside
@@ -35,7 +35,7 @@ offset is calculated by multiplying the index by a certain number of
 bytes equal to the size of each item, $c$. As such the address of $a[i]$
 is $a + c \times i$.
 
-## Arrays, Iteration & Invariants
+# Arrays, Iteration & Invariants
 
 Index access to array elements, makes the array data structure conducive
 to sequential access. Iteration over the index variable, which is
@@ -48,7 +48,7 @@ like syntax.
 
 [Iteration in pseudocode and C like syntax]{.label}
 
-```{.text}
+```text
 For i <- 0 ... (N - 1) Do
     use value i
 
@@ -65,7 +65,7 @@ errors such as accessing indices beyond the end of an array. Due to the
 static nature of arrays (arrays are allocated once at a certain size),
 array size is a common program invariant.
 
-## List ADT
+# List ADT
 
 As an abstract data type, a list is defined in terms of its public
 functions. A minimal list type can be defined with two _constructors_,
@@ -98,7 +98,7 @@ With this set of functions, the following expressions are true.
 - `head (prepend(e, l)) == e`
 - `tail (prepend(e, l)) == l`
 
-## Recursion & Derived List Procedures
+# Recursion & Derived List Procedures
 
 Iteration is the logical and convenient method to process a collection
 of elements in an array, due to indexing. With the abstract list
@@ -113,7 +113,7 @@ function `last` returns the last element of the list `l`.
 
 [Return the last element of a list]{.label}
 
-```{.text}
+```text
 last(L:l) -> E {
     if (isemptylist(tail(l)) return head(l);
     return last(tail(l));
@@ -132,7 +132,7 @@ in the `last` function.
 
 [The same, with error handling]{.label}
 
-```{.text}
+```text
 last(L:l) ->E {
     if (isemptylist(l)) {
         error();
@@ -155,7 +155,7 @@ to the end of a list `l1` can be achieved by passing
 
 [Append one list to another]{.label}
 
-```{.text}
+```text
 append(L:l1,L:l2) -> L {
    if (isemptylist(l1)) return l2;
    return prepend(head(l1), append(tail(l1), l2))
@@ -171,7 +171,7 @@ which appends a single element to the end of a list.
 
 [Append an element to a list]{.label}
 
-```{.text}
+```text
 append(L:l,E:x) -> L {
    if (isemptylist(l)) return prepend(x, emptylist());
    return prepend(head(l), append(tail(l), x))
@@ -195,7 +195,7 @@ trade off is the space and time complexity associated with repeated
 memory allocation and traversal, yet another reason why complex data
 types in programming languages and libraries are truly abstract.
 
-## Linked Lists
+# Linked Lists
 
 Lists contain a finite number of elements, but theoretically this number
 has no upper bound. Lists on computers are practically limited in size
@@ -223,7 +223,7 @@ hold a copy of the element in place. The second field however **must**
 contain a reference to the next node. In a language such as Java, a node
 may be a user-defined object.
 
-```{.java}
+```java
 class Node {
     int data;
     Node next;
@@ -236,7 +236,7 @@ allocation of a new node and pointer logic are all handled implicitly.
 This is the equivalent of a C structure containing a pointer to another
 structure of the same type.
 
-```{.c}
+```c
 struct Node {
     int data;
     struct Node * next;
@@ -248,7 +248,7 @@ as it would appear in Java, as the structure definition is incomplete at
 the point the field is declared. Attempting to declare such a structure
 is impossible, it would require an infinite amount of memory.
 
-```{.c}
+```c
 struct Node {
     int data;
     struct Node next; // invalid
@@ -268,7 +268,8 @@ data type in its own right and there are different stylistic approaches
 to illustrating linked lists, evident in figures [@fig:abstract_llist]
 and [@fig:llist].
 
-![A more concrete linked list illustration](../res/llist.svg){#fig:llist}
+![A more concrete linked list
+illustration](../res/llist.svg){#fig:llist}
 
 In keeping with the inductive type definition, it is unnecessary to
 illustrate both nodes and a dedicated list object. It is still possible
@@ -286,7 +287,8 @@ begin performing an operation at some arbitrary point within the list,
 other than the first element, in which case this change is helpful. This
 is called a _circular_ linked list.
 
-![A circular linked list](../res/circular_llist.svg){#fig:circular_llist}
+![A circular linked
+list](../res/circular_llist.svg){#fig:circular_llist}
 
 A _queue_ is a linked list with an additional two-cell pointing to the
 front and rear nodes.
@@ -302,7 +304,7 @@ pointer is the previous node of the start).
 ![A circular doubly-linked
 list](../res/double_circular_llist.svg){#fig:double_circular_llist}
 
-## Dynamic Arrays
+# Dynamic Arrays
 
 An array is allocated once with a given size. An array is an ideal
 container type, if the data to be stored is of the same form and the
@@ -331,7 +333,7 @@ complexity if more space than is required is allocated and under certain
 conditions the time complexity of an operation may be worse, such as the
 reallocation of memory.
 
-## Stacks
+# Stacks
 
 A stack is an abstract data type organises data in _First-In-Last-Out
 (FILO)_ or _Last-In-First-Out (LIFO)_ manner. The most recently inserted
@@ -380,9 +382,10 @@ considered _full_. Pushing and further elements onto the stack will
 result in a state known as _stack overflow_. A dynamic array stack
 implementation can be used to avoid this condition.
 
-![Stack implemented as an array](../res/stack_array.svg){#fig:stack_array}
+![Stack implemented as an
+array](../res/stack_array.svg){#fig:stack_array}
 
-## Queue
+# Queue
 
 Unlike a stack, queue items are removed in the order they were
 originally inserted, called a _First-In-First-Out (FIFO)_ or
@@ -450,11 +453,13 @@ functions, two conditionals `isemptyqueue` and `isfullqueue`, a
 constructor `enqueue` (emptyqueue is omitted here) and a selector
 `dequeue`.
 
+```{=html}
 <div>
+```
 
 [Circular queue implementation]{.label}
 
-```{.text}
+```text
 record E { ... };
 record Q {
     int size;

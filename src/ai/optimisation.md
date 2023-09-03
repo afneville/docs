@@ -27,7 +27,7 @@ def new_plot():
     return fig, ax
 ```
 
-## Hill Climbing
+# Hill Climbing
 
 A very simple optimisation algorithm is hill climbing. The process
 resembles generating neighbour solutions, which are close to the current
@@ -109,7 +109,9 @@ anim = animation.FuncAnimation(fig=fig, func=hill_climb, frames=11, interval=500
 anim.save('../animations/optimal.gif')
 ```
 
-![Optimal Hill Climbing](../res/animations/optimal.gif){#fig:optimalhillclimbing .nocaption}
+![Optimal Hill
+Climbing](../res/animations/optimal.gif){#fig:optimalhillclimbing
+.nocaption}
 
 Applied to more complicated problems, hill climbing may not find a
 perfect solution as it can become _trapped_ in a local maxima. It is
@@ -133,7 +135,9 @@ anim = animation.FuncAnimation(fig=fig, func=hill_climb, frames=7, interval=500)
 anim.save('../animations/local_maxima.gif')
 ```
 
-![Sub-optimal Hill Climbing](../res/animations/local_maxima.gif){#fig:sub-optimalhillclimbing .nocaption}
+![Sub-optimal Hill
+Climbing](../res/animations/local_maxima.gif){#fig:sub-optimalhillclimbing
+.nocaption}
 
 ```python
 def f(x):
@@ -161,7 +165,7 @@ anim.save('../animations/plateau.gif')
 
 ![Plateau](../res/animations/plateau.gif){#fig:plateau .nocaption}
 
-## Simulated Annealing
+# Simulated Annealing
 
 Simulated annealing is one strategy to improve the performance of hill
 climbing algorithms.
@@ -249,4 +253,6 @@ anim = animation.FuncAnimation(fig=fig,
 anim.save('../animations/simulated_annealing.gif')
 ```
 
-![Simulated Annealing](../res/animations/simulated_annealing.gif){#fig:simulated_annealing .nocaption}
+![Simulated
+Annealing](../res/animations/simulated_annealing.gif){#fig:simulated_annealing
+.nocaption}

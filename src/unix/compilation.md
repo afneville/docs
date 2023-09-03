@@ -38,7 +38,7 @@ with an unrecognised extension is treated as an object file. GCC chooses
 The language can also be set explicitly with the `-x` flag. Values
 include:
 
-```{.language-plaintext}
+```language-plaintext
 c  c-header  cpp-output
 assembler  assembler-with-cpp
 ```
@@ -48,7 +48,7 @@ the command `gcc -S main.c` and subsequently assembled and linked with
 the command `gcc -x assembler main.s` or simply `gcc main.s` (GCC can
 detect the type of input file from the suffix).
 
-## Preprocessor
+# Preprocessor
 
 Lines beginning with `#` are treated as preprocessor directives. These
 lines are expanded and text replacements occur before the file is
@@ -98,7 +98,7 @@ is `.i`. Changing the suffix of `main.c` from `.c` to `.i` will cause
 the compiler to encounter an error, as it will skip the preprocessor
 step and the macro `EXIT_CODE` will not be replaced.
 
-```{.language-plaintext}
+```language-plaintext
 $ cp main.c main.i
 $ gcc main.i
 main.i: In function ‘main’:
@@ -111,17 +111,17 @@ $
 
 To force the compiler to start at the preprocessor step, regardless of
 the file extension, set the language to `c` explicitly with the `-x`
-flag (e.g. `gcc -x c main.i`). Using the appropriate extension for each
+flag (e.g. `gcc -x c main.i`). Using the appropriate extension for each
 file is unsurprisingly considered best practice.
 
-## Compiler
+# Compiler
 
 GCC refers to the compilation step as _compilation proper_ to avoid
 confusion this step with the whole build process. Compilation transforms
 preprocessed C source code into assembly. The `-S` flag instructs GCC to
 stop at the assembly step, after compilation (proper).
 
-```{.language-plaintext}
+```language-plaintext
 $ ls
 main.c
 $ gcc -S main.c
@@ -132,44 +132,44 @@ $
 
 This creates a new file with the `.s` suffix.
 
-```asm {.gnuassembler .s}
-	.file	"main.c"
-	.text
-	.globl	main
-	.type	main, @function
+```{.asm .gnuassembler .s}
+    .file   "main.c"
+    .text
+    .globl  main
+    .type   main, @function
 main:
 .LFB0:
-	.cfi_startproc
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	movl	%edi, -4(%rbp)
-	movq	%rsi, -16(%rbp)
-	movl	$0, %eax
-	popq	%rbp
-	.cfi_def_cfa 7, 8
-	ret
-	.cfi_endproc
+    .cfi_startproc
+    pushq   %rbp
+    .cfi_def_cfa_offset 16
+    .cfi_offset 6, -16
+    movq    %rsp, %rbp
+    .cfi_def_cfa_register 6
+    movl    %edi, -4(%rbp)
+    movq    %rsi, -16(%rbp)
+    movl    $0, %eax
+    popq    %rbp
+    .cfi_def_cfa 7, 8
+    ret
+    .cfi_endproc
 .LFE0:
-	.size	main, .-main
-	.ident	"GCC: (GNU) 13.1.1 20230429"
-	.section	.note.GNU-stack,"",@progbits
+    .size   main, .-main
+    .ident  "GCC: (GNU) 13.1.1 20230429"
+    .section    .note.GNU-stack,"",@progbits
 ```
 
 To compile a file on which the preprocessor has been run, use the
 `-x cpp-output` or give it the `.i` suffix, in addition to the `-S`
 option. It is safe to run the preprocessor on the same f once.
 
-## Assembler
+# Assembler
 
 Compilation produces an architecture dependent assembly file. GCC uses
 the GNU `as` assembler to produce object files. GCC will identify any
 file ending with `.s` as assembly. Alternatively, the option
 `-x assembler` will explicitly set the file type to assembly.
 
-```{.language-plaintext}
+```language-plaintext
 $ ls
 main.c  main.s
 $ as -o main.o main.s
@@ -177,7 +177,7 @@ $ ls
 main.c  main.o  main.s
 ```
 
-## Linker
+# Linker
 
 The final step in the build process is linking. At this point any
 library dependencies are resolved. GCC with no arguments will attempt to
@@ -186,7 +186,7 @@ program. Running GCC with the `-v` flag will output the link command
 used. For example `gcc -c main.o -o main`, uses the following linker
 command:
 
-```{.language-plaintext}
+```language-plaintext
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.1.1/collect2 -plugin
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.1.1/liblto_plugin.so
 -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/13.1.1/lto-wrapper

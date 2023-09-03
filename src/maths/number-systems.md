@@ -4,7 +4,7 @@ date: 2023-01-03
 title: Number Systems
 ---
 
-## Natural Numbers
+# Natural Numbers
 
 The set of Natural numbers $\mathbb{N}$, is the infinite set of all
 non-negative Integers, including $0$.
@@ -36,7 +36,7 @@ Considering the list $[5,8,4,6]$:
   _zeroth_ element of this list. In computing, this is generally the
   convention.
 
-### Natural Number Notation
+## Natural Number Notation
 
 Every natural number $n$ has a _successor_ $\textbf{S}n$. Any natural
 number can be expressed as in terms of this operation and the natural
@@ -77,13 +77,13 @@ this specificity isn't always necessary.
 | digit    | $1$    | $0$    | $3$    | $7$    |
 | value    | $1000$ | $0$    | $30$   | $7$    |
 
-## Algebraic Structures
+# Algebraic Structures
 
 An _algebraic structure_ consists of a non-empty set $A$ (know as the
 underlying set, carrier set or domain), a collection of operations on
 $A$ and a finite set of axioms for operations on $A$ to satisfy.
 
-### Field
+## Field
 
 A _field_ is one such algebraic structure for which addition,
 subtraction, multiplication and division are defined. A field is a set
@@ -118,7 +118,7 @@ A field is similar to a _commutative ring_ with the addition of the
 multiplicative inverse for all non-zero elements of $F$. The rational
 numbers $\mathbb{Q}$ and real numbers $\mathbb{R}$ form a field.
 
-### Ring & Commutative Ring
+## Ring & Commutative Ring
 
 A _ring_ is an algebraic structure similar to a field, but without the
 need for multiplication to be commutative and the need for elements to
@@ -154,7 +154,7 @@ More often than not, rings are commutative and the word ring is used in
 place of commutative ring. The set of integers $\mathbb{Z}$ forms a
 commutative ring.
 
-### Commutative Semiring
+## Commutative Semiring
 
 A commutative semiring is an algebraic structure similar to a
 commutative ring, but without the requirement that each element of the
@@ -173,13 +173,13 @@ multiplication is commutative.
 
 The set of natural numbers $\mathbb{N}$ forms a commutative semiring.
 
-### Closure
+## Closure
 
 A subset of a set is said to be _closed_ under an operation of the
 containing set if the result of the operation on a member of a subset
 always produces a member of that subset.
 
-## Integer Numbers
+# Integer Numbers
 
 The set of integers, denoted $\mathbb{Z}$ is the set of natural numbers,
 including zero and the set of negative number. The negative numbers are
@@ -190,7 +190,7 @@ but not a field.
 
 $$\{ \ldots , -3, -2, -1, 0, 1, 2, 3, \ldots \}$$
 
-### Mod & Div
+## Mod & Div
 
 The modulo operation, written $a \text{ mod } b$, returns the remainder
 of the division of $a$ by $b$. A modulo operation can be written
@@ -217,14 +217,14 @@ operations. In number theory, floored division is preferred, the
 remainder has the same sign as the divisor, as in the examples given
 here. This is called `floorMod` or `floorDiv` in some languages.
 
-### Integer Notation
+## Integer Notation
 
 The positional notation used to write natural numbers needs to be
 extended to write the negative numbers in the set of integers.
 
 The most simple system is _Sign-magnitude_ notation. Negative numbers
-are prefixed with a minus sign, e.g. $-37$. Natural numbers can also be
-written with a distinct positive sign, e.g. $+37$. If the sign is
+are prefixed with a minus sign, e.g. $-37$. Natural numbers can also be
+written with a distinct positive sign, e.g. $+37$. If the sign is
 omitted, the number is assumed to be positive. Inversion is very easy
 using this notation, changing the sign is the only step. In a computer
 system, an additional bit is required to store the sign, making the
@@ -278,7 +278,7 @@ $[-2^{n-1} \ldotp \ldotp 2^{n-1})$.
 | +0  |   0 |   0 |   0 |   0 | 0000 |
 | -8  |   1 |   0 |   0 |   0 | 1000 |
 
-### Integer Intervals
+## Integer Intervals
 
 An integer interval is a set of consecutive integers, which can be
 written compactly by defining its endpoints. $[$, $]$ are used to show
@@ -299,7 +299,7 @@ inclusion and $($, $)$ are used for exclusion by convention.
 - $\mathbb{Z}$ is the interval $(- \infty \ldotp \ldotp \infty)$
 - $\mathbb{N}$ is the interval $[0 \ldotp \ldotp \infty)$
 
-### Integer Lists
+## Integer Lists
 
 For a list of numbers, which the set of integers are sufficient to
 demonstrate, the sum and product of a list $L$ are written $\sum L$ and
@@ -312,7 +312,7 @@ $\prod L$ respectively.
 - $\sum [] = 0$
 - $\prod [] = 1$
 
-## Rational Numbers
+# Rational Numbers
 
 A rational number is one which can be represented as a quotient of
 fraction of two integers $m$ and $n$ where $n \neq 0$, as in $m/n$ or
@@ -323,7 +323,7 @@ rational number\'s canonical form. Two integers are coprime if their
 highest common divisor or factor is $1$. Every non-zero rational number
 has a multiplicative inverse, making $\mathbb{Q}$ a field.
 
-## Real Numbers
+# Real Numbers
 
 The set of real numbers $\mathbb{R}$ is the set of continuous values,
 with arbitrarily small divisions. The real numbers include all of the
@@ -340,7 +340,7 @@ round brackets retain the same meaning as integer interval notation.
   $10 \le n < \infty$
 - $\mathbb{R}$ is the interval $(- \infty \ldotp \ldotp \infty)$
 
-### Floor & Ceiling
+## Floor & Ceiling
 
 Floor is the function which returns the greatest integer less than or
 equal to a real $a$, written $\lfloor a \rfloor$. Ceiling is the
@@ -352,7 +352,7 @@ real $a$, written $\lceil a \rceil$.
 - $\lfloor -6.2 \rfloor = -7$
 - $\lceil -6.2 \rceil = -6$
 
-### Modular Arithmetic
+## Modular Arithmetic
 
 Two integers $a$ and $b$ are _congruent modulo_ $n$ if $n>0$ and the
 difference of $a$ and $b$ is a multiple of the modulus $n$; there exists
@@ -374,7 +374,7 @@ $$a + b \equiv x+y\text{ }(\text{mod } n)$$
 $$a - b \equiv x-y\text{ }(\text{mod } n)$$
 $$a \times b \equiv x \times y\text{ }(\text{mod } n)$$
 
-#### Rings of Modular Arithmetic
+### Rings of Modular Arithmetic
 
 Congruence modulo $n$ is an equivalence relation and an integer $a$ has
 the equivalence class $\overline{a}_n$, known as the _congruence class_
@@ -397,7 +397,7 @@ $$(a + b) \text{ mod } n = (a \text{ mod } n) +_{n} (b \text{ mod } n)$$
 $$(a - b) \text{ mod } n = (a \text{ mod } n) -_{n} (b \text{ mod } n)$$
 $$(a \times b) \text{ mod } n = (a \text{ mod } n) \times_{n} (b \text{ mod } n)$$
 
-#### Fields of Modular Arithmetic
+### Fields of Modular Arithmetic
 
 An element $a$ of $\mathbb{Z}_n$ has a multiplicative inverse if and
 only if $a$ is coprime with $n$. If $n$ is prime then all the elements

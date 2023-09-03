@@ -8,7 +8,7 @@ _GnuPG_, the _GNU privacy guard_ is a free and open source
 implementation of the _OpenPGP_ specification. OpenPGP itself is an IETF
 standard based on _Pretty Good Privacy_ (PGP).
 
-## Configuration
+# Configuration
 
 You may want to move the GPG configuration to `~/.config/`, to avoid
 clutter in your home directory. GPG requires strict permissions on the
@@ -27,7 +27,7 @@ Here are some sensible options to place in the `gpg` configuration file.
 These settings will suppress distracting information - such as version
 numbers and comments - in the `gpg` output.
 
-```{.language-plaintext}
+```language-plaintext
 no-default-keyring
 keyserver-options auto-key-retrieve
 keyserver-options no-honor-keyserver-url
@@ -46,20 +46,20 @@ required. The `gpg` utility delegates to a _pinentry_ program to prompt
 for this passphrase. Many such programs exist. The preference is set in
 the `gpg-agent.conf` file.
 
-```{.language-plaintext}
+```language-plaintext
 pinentry-program /usr/bin/pinentry-tty
 ```
 
 After modifying the `gpg-agent.conf` file, reload the agent with the
 command `gpg-connect-agent reloadagent /bye`.
 
-## Create and Manage Keys
+# Create and Manage Keys
 
 GPG keys can be created quickly, providing only a user id and password
 or interactively, specifying the key algorithm and optionally adding
 comments. Add the `--expert` option to enable newer ECC ciphers.
 
-```sh {.language-plaintext}
+```{.sh .language-plaintext}
 gpg --quick-generate-key
 gpg --generate-key
 gpg --full-generate-key
@@ -67,7 +67,7 @@ gpg --full-generate-key
 
 View keys in the keychain (public & private respectively).
 
-```sh {.language-plaintext}
+```{.sh .language-plaintext}
 gpg --list-keys
 gpg --list-secret-keys
 ```
@@ -77,7 +77,7 @@ location. The revocation certificate should be generated when the key is
 created, not when it is needed. The `--armor` flag ensures the output is
 ascii encoded, rather than binary.
 
-```sh {.language-plaintext}
+```{.sh .language-plaintext}
 gpg --export --armor --output pubkey.asc uid
 gpg --export-secret-keys --armor --output seckey.asc uid
 gpg --gen-revoke --armor --output revcert.asc uid
@@ -86,13 +86,13 @@ gpg --gen-revoke --armor --output revcert.asc uid
 So that other _gpg_ users are able to search for and import your public
 key, publish it to a keyserver.
 
-```sh {.language-plaintext}
+```{.sh .language-plaintext}
 gpg --send-keys keyid
 gpg --seach-keys uid
 gpg --receive-keys keyid
 ```
 
-## Signing
+# Signing
 
 To demonstrate authenticity, a user can _sign_ a file with their private
 key. The distributed file can be _verified_ by a recipient with the
@@ -106,7 +106,7 @@ before, the output can be in raw binary format, or armoured ASCII. For
 this example, the first paragraph of Charles Dickens' _"A Tale of Two
 Cities"_ is saved in the file `message.txt`.
 
-```{.language-plaintext}
+```language-plaintext
 It was the best of times, it was the worst of times, it was the age of
 wisdom, it was the age of foolishness, it was the epoch of belief, it
 was the epoch of incredulity, it was the season of Light, it was the
@@ -124,7 +124,7 @@ signature is `.gpg`. Optionally add the `--armour` option to encode the
 output. It is always possible to encode a signature later with
 `gpg --enarmour`. The `.asc` extension is used for such files.
 
-```{.language-plaintext}
+```language-plaintext
 $ ls
 message.txt
 $ gpg --default-key contact@alexneville.co.uk --sign message.txt
@@ -143,7 +143,7 @@ The file created by `--sign` is raw, but not encrypted. It can be
 verified by any recipient with the author's public key. The original
 file can be viewed with the `--decrypt` command.
 
-```{.language-plaintext}
+```language-plaintext
 $ gpg --decrypt message.txt.gpg
 It was the best of times, it was the worst of times, it was the age of
 wisdom, it was the age of foolishness, it was the epoch of belief, it
@@ -161,7 +161,7 @@ gpg: Good signature from "Alex Neville <contact@alexneville.co.uk>" [ultimate]
 Primary key fingerprint: 6526 651F CB32 C82B B3A6  449C 97BA C3EF F6C6 C53D
 ```
 
-### Clearsign & Detached Signatures
+## Clearsign & Detached Signatures
 
 In some cases an individual may want to provide a signature against
 which recipients can optionally verify the message, but leaving the
@@ -169,7 +169,7 @@ original message in plaintext. This can be done with `--clearsign`,
 which appends the ASCII armoured signature to the end of the plain text
 file (notice the header appended to the start of the file).
 
-```{.language-plaintext}
+```language-plaintext
 $ gpg --default-key contact@alexneville.co.uk --clearsign message.txt
 gpg: using "contact@alexneville.co.uk" as default secret key for signing
 $ cat message.txt.asc
@@ -202,7 +202,7 @@ file that does not include the file contents. The default file extension
 for a detached signature is `.sig`. The armoured detached signature is
 identical to the signature added to the end of the clearsigned file.
 
-```{.language-plaintext}
+```language-plaintext
 $ gpg --default-key contact@alexneville.co.uk --detach-sign message.txt
 $ ls
 message.txt message.txt.sig
@@ -226,7 +226,7 @@ is stored with the same name as the signature, less the `.asc` / `.sig`
 suffix. The path to the original file can be given explicitly by passing
 it to `gpg` after the signature path.
 
-```{.language-plaintext}
+```language-plaintext
 $ gpg --verify message.txt.sig
 gpg: assuming signed data in 'message.txt'
 gpg: Signature made Thu 20 Jul 2023 10:50:07 BST
@@ -242,13 +242,13 @@ gpg: Good signature from "Alex Neville <contact@alexneville.co.uk>" [ultimate]
 Primary key fingerprint: 6526 651F CB32 C82B B3A6  449C 97BA C3EF F6C6 C53D
 ```
 
-## Symmetric Encryption
+# Symmetric Encryption
 
 Unlike other GPG operations, symmetric encryption does not require a key
 pair. The supplied passphrase is the only secret/seed in the encryption
 process.
 
-```{.language-plaintext}
+```language-plaintext
 $ gpg -c message.txt
 Enter passphrase
 
@@ -261,7 +261,7 @@ message.txt  message.txt.gpg
 
 To decrypt an encrypted file, use the `--decrypt` command.
 
-## Asymmetric Encryption
+# Asymmetric Encryption
 
 Asymmetric encryption is widely used to secure internet communications.
 The public key of any key pair may be freely disseminated, so that
@@ -271,7 +271,7 @@ intended recipient is able to decrypt the message, using their private
 key. I'll use the public key of another of my public email addresses for
 this example.
 
-```{.language-plaintext}
+```language-plaintext
 $ gpg --recipient dev@alexneville.co.uk --encrypt message.txt
 $ ls
 message.txt  message.txt.gpg
@@ -300,7 +300,7 @@ recipient is then able to verify that the decrypted message was authored
 by the sender. Using two of my own key pairs, I can send myself an
 encrypted message - very secure!
 
-```{.language-plaintext}
+```language-plaintext
 $ gpg --default-key contact@alexneville.co.uk --recipient dev@alexneville.co.uk --encrypt --sign message.txt
 gpg: using "contact@alexneville.co.uk" as default secret key for signing
 $ ls

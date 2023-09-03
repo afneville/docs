@@ -12,7 +12,7 @@ command="pandoc -f markdown -t html -s"
 mathjax_flag="--mathjax=https://cdn.aneville.uk/mathjax/tex-svg.js"
 constant_flags="--data-dir=$(pwd) --metadata-file=./metadata.yaml --lua-filter=md-to-html-links.lua --filter=pandoc-crossref --no-highlight"
 
-buildblogpost="${command} ${constant_flags} ${mathjax_flag} --template=templates/blog-post -o"
+buildblogpost="${command} ${constant_flags} ${mathjax_flag} --shift-heading-level-by=1 --template=templates/blog-post -o"
 buildiframe="${command} ${constant_flags} --template=templates/contents-iframe -o"
 buildindexsection="${command} ${constant_flags} --template=templates/index-section"
 buildindex="${command} ${constant_flags} --template=templates/index-page --metadata title=index -o"

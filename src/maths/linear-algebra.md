@@ -4,7 +4,7 @@ date: 2023-01-05
 title: Linear Algebra
 ---
 
-## Gaussian Elimination
+# Gaussian Elimination
 
 Gaussian elimination is a technique for solving a system of linear
 equations with $n$ equations and $n$ variables, using the _matrix of
@@ -25,7 +25,7 @@ coefficients more easily.
 
 $$\left[\begin{array}{ccc|c}1&0&0&\ast \\ 0&1&0&\ast \\ 0&0&1&\ast \end{array} \right ]$$
 
-## Vector Spaces
+# Vector Spaces
 
 A _vector space_ over a field $F$ is a set $V$ equipped with two binary
 operations: vector addition and scalar multiplication. Any element of
@@ -63,7 +63,7 @@ Some derived statements about vector spaces:
 - $(-1)\vec{v} = -\vec{v}$
 - $s\vec{v} = \boldsymbol 0 \implies s = 0 \lor \vec{v} = \boldsymbol{0}$
 
-### Examples
+## Examples
 
 Every field is a vector space over itself. Fields are closed under $+$
 and $\times$, thus $\oplus$ can be defined as $+$ and scalar
@@ -84,7 +84,7 @@ $$\begin{pmatrix} a_1\\ \vdots \\a_n \end{pmatrix} \oplus \begin{pmatrix} b_1\\ 
 
 $$s\begin{pmatrix} b_1\\ \vdots \\b_n \end{pmatrix} \stackrel{\text{def}}{=} \begin{pmatrix} s \times a_1\\ \vdots \\ s \times a_n \end{pmatrix}$$
 
-### Span
+## Span
 
 The span of two vectors $\vec{v}$ and $\vec{w}$ is the set of all
 possible linear combinations of $\vec{v}$ and $\vec{w}$.
@@ -101,7 +101,7 @@ combination of the set of vectors. If the span of a set of vectors is
 all of $V$, every element of $V$ is a linear combination of
 $\{\vec{v}_1, \ldots, \vec{v}_n\}$, it is a _spanning set_.
 
-### Linear Independence
+## Linear Independence
 
 A set of vectors $\{\vec{v}_1, \ldots, \vec{v}_n\}$ is _linearly
 independent_ if
@@ -109,7 +109,7 @@ $r_1\vec{v}_1 \oplus \ldots \oplus r_n\vec{v}_n = \vec{0} \implies r_1 = \ldots 
 The only way to obtain the zero vector $\vec{0}$ is by taking each
 scalar to be $0$.
 
-### Basis
+## Basis
 
 A set of vectors $\vec{v}_1, \ldots, \vec{v}_n \in V$ forms a _basis_ if
 $\text{Span}(\vec{v}_1, \ldots, \vec{v}_n) = V$ and
@@ -121,7 +121,7 @@ $$\vec{v} \cdot \vec{w} \stackrel{\text{def}}{=} (v_1 \times w_1) + \ldots + (v_
 A basis set of vectors $B$ is _orthogonal_ if the inner product of all
 elements of $B$ with each other is $0$.
 
-## Matrices
+# Matrices
 
 A matrix is a two-dimensional array of values from a field. Matrices can
 be read row-wise or column-wise. The size of a matrix is $m \times n$
@@ -130,7 +130,7 @@ notation $a_{ij}$ means the element in row $i$ and column $j$.
 
 $$A_{2\times 3 } = \begin{bmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23}\end{bmatrix}$$
 
-### Matrix Multiplication
+## Matrix Multiplication
 
 Matrix multiplication is defined for two matrices $A_{m \times n}$ and
 $B_{n \times p}$, the number of rows in $B$ must equal the number of
@@ -143,7 +143,7 @@ $$c_{ik} = \sum_{j=1}^{n} a_{ij} \times b_{jk} $$
 
 Matrix multiplication is associative but not commutative.
 
-### Matrix Inversion
+## Matrix Inversion
 
 The inverse of a matrix $A$ is $A^{-1}$, such that $AA^{-1} = I$, where
 $I$ is the identity matrix. Not all matrices have an inverse. The
