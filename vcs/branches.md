@@ -1,11 +1,23 @@
 ---
-author: Alex Neville
+author: Alexander Neville
 date: 2023-03-29
 title: Local Branches
 ---
 
-The branch information can be suppressed/shown with the `--no-decorate`
-/ `--decorate` flags.
+A branch in git is simply a lightweight pointer to a commit. Branches
+enable development to diverge from the main history of the project in
+places, giving developers unlimited editable local copies of a project,
+without interfering with the work of others.
+
+As an example, one developer could create a branch at a certain commit
+and continue making changes locally. At the same time, another developer
+may continue working on the main branch or even create another branch to
+work on another part of the project. When each developer's progress is
+ready to be shared, the changes made in their branch can be _merged_
+with a shared branch.
+
+`HEAD` points to the current branch. The branch information can be
+suppressed/shown in with the `--no-decorate` / `--decorate` flags.
 
 ```text
 $ git log --oneline --no-decorate
@@ -18,16 +30,11 @@ f47ea70 create CONTRIBUTING
 2c35a17 create README
 ```
 
-`HEAD` points to the current branch. Each branch is a lightweight
-pointer to a commit. Each commit points to one or more parent commits.
-
 # Creating a Branch
 
 The `git branch` command is used to list and create branches. With the
 `--list` argument or no optional arguments, the local branches are
-listed. The `-r` flag can be used to list remote branches and `-a` can
-be used to list both local and remote branches. An optional string
-argument can be used to create a new branch.
+listed. An optional string argument can be used to create a new branch.
 
 ```text
 $ git branch branch1
@@ -56,8 +63,13 @@ f47ea70 create CONTRIBUTING
 2c35a17 create README
 ```
 
-Creating a commit on the new branch, moves the head pointer and the
-branch under it to the new commit.
+To create and switch to a branch in a single step, use
+`git checkout -b new-branch-name`. Use `git switch branch-name` to
+switch to an existing branch, or `git switch -c new-branch-name` to
+create and switch to a branch.
+
+Creating a commit on a newly-created branch, moves the head pointer and
+the branch under it to reference the new commit.
 
 ```text
 $ nvim index.html
@@ -77,8 +89,8 @@ $ git log --oneline --decorate --graph
 * 2c35a17 create README
 ```
 
-By using `git checkout` to return to the main branch the log no long
-shows commits made after the commit pointed to by the current branch.
+By using `git checkout` to return to the main branch the log no longer
+displays commits made after the commit pointed to by the current branch.
 The `--all` flag will show late commits.
 
 ```text
@@ -114,13 +126,12 @@ $ git log --oneline --decorate --graph --all
 * 2c35a17 create README
 ```
 
-## Alternative Syntax
-
-Create and switch to a branch with `git checkout -b new-branch-name`.
-Use `git switch branch-name` to switch to an existing branch, or
-`git switch -c new-branch-name` to create and switch to a branch.
-
 # Merging
+
+When the progress made in a branch is ready to be combined with another
+branch, the history of the two must be merged. In some cases, git is
+able to perform the merge automatically; in others, conflicts occur and
+manual intervention is required.
 
 ## Fast-forward merge
 
@@ -151,8 +162,8 @@ $ git log --oneline --decorate --graph --all
 * 2c35a17 create README
 ```
 
-Checkout the original branch and merge `branch2`. In this case the
-branch is moved to point to a different commit.
+Checkout the original branch and merge with the newly created `branch2`.
+In this case the branch is moved to point to a different commit.
 
 ```text
 $ git checkout main
@@ -174,12 +185,12 @@ $ git branch -d branch2
 Deleted branch branch2 (was aea2a4e).
 ```
 
-## Merging
+## Merging Divergent Branches
 
 The merge operation is more complicated when the two branches involved
 are divergent, _i.e._ the branch being merged from is not an ancestor of
 the branch being merged. A new commit must be created, sometimes called
-a `merge commit`.
+a _merge commit_.
 
 If both branches modify the same part of a file, git will not be able to
 merge automatically due to the conflict (_e.g._ merging `branch1` into

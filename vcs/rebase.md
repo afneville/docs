@@ -1,11 +1,11 @@
 ---
-author: Alex Neville
+author: Alexander Neville
 date: 2023-02-21
 title: Git Rebase
 ---
 
-Rebasing is an alternative to merging branches, as seen in
-[Local Git Branches](./branches.md).
+Rebasing is an alternative strategy to merging branches with a merge
+commit.
 
 # Rebase onto main
 

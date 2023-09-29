@@ -1,5 +1,5 @@
 ---
-author: Alex Neville
+author: Alexander Neville
 date: 2023-02-23
 title: Tracking Repository Changes
 ---
@@ -10,19 +10,8 @@ files between the different states. The same can be achieved using more
 primitive operations, but all modern git versions share a very similar
 CLI.
 
-# Repository Status
-
-Following the steps to create a new repository, create a directory,
-change into it and create a new git repository with `git init`:
-
-```text
-$ mkdir git-test
-$ cd git-test
-$ git init
-```
-
 The `git status` command outputs information relevant to the current
-state of the repository. In this recently initialised, empty project the
+state of the repository. In a recently initialised, empty project the
 output is very short.
 
 ```text

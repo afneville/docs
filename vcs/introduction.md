@@ -1,5 +1,5 @@
 ---
-author: Alex Neville
+author: Alexander Neville
 date: 2023-02-21
 title: Introduction to Git
 ---
@@ -12,15 +12,20 @@ system.
 The majority of git operations are local and do not require network
 access, this allows many different developers to work on the same
 project simultaneously without the availability of a central server. Git
-manages tracked files with snapshots, rather than _diffs_ or _deltas_;
-changed files get a new snapshot. Git makes frequent use of checksums to
-ensure data integrity, such as using a checksum to identify file
-snapshots.
+manages tracked files with _snapshots_, rather than _diffs_ or _deltas_;
+changed files get a new snapshot in each _commit_. Git makes frequent
+use of checksums to ensure data integrity, such as using a checksum to
+identify file snapshots.
 
-Most git actions add data to the database and very few actually remove
-data from the database, thus deleting a file in the working repository
-does not mean its history is removed from the git database. Files exist
-in one of three states:
+A commit is a snapshot of all the files with changes explicitly marked
+for commit. Each commit maintains a pointer to at least one parent
+commit, with the exception of the initial commit. Most git actions add
+data to the database with new commits and very few actually remove data
+from the database, thus deleting a file in the working repository does
+not mean its history is removed from the git database - snapshots of it
+exist in old commits.
+
+Files in a git repository exist in one of three states:
 
 - _Committed_ files have a current snapshot in the git database.
 - _Modified_ files exist with changes in the working directory, but
@@ -28,7 +33,7 @@ in one of three states:
 - _Staged_ files are marked for inclusion in the next commit a current
   snapshot of the file will be added to the database.
 
-The working area is a _checkout_ of one version of a project. The
+The _working area_ is a _checkout_ of one version of a project. The
 _staging_ area is managed by git to calculate which files will be
 included in the next commit. This is technically referred to as the
 index.
@@ -60,7 +65,7 @@ Some common configuration options:
 
 ```text
 $ git config --global user.name "Alexander Neville"
-$ git config --global user.email "dev@alexneville.co.uk"
+$ git config --global user.email "git@aneville.uk"
 $ git config --global core.editor nvim
 $ git config --global init.defaultBranch main
 $ git config --global credential.helper store
@@ -104,7 +109,7 @@ information for that project. The clone command also _checks out_ a copy
 of the current version to the working directory.
 
 ```text
-$ git clone https://github.com/alexanderneville/website <local-directory>
+$ git clone https://github.com/alexanderneville/docs <local-directory>
 ```
 
 # References
