@@ -217,7 +217,8 @@ printf("%s %s\n", string1, string2); // 1234 'T'
 free(string1); free(string2); free(c);
 ```
 
-The complete source file can be downloaded [here](../res/item.c).
+The complete source file can be downloaded
+[here](https://cdn.afneville.com/files/item.c).
 
 # Object Methods
 
@@ -292,4 +293,5 @@ matrix * m2 = m1->scale_matrix(m1);
 // ...
 ```
 
-The complete source file can be downloaded [here](../res/matrix.c).
+The complete source file can be downloaded
+[here](https://cdn.afneville.com/files/matrix.c).
