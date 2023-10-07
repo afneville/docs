@@ -1,5 +1,5 @@
 ---
-author: Alex Neville
+author: Alexander Neville
 date: 2023-01-04
 title: Mathematical Relations
 ---
@@ -62,10 +62,10 @@ $$\{b \in B \text{ } | \text{ } \exists a\in A. (a,b) \in f\}$$
 A relation is not a function if there exists an element in the domain
 which has multiple values in the co-domain, or if any of the elements in
 the domain have no value in the co-domain, as in figure
-[fig:not_functional_relation](fig:not_functional_relation)
+[@fig:not_functional_relation]
 
 ![Two non-functional
-relations](../res/invalid_functions.svg "not_functional_relation")
+relations](../res/invalid_functions.svg){#fig:not_functional_relation}
 
 Instead of using the notation $f \subseteq A \times B$ to write the
 domain and co-domain of a functional relation the notation
@@ -87,10 +87,9 @@ $f^{-1}[Y]$
 $$f^{-1}[Y] \stackrel{\text{def}}{=} \{a \in A\text{ } | \text{ } f(a) \in Y\}$$
 
 There are several different properties a function may satisfy,
-illustrated in figure
-[fig:functional_relations](fig:functional_relations).
+illustrated in figure [@fig:functional_relations].
 
-![Set of valid functions](../res/functions.svg "functional_relations")
+![Set of valid functions](../res/functions.svg){#fig:functional_relations}
 
 1.  General function: defined and single-valued for each element of A.
     The _many-to-one_ property is valid for a general function. There

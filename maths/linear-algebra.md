@@ -1,5 +1,5 @@
 ---
-author: Alex Neville
+author: Alexander Neville
 date: 2023-01-05
 title: Linear Algebra
 ---

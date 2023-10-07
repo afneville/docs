@@ -13,7 +13,7 @@ The remote repositories for the current project can be manipulated with
 the `git remote` command. Without any optional arguments, all remotes
 are listed. Inspect `man git-remote` to view the available subcommands.
 
-```
+```text
 $ git remote
 origin
 ```
@@ -21,11 +21,11 @@ origin
 By default, git will name the server that a repository is cloned from
 _origin_. To inspect this remote, use the `show` subcommand
 
-```
+```text
 $ git remote show origin
 * remote origin
-  Fetch URL: git@github.com:alexanderneville/docs.git
-  Push  URL: git@github.com:alexanderneville/docs.git
+  Fetch URL: git@github.com:afneville/docs.git
+  Push  URL: git@github.com:afneville/docs.git
   HEAD branch: main
   Remote branches:
     main tracked
@@ -52,7 +52,7 @@ local branches. The `-r` flag can be used to list remote-tracking
 branches and `-a` can be used to list both local and remote-tracking
 branches.
 
-```
+```text
 $ git branch
 * main
 $ git branch -r
@@ -73,7 +73,7 @@ with remote-tracking branches, but it does not create an editable local
 branch for each. Checking out a remote-tracking branch will put the
 local repository in detached head state.
 
-```
+```text
 $ git checkout origin/org
 Note: switching to 'origin/org'.
 
@@ -89,7 +89,7 @@ known as the _upstream_ branch. The syntax to do so is
 `git branch <local-branch> <remote>/<branch>`. This command won't switch
 to the newly created branch, but `git checkout -b ...` will.
 
-```
+```text
 $ git checkout -b test origin/org
 branch 'test' set up to track 'origin/org'.
 Switched to a new branch 'test'
@@ -105,7 +105,7 @@ as an argument. If the checkout subcommand is passed the name of a
 non-existent branch that matches exactly one remote branch (across all
 configured remotes), it will create a tracking branch with that name.
 
-```
+```text
 $ git checkout org
 branch 'org' set up to track 'origin/org'.
 Switched to a new branch 'org'
@@ -118,7 +118,7 @@ To do the opposite and set an existing local branch to track a remote
 branch or change the remote branch being tracked, use the `-u` option of
 `git branch` to set the upstream branch.
 
-```
+```text
 $ git branch -vv
 * main d410267 [origin/main] restructure
 $ git branch -u origin/org
@@ -134,7 +134,7 @@ branches which are an ancestor of the specified commit. The
 `--no-merged` option does the opposite, listing only branches which are
 not direct ancestors of the current commit.
 
-```
+```text
 $ git branch --merged
 * main
   org

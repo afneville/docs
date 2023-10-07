@@ -1,5 +1,5 @@
 ---
-author: Alex Neville
+author: Alexander Neville
 date: 2023-07-09
 title: Program Compilation
 ---

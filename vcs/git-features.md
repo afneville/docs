@@ -106,7 +106,7 @@ unambiguous.
 ```
 $ git show --shortstat 73e358ebd24810fe7055bf952d882c34d68a9805
 commit 73e358ebd24810fe7055bf952d882c34d68a9805
-Author: Alexander Neville <git@aneville.uk>
+Author: Alexander Neville <git@afneville.com>
 Date:   Sun Sep 3 22:16:14 2023 +0100
 
     promote all headings
@@ -114,7 +114,7 @@ Date:   Sun Sep 3 22:16:14 2023 +0100
  29 files changed, 350 insertions(+), 327 deletions(-)
 $ git show --shortstat 73e358e
 commit 73e358ebd24810fe7055bf952d882c34d68a9805
-Author: Alexander Neville <git@aneville.uk>
+Author: Alexander Neville <git@afneville.com>
 Date:   Sun Sep 3 22:16:14 2023 +0100
 
     promote all headings
@@ -135,7 +135,7 @@ ba1398c (origin/org) HEAD@{1}: checkout: moving from main to origin/org
 d410267 (HEAD -> main, origin/main, origin/HEAD) HEAD@{2}: reset: moving to HEAD
 d410267 (HEAD -> main, origin/main, origin/HEAD) HEAD@{3}: commit: restructure
 73e358e HEAD@{4}: commit: promote all headings
-8deef80 HEAD@{5}: commit: alexneville.co.uk -> aneville.uk
+8deef80 HEAD@{5}: commit: alexneville.co.uk -> afneville.com
 001e5ff HEAD@{6}: commit (amend): fix link target on index page
 8a1de37 HEAD@{7}: commit: fix link target on index page
 54db34c HEAD@{8}: rebase (finish): returning to refs/heads/main
@@ -154,7 +154,7 @@ times to date, can be checked with the `HEAD@{4}` syntax.
 ```
 $ git show --shortstat HEAD@{4}
 commit 73e358ebd24810fe7055bf952d882c34d68a9805
-Author: Alexander Neville <git@aneville.uk>
+Author: Alexander Neville <git@afneville.com>
 Date:   Sun Sep 3 22:16:14 2023 +0100
 
     promote all headings

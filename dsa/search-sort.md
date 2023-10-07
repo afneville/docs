@@ -1,5 +1,5 @@
 ---
-author: Alex Neville
+author: Alexander Neville
 date: 2023-01-11
 title: Searching and Sorting
 ---
@@ -36,10 +36,6 @@ performs $O(n)$ comparisons and $O(1)$ swaps, efficient for fully or
 mostly sorted lists. The space complexity is constant (no auxiliary
 space required).
 
-<div>
-
-[Two common bubblesort implementations]{.label}
-
 ```text
 bubblesort(a[],n) {
     for (i = 0; i < n - 1; i++)
@@ -55,8 +51,6 @@ bubblesort(a[],n) {
 }
 ```
 
-</div>
-
 # Insertion Sort
 
 Insertion sort may be implemented as a stable, in-place,
@@ -68,10 +62,6 @@ elements. In the best case, bubble sort performs $O(n)$ comparisons and
 $O(1)$ swaps, ideal for fully or mostly sorted lists. The space
 complexity (no auxiliary space required) is constant if the output array
 grows inside the input array.
-
-<div>
-
-[Insertion sort implementation]{.label}
 
 ```text
 insertionsort(a[],n) {
@@ -85,8 +75,6 @@ insertionsort(a[],n) {
 }
 ```
 
-</div>
-
 # Selection Sort
 
 Selection sort may be implemented as a stable, in-place,
@@ -96,10 +84,6 @@ insertion sort performs $O(n^2)$ comparisons and swaps $O(n)$ elements.
 In the best case, bubble sort performs $O(n^2)$ comparisons and $O(1)$
 swaps. The space complexity is constant (no auxiliary space required) if
 the output array grows inside the input array.
-
-<div>
-
-[Selection sort implementation]{.label}
 
 ```text
 selectionsort(a[],n) {
@@ -112,8 +96,6 @@ selectionsort(a[],n) {
 }
 ```
 
-</div>
-
 # Merge Sort
 
 Merge sort is a more efficient stable, comparison-based
@@ -124,10 +106,6 @@ smallest of either sorted sub-list as the next element of the sorted
 list. Merge sort is $\Theta(n \log n)$ in the best, worst and average
 cases. Merge sort additionally requires $O(n)$ of auxiliary space to act
 as a buffer for merging sub-lists if the sort acts on an array.
-
-<div>
-
-[Merge sort implementation]{.label}
 
 ```text
 mergesort(a[], l, r) {
@@ -154,8 +132,6 @@ mergesublists(a[], l, m, r) {
 }
 ```
 
-</div>
-
 # QuickSort
 
 Quicksort is an efficient comparison-based divide-and-conquer sorting
@@ -170,10 +146,6 @@ partition will have considerably more elements than than the other.
 Ideally the median value is chosen as the pivot. In the best and average
 cases, where the pivot is close to the median, complexity of quicksort
 is $O(n \log n)$. In the worst case the complexity is $O(n^2)$.
-
-<div>
-
-[Unstable quicksort implementation]{.label}
 
 ```text
 quicksort(a[], l, r) {
@@ -210,17 +182,11 @@ partition(a[], l, r) {
 }
 ```
 
-</div>
-
 The most simple quicksort algorithm is not stable. Quicksort can be made
 stable by introducing a buffer to store elements greater than and equal
 and occurring to the right of the pivot. Once these elements have been
 collected, they are added to the appropriate index of the original
 sub-list. Using a buffer introduces $O(n)$ auxiliary space complexity.
-
-<div>
-
-[Stable quicksort implementation using a buffer]{.label}
 
 ```text
 partition(a[], l, r) { // stable sort
@@ -240,5 +206,3 @@ partition(a[], l, r) { // stable sort
     return r - j + 1;
 }
 ```
-
-</div>

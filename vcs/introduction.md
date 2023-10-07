@@ -65,7 +65,7 @@ Some common configuration options:
 
 ```text
 $ git config --global user.name "Alexander Neville"
-$ git config --global user.email "git@aneville.uk"
+$ git config --global user.email "git@afneville.com"
 $ git config --global core.editor nvim
 $ git config --global init.defaultBranch main
 $ git config --global credential.helper store

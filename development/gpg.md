@@ -1,5 +1,5 @@
 ---
-author: Alex Neville
+author: Alexander Neville
 date: 2023-07-20
 title: GPG Usage
 ---
@@ -130,7 +130,7 @@ message.txt
 $ gpg --default-key contact@alexneville.co.uk --sign message.txt
 gpg: using "contact@alexneville.co.uk" as default secret key for signing
 Please enter the passphrase to unlock the OpenPGP secret key:
-"Alex Neville <contact@alexneville.co.uk>"
+"Alexander Neville <contact@alexneville.co.uk>"
 255-bit EDDSA key, ID 97BAC3EFF6C6C53D,
 created 2023-06-11.
 
@@ -157,7 +157,7 @@ evil, in the superlative degree of comparison only.
 gpg: Signature made Thu 20 Jul 2023 10:25:16 BST
 gpg:                using EDDSA key 6526651FCB32C82BB3A6449C97BAC3EFF6C6C53D
 gpg:                issuer "contact@alexneville.co.uk"
-gpg: Good signature from "Alex Neville <contact@alexneville.co.uk>" [ultimate]
+gpg: Good signature from "Alexander Neville <contact@alexneville.co.uk>" [ultimate]
 Primary key fingerprint: 6526 651F CB32 C82B B3A6  449C 97BA C3EF F6C6 C53D
 ```
 
@@ -232,13 +232,13 @@ gpg: assuming signed data in 'message.txt'
 gpg: Signature made Thu 20 Jul 2023 10:50:07 BST
 gpg:                using EDDSA key 6526651FCB32C82BB3A6449C97BAC3EFF6C6C53D
 gpg:                issuer "contact@alexneville.co.uk"
-gpg: Good signature from "Alex Neville <contact@alexneville.co.uk>" [ultimate]
+gpg: Good signature from "Alexander Neville <contact@alexneville.co.uk>" [ultimate]
 Primary key fingerprint: 6526 651F CB32 C82B B3A6  449C 97BA C3EF F6C6 C53D
 $ gpg --verify message.txt.sig message.txt
 gpg: Signature made Thu 20 Jul 2023 10:50:07 BST
 gpg:                using EDDSA key 6526651FCB32C82BB3A6449C97BAC3EFF6C6C53D
 gpg:                issuer "contact@alexneville.co.uk"
-gpg: Good signature from "Alex Neville <contact@alexneville.co.uk>" [ultimate]
+gpg: Good signature from "Alexander Neville <contact@alexneville.co.uk>" [ultimate]
 Primary key fingerprint: 6526 651F CB32 C82B B3A6  449C 97BA C3EF F6C6 C53D
 ```
 
@@ -277,13 +277,13 @@ $ ls
 message.txt  message.txt.gpg
 $ gpg --decrypt message.txt.gpg
 Please enter the passphrase to unlock the OpenPGP secret key:
-"Alex Neville <dev@alexneville.co.uk>"
+"Alexander Neville <dev@alexneville.co.uk>"
 255-bit ECDH key, ID C0E91A549735460F,
 created 2023-06-11 (main key ID 545E6C5AC1F2BFE1).
 
 Passphrase:
 gpg: encrypted with 255-bit ECDH key, ID C0E91A549735460F, created 2023-06-11
-      "Alex Neville <dev@alexneville.co.uk>"
+      "Alexander Neville <dev@alexneville.co.uk>"
 It was the best of times, it was the worst of times, it was the age of
 wisdom, it was the age of foolishness, it was the epoch of belief, it
 was the epoch of incredulity, it was the season of Light, it was the
@@ -307,7 +307,7 @@ $ ls
 message.txt  message.txt.gpg
 $ gpg --decrypt message.txt.gpg
 gpg: encrypted with 255-bit ECDH key, ID C0E91A549735460F, created 2023-06-11
-      "Alex Neville <dev@alexneville.co.uk>"
+      "Alexander Neville <dev@alexneville.co.uk>"
 It was the best of times, it was the worst of times, it was the age of
 wisdom, it was the age of foolishness, it was the epoch of belief, it
 was the epoch of incredulity, it was the season of Light, it was the
@@ -320,6 +320,6 @@ evil, in the superlative degree of comparison only.
 gpg: Signature made Thu 20 Jul 2023 13:50:23 BST
 gpg:                using EDDSA key 6526651FCB32C82BB3A6449C97BAC3EFF6C6C53D
 gpg:                issuer "contact@alexneville.co.uk"
-gpg: Good signature from "Alex Neville <contact@alexneville.co.uk>" [ultimate]
+gpg: Good signature from "Alexander Neville <contact@alexneville.co.uk>" [ultimate]
 Primary key fingerprint: 6526 651F CB32 C82B B3A6  449C 97BA C3EF F6C6 C53D
 ```

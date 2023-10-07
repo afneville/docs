@@ -1,5 +1,5 @@
 ---
-author: Alex Neville
+author: Alexander Neville
 date: 2023-01-10
 title: Lists
 ---
@@ -44,10 +44,6 @@ processed at run time. A _loop_ is the programming construct
 facilitating iteration. It is commonly expressed in pseudocode and C
 like syntax.
 
-<div>
-
-[Iteration in pseudocode and C like syntax]{.label}
-
 ```text
 For i <- 0 ... (N - 1) Do
     use value i
@@ -56,8 +52,6 @@ for (i = 0; i < N; i++) {
     // use value i
 }
 ```
-
-</div>
 
 In both of these examples $N$ is an invariant. It does not change in the
 loop body or anywhere else in the program. Invariants prevent common
@@ -109,10 +103,6 @@ inductive construction of the list type, obtaining the last element
 requires every element in the list is processed or _traversed_. The
 function `last` returns the last element of the list `l`.
 
-<div>
-
-[Return the last element of a list]{.label}
-
 ```text
 last(L:l) -> E {
     if (isemptylist(tail(l)) return head(l);
@@ -120,17 +110,11 @@ last(L:l) -> E {
 }
 ```
 
-</div>
-
 This implementation ensures that the `last` function is not recursively
 applied to an empty list, although if the function is initially called
 on an empty list, `tail` will be passed an empty list, for which it is
 undefined. This situation could be handled with an additional condition
 in the `last` function.
-
-<div>
-
-[The same, with error handling]{.label}
 
 ```text
 last(L:l) ->E {
@@ -144,16 +128,10 @@ last(L:l) ->E {
 }
 ```
 
-</div>
-
 Appending, rather than prepending, to a list is also a derived function
 on this list. For the sake of simplicity, appending a single element `x`
 to the end of a list `l1` can be achieved by passing
 `prepend(x,emptylist())` in place of `l2`.
-
-<div>
-
-[Append one list to another]{.label}
 
 ```text
 append(L:l1,L:l2) -> L {
@@ -162,14 +140,8 @@ append(L:l1,L:l2) -> L {
 }
 ```
 
-</div>
-
 Modifying the base case slightly, it is possible to write a function
 which appends a single element to the end of a list.
-
-<div>
-
-[Append an element to a list]{.label}
 
 ```text
 append(L:l,E:x) -> L {
@@ -177,8 +149,6 @@ append(L:l,E:x) -> L {
    return prepend(head(l), append(tail(l), x))
 }
 ```
-
-</div>
 
 Many of these derived functions are slow and inefficient. In practice it
 might be easier to use some of the underlying implementation details of

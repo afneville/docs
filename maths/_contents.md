@@ -1,5 +1,5 @@
 ---
-title: Maths for Computer Science
+title: Maths
 ---
 
 - [Number Systems](/maths/number-systems.md)

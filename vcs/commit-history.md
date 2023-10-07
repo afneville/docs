@@ -11,25 +11,25 @@ reverse order (most recent first).
 ```text
 $ git log
 commit 06a00edd58d65bcee1d70b0cb45a8acdc0543cd1
-Author: Alexander Neville <git@aneville.uk>
+Author: Alexander Neville <git@afneville.com>
 Date:   Wed Mar 15 14:34:14 2023 +0000
 
     change LICENSE
 
 commit 16b89b1410d919818f9e5dab4eaab35872dac21a
-Author: Alexander Neville <git@aneville.uk>
+Author: Alexander Neville <git@afneville.com>
 Date:   Wed Mar 15 14:33:45 2023 +0000
 
     modify README
 
 commit 1c19a4b51dff6a0faf02d413289d782c33fe5227
-Author: Alexander Neville <git@aneville.uk>
+Author: Alexander Neville <git@afneville.com>
 Date:   Wed Mar 15 14:32:25 2023 +0000
 
     Add license
 
 commit efbb720533e1086398676db9d744455abb635e45
-Author: Alexander Neville <git@aneville.uk>
+Author: Alexander Neville <git@afneville.com>
 Date:   Wed Mar 15 14:31:16 2023 +0000
 
     initial commit
@@ -64,13 +64,13 @@ Print the commits in which changes include the string `GPL`.
 ```text
 $ git log -S GPL
 commit 06a00edd58d65bcee1d70b0cb45a8acdc0543cd1 (HEAD -> main)
-Author: Alexander Neville <git@aneville.uk>
+Author: Alexander Neville <git@afneville.com>
 Date:   Wed Mar 15 14:34:14 2023 +0000
 
     change LICENSE
 
 commit 1c19a4b51dff6a0faf02d413289d782c33fe5227
-Author: Alexander Neville <git@aneville.uk>
+Author: Alexander Neville <git@afneville.com>
 Date:   Wed Mar 15 14:32:25 2023 +0000
 
     Add license
@@ -93,7 +93,7 @@ contains the string `"license"` (case insensitive).
 ```text
 $ git log --grep="LICENSE\|license" --stat
 commit 06a00edd58d65bcee1d70b0cb45a8acdc0543cd1 (HEAD -> main)
-Author: Alexander Neville <git@aneville.uk>
+Author: Alexander Neville <git@afneville.com>
 Date:   Wed Mar 15 14:34:14 2023 +0000
 
     change LICENSE
@@ -102,7 +102,7 @@ Date:   Wed Mar 15 14:34:14 2023 +0000
  1 file changed, 16 insertions(+), 11 deletions(-)
 
 commit 1c19a4b51dff6a0faf02d413289d782c33fe5227
-Author: Alexander Neville <git@aneville.uk>
+Author: Alexander Neville <git@afneville.com>
 Date:   Wed Mar 15 14:32:25 2023 +0000
 
     Add license
@@ -133,7 +133,7 @@ then added to the last commit via the same method.
 ```text
 $ git log -1 --stat
 commit 06a00edd58d65bcee1d70b0cb45a8acdc0543cd1 (HEAD -> main)
-Author: Alexander Neville <git@aneville.uk>
+Author: Alexander Neville <git@afneville.com>
 Date:   Wed Mar 15 14:34:14 2023 +0000
 
     change LICENSE
@@ -144,7 +144,7 @@ $ git add CONTRIBUTING.md
 $ git commit --amend -m "LICENCE and CONTRIBUTING info"
 $ git log -1 --stat
 commit b18d694dae570093b428c13b003d6a3785a8b628 (HEAD -> main)
-Author: Alexander Neville <git@aneville.uk>
+Author: Alexander Neville <git@afneville.com>
 Date:   Wed Mar 15 14:34:14 2023 +0000
 
     LICENCE and CONTRIBUTING info
