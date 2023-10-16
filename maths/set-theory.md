@@ -7,7 +7,7 @@ title: Set Theory
 A _set_ is a collection of different items; a set contains _elements_. A
 set can be simply expressed by enumerating its elements, typically
 inside $\{$,$\}$ curly brackets. $\{2,4,6,8\}$ and
-$\{\text{Alex}, \text{Benjamin}, \text{Richard}, \text{Bethan}\}$ are
+$\{\text{Alex}, \text{Benjamin}, \text{John}\}$ are
 examples of sets.
 
 # Membership & Equality
