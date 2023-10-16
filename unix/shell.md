@@ -4,6 +4,12 @@ date: 2023-06-25
 title: Shell Scripting
 ---
 
+A Shell script is a program that is executed by a shell. Shells operate
+as command line interpreters; scripts are an automated method of issuing
+sequential commands to a shell. Shell scripts are plain text files and
+are not compiled before they are executed. They must, however, have
+their executable bit set.
+
 # Shebang
 
 If a plain text file is executed as a command and the first line begins
@@ -197,32 +203,22 @@ echo $(($b / 5)) # 1
 echo $(($b % 5)) # 3
 ```
 
-# String Operations
-
-```sh
-string="Hello, world!"
-echo ${#string} # 13
-echo ${string:0:5} # Hello
-echo ${string:5} # , world!
-```
-
 # Loops
+
+As in many other languages, for loops are pre-determined and iterate
+though a set of values.
 
 ```sh
 #!/bin/sh
 for i in 1 2 3 4 5
 do
-  echo "$i"
+  printf "$i "
 done
+echo # prints 1 2 3 4 5
 ```
 
-```sh
-#!/bin/sh
-for i in "Hello," world
-do
-  echo "$i"
-done
-```
+While loops too are exactly as one would expect. `:` always evaluates to
+true.
 
 ```sh
 #!/bin/sh
@@ -271,4 +267,53 @@ if [ 1 -eq 1 ]
 then
     echo "The expression is true."
 fi
+```
+
+# Case
+
+The case statement is intuitive. The following script prints `Two`.
+
+```sh
+#!/bin/sh
+
+x=2
+
+case $x in
+    1) echo "One" ;;
+    2) echo "Two" ;;
+    3) echo "Three" ;;
+    *) echo "Larger Than Three" ;;
+esac
+```
+
+# Functions
+
+The scope rules of functions in shell are unusual. Consider the
+following example:
+
+```sh
+#!/bin/sh
+
+testfunction() {
+    echo "Function arguments: " "$@"
+    X=2
+}
+
+X=1
+echo "X: $X"
+testfunction 1 2 3
+echo "Script arguments: " "$@"
+echo "X: $X"
+```
+
+Named `test.sh` and called with the arguments `a b c`, the function is
+demonstrated to have a different argument array to the main script, but
+the variable `X` is global.
+
+```text
+$ ./test.sh a b c
+X: 1
+Function arguments:  1 2 3
+Script arguments:  a b c
+X: 2
 ```
