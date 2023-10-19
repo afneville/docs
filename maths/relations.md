@@ -18,8 +18,8 @@ another set, the _codomain_. A binary relation over the sets $X$ and $Y$
 is a subset of $\mathcal{P}(X \times Y)$. A binary relation is
 _homogeneous_ when $X = Y$ and is said to be a binary relation over $X$.
 $(x, y) \in R$ means that $x$ is related to $y$, sometimes written
-$xRy$. A binary relation is a generalisation of a _unary_ function which
-maps one input to one output.
+$xRy$. A binary relation is a generalisation of a _unary_ function of
+arity one, which maps one input to one output.
 
 The composition of the relation $R \subseteq A \times B$ and
 $S \subseteq B \times C$ is written $S \circ R \subseteq = A \times C$;
@@ -68,7 +68,7 @@ the domain have no value in the co-domain, as in figure
 relations](../res/invalid_functions.svg){#fig:not_functional_relation}
 
 Instead of using the notation $f \subseteq A \times B$ to write the
-domain and co-domain of a functional relation the notation
+domain and co-domain of a functional relation, the notation
 $f: A \mapsto B$ is preferred. Instead of writing $(a, b) \in f$, the
 notation $f(a) = b$ is used to say $a$ maps to $b$.
 
@@ -111,6 +111,29 @@ illustrated in figure [@fig:functional_relations].
 
 4.  Bijective function: both injective and surjective, the domain and
     co-domain have equal cardinality $|A| = |B|$.
+
+## Arity
+
+Many functions are not unary. The arithmetic operators + and -, for
+example, are binary functions. Functions that take more than one
+argument are sometimes called _multivariable_ or _multivariate_.
+
+In the case of an _n_-ary function $f$, the domain is a set of
+_n_-tuples. Each $(x_{1},\ldots,x_{n})$ is an element of the Cartesian
+product $X_{1}\times\cdots\times X_{n}$, where each $x_{i} \in X_{i}$.
+$f$ can be written:
+
+$$f: X_{1}\times\cdots\times X_{n} \mapsto Y$$
+
+It is also possible to consider $f$ as a unary function which takes an
+_n_-tuple as its one argument.
+
+$$f: Z \mapsto Y$$
+
+$$Z \subseteq X_{1}\times\cdots\times X_{n}$$
+
+$f(x_{1},\ldots,x_{n})$ could equally be written
+$f((x_{1},\ldots,x_{n}))$.
 
 # Endorelations
 
