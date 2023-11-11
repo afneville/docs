@@ -75,12 +75,16 @@ $11$ is assumed to be the natural number eleven, written in decimal,
 rather than three written in binary. $11_2$ is unmistakably binary, but
 this specificity isn't always necessary.
 
-|          |        |        |        |        |
-| -------: | :----: | :----: | :----: | :----: |
-| position |  $3$   |  $2$   |  $1$   |  $0$   |
-|    power | $10^3$ | $10^2$ | $10^1$ | $10^0$ |
-|    digit |  $1$   |  $0$   |  $3$   |  $7$   |
-|    value | $1000$ |  $0$   |  $30$  |  $7$   |
+:::{.wrap-table}
+
+|       |        |        |        |        |
+| ----: | :----: | :----: | :----: | :----: |
+| place |  $3$   |  $2$   |  $1$   |  $0$   |
+| power | $10^3$ | $10^2$ | $10^1$ | $10^0$ |
+| digit |  $1$   |  $0$   |  $3$   |  $7$   |
+| value | $1000$ |  $0$   |  $30$  |  $7$   |
+
+:::
 
 # Integer Numbers
 
@@ -135,6 +139,8 @@ range of possible integer values with $n$ bits
 $(-2^{n-1} \ldotp \ldotp 2^{n-1})$, with both $+0$ and $-0$ being
 stored.
 
+:::{.wrap-table}
+
 |     | +-  | +4  | +2  | +1  |      |
 | --: | :-: | :-: | :-: | :-: | :--- |
 |  +7 |  0  |  1  |  1  |  1  | 0111 |
@@ -144,6 +150,8 @@ stored.
 |  +0 |  0  |  0  |  0  |  0  | 0000 |
 |  -0 |  1  |  0  |  0  |  0  | 1000 |
 
+:::
+
 _Complement_ notation makes integer arithmetic more practical at the
 cost of more complicated inversion. Writing a number in complement
 notation is effected by subtracting the absolute or positive value
@@ -151,12 +159,16 @@ from 0. The inversion process is consistent in all bases. For any radix
 base $b$, the complement of a number can be calculated quickly by taking
 each digit\'s complement with $b-1$ and then adding $1$ to the value.
 
+:::{.wrap-table}
+
 |     |     |     |     |     |     |
 | --- | :-- | :-- | :-- | :-- | :-- |
 |     | 0   | 0   | 0   | 0   | 0   |
 |     |     |     | 2   | 8   | 2   |
 | \-  | 1   | 1   | 1   | 1   | 0   |
 | =   | 9   | 9   | 7   | 1   | 8   |
+
+:::
 
 In the case of this decimal number, its complement begins with the
 repeated digit $9$, which can be written $\dot 9$, a positive number in
@@ -172,6 +184,8 @@ notation includes the additional value $-2^{n-1}$, instead of $-0$
 making the range of integers that can be expressed with $n$ bits
 $[-2^{n-1} \ldotp \ldotp 2^{n-1})$.
 
+:::{.wrap-table}
+
 |     |  -8 |  +4 |  +2 |  +1 |      |
 | --- | --: | --: | --: | --: | ---- |
 | +7  |   0 |   1 |   1 |   1 | 0111 |
@@ -180,6 +194,8 @@ $[-2^{n-1} \ldotp \ldotp 2^{n-1})$.
 | -3  |   1 |   1 |   0 |   1 | 1101 |
 | +0  |   0 |   0 |   0 |   0 | 0000 |
 | -8  |   1 |   0 |   0 |   0 | 1000 |
+
+:::
 
 ## Integer Intervals
 
@@ -283,9 +299,9 @@ properly normalised), so it can be omitted from the in-memory
 representation. Most standards incorporate a sign bit to represent
 positive and negative real numbers and special bit patterns for 0 and
 various overflow scenarios (NaN, Inf). In many cases the exponent is
-_biased_: the exponent is stored as an integer in the range $[0..2^{n})$,
-from which $2^{n-1}$ is subtracted, giving the exponent in a range of
-$[-2^{n-1}..2^{n-1})$.
+_biased_: the exponent is stored as an integer in the range
+$[0..2^{n})$, from which $2^{n-1}$ is subtracted, giving the exponent in
+a range of $[-2^{n-1}..2^{n-1})$.
 
 A far more comprehensive explanation can be found
 [here](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html).
