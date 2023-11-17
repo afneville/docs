@@ -4,8 +4,6 @@ author: Alexander Neville
 date: 2023-10-20
 ---
 
-A very brief overview of the Haskell language and its features.
-
 An expression is any piece of code which returns or _yields_ a value.
 All computation in Haskell and more generally any functional language is
 conducted by evaluating these expressions.
@@ -37,9 +35,7 @@ brackets.
 abs' :: (Ord a, Num a) => a -> a
 abs' n | n >= 0 = n
        | otherwise = -n
-```
 
-```hs
 classification x =
     if x > 100 then "No Classification"
     else if x >= 70 then "First"

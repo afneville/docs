@@ -4,23 +4,23 @@ author: Alexander Neville
 date: 2023-10-17
 ---
 
-Functional programming is a _ programming paradigm_. A paradigm is a
+Functional programming is a _programming paradigm_. A paradigm is a
 broad characterisation of a language and its features. The functional
 programming paradigm falls into the category of _declarative_ languages,
 in which the program is more a description of computation than a
 sequential set of instructions (which would be described as imperative).
-Functional programming languages treat mathematically pure first-class
-functions as the fundamental method of computation.
+
+Functions in functional programming are considered _first-class_;
+functions can be passed to and returned from other functions and bound
+to variables, just as any other data type. Functional programming
+languages typically treat mathematically pure first-class functions as
+the fundamental method of computation. A _higher-order_ function simply
+takes a function as an argument or returns a function. Support for
+higher-order functions implies that functions are first-class objects.
 
 Many languages which are not inherently functional draw inspiration from
 functional programming. It is common to see functions treated as first
 class objects.
-
-# First-class Functions
-
-Functions in functional programming are considered _first-class_ -
-functions can be passed to and returned from other functions and bound
-to variables, just as any other data type.
 
 # Purely Functional Programming
 
@@ -33,16 +33,6 @@ function. Pure functions are guaranteed to return the same value across
 repeated invocations with consistent arguments. The computation of the
 function is not affected by any mutable program state. Similarly, a pure
 function does not manipulate any state or cause side-effects.
-
-# Higher-order Functions
-
-A higher-order function simply takes a function as an argument or
-returns a function. Support for higher-order functions implies that
-functions are first-class objects.
-
-- map
-- fold
-- filter
 
 # Currying
 
@@ -76,16 +66,15 @@ Haskell supports curried functions and function application is written
 with spaces, thus the following example demonstrates the creation of an
 increment function by partially applying `1` to the binary `+` function.
 
-```language-plaintext
-> g = (+) 1
-> g 2
-3
+```haskell
+g = (+) 1
+g 2
 ```
 
-In non-functional languages, partial application is still achievable by
-using closures. A closure is a scoped binding of a value to a function
-which may be used outside of the scope in which the captured variables
-exist.
+In non-functional languages, partial application is still achievable
+with the use of closures. A closure is a scoped binding of a value to a
+function which may be used outside of the scope in which the captured
+variables exist. This python example illustrates the concept.
 
 ```python
 def f(x):
@@ -100,13 +89,11 @@ def h(x):
 The closures returned by `f` and `g` can be bound to symbols in a
 different scope to the captured variables.
 
-```language-plaintext
->>> g = f(2)
->>> i = h(4)
->>> g(2)
-4
->>> i(2)
-6
+```python
+g = f(2)
+i = h(4)
+x = g(2) # x = 4
+y = i(2) # y = 6
 ```
 
 # Referential Transparency

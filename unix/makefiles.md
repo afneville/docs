@@ -4,19 +4,21 @@ author: Alexander Neville
 title: Writing Makefiles
 ---
 
-`make` is a utility designed to automatically rebuild affected parts of
-a program when components are modified. `make` refers to a _makefile_ to
-identify the relationships between files. If the time stamp of a file is
-newer than that of another file that depends on it, `make` will run the
-specified command to rebuild the output from the specified inputs.
-`make` is often used in the build process of a C program, but can be
-used to great effect automating any task in which an output file depends
-on a number of other files and should be rebuilt when they change.
+`make` is a utility designed to automatically rebuild parts of a program
+when its components are modified. `make` refers to a user-defined
+_makefile_ to identify the relationships between files. If the time
+stamp of a file is newer than that of another file that depends on it,
+`make` will run the specified actions to rebuild the output from the
+specified inputs. `make` is often used in the build process of a C
+program, but can be used to great effect automating tasks in which an
+output file depends on a number of other files and should be rebuilt
+when they change.
 
 # Rules
 
-A makefile is composed of rules, among other directives. A rule has a
-_target_, a list of _prerequisites_ and a _recipe_.
+A makefile is composed of _rules_, amongst other directives. A rule has
+a _target_ (which may be one or more files), an optional list of
+_prerequisites_ and an optional _recipe_.
 
 ```makefile
 target: prerequisites
@@ -82,7 +84,7 @@ $ ls
 app  app.c  app.o  makefile
 ```
 
-### Pattern Rules
+## Pattern Rules
 
 A _pattern rule_ may be used to define a new implicit rule. A pattern
 rule contains exactly one `%` character in the target. The `%` character
@@ -104,6 +106,32 @@ app: app.o
 
 This pattern rule overrides the implicit rule for C source file
 compilation.
+
+## Static Pattern Rules
+
+Static pattern rules are analogous to implicit rules for a specified set
+of files. The syntax is
+`targets: target-pattern: prerequisite-pattern; recipe`. Here is an
+example, using automatic variables and static pattern matching to
+override the implicit rule for generating an object file for the files
+`app.o` and `lib.o`.
+
+```
+app: app.o lib.o
+	cc -o $@ $^
+app.o lib.o: %.o: %.c; cc -c -o $@ $<
+```
+
+## Double-Colon Rules
+
+An uncommon type of rule is the _double-colon_ form, resembling
+`target :: prerequisites ; recipe`. A target must appear in only
+double-colon or only normal rules, not both. The target of such a rule
+is updated if any of its prerequisites are newer than it, but unusually
+a target without prerequisites is always updated. Many double-colon
+rules may exist for the same target, including a recipe. This rule is
+used in the rare case that the recipe to update a target depends on
+which prerequisites have changed.
 
 ```language-plaintext
 $ ls
@@ -343,32 +371,6 @@ $ make
 make: 'target' is up to date.
 ```
 
-## Static Pattern Rules
-
-Static pattern rules are analogous to implicit rules for a specified set
-of files. The syntax is
-`targets: target-pattern: prerequisite-pattern; recipe`. Here is an
-example, using automatic variables and static pattern matching to
-override the implicit rule for generating an object file for the files
-`app.o` and `lib.o`.
-
-```
-app: app.o lib.o
-	cc -o $@ $^
-app.o lib.o: %.o: %.c; cc -c -o $@ $<
-```
-
-## Double-Colon Rules
-
-An uncommon type of rule is the _double-colon_ form, resembling
-`target :: prerequisites ; recipe`. A target must appear in only
-double-colon or only normal rules, not both. The target of such a rule
-is updated if any of its prerequisites are newer than it, but unusually
-a target without prerequisites is always updated. Many double-colon
-rules may exist for the same target, including a recipe. This rule is
-used in the rare case that the recipe to update a target depends on
-which prerequisites have changed.
-
 # Variables
 
 A variable is a stand-in for a string of text, known as the variable's
@@ -394,7 +396,8 @@ the rule, where the most recent definition of `b` is _two_.
 b = one
 a = $(b)
 b = two
-recursive:;@echo $(a) # two
+recursive:
+	@echo $(a) # two
 ```
 
 The `:=` and `::=` forms are identical and called _simply-expanded_
@@ -406,7 +409,8 @@ point the value of `y` is _one_.
 y = one
 x := $(y)
 y = two
-simple:;@echo $(x) # one
+simple:
+	@echo $(x) # one
 ```
 
 ## Appending to a Variable's Value
@@ -432,7 +436,8 @@ b := $(a)
 b += two
 a = three
 
-simple:;@echo $(b) # one two
+simple:
+	@echo $(b) # one two
 ```
 
 In the case of recursively-expanded variables, `+=` is roughly
@@ -452,7 +457,8 @@ b = $(a)
 b += two
 a = three
 
-recursive:;@echo $(b) # three two
+recursive:
+	@echo $(b) # three two
 ```
 
 ## Multi-Line Variables
