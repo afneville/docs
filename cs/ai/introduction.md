@@ -69,7 +69,7 @@ perceiving, while an agent\'s _percept sequence_ is the history of all
 the information the agent has perceived. The behaviour of an agent is
 given by the _agent function_ which maps all possible percept sequences
 (an infinite list) to an action, an example of a
-[mathematical function](../../maths/set_theory.org::*Functions). The binary
+[mathematical function](../../maths/relations.md#functions). The binary
 relation which constitutes the agent function is an external model of an
 agent\'s behaviour. The action taken by an agent at any point is
 determined by a concrete _agent program_, rather than a mathematical

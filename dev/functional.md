@@ -26,7 +26,7 @@ class objects.
 
 Purely functional programming is a subset of the functional programming
 paradigm, in which functions are _pure_ or
-[mathematically](/maths/relations.md#functions) deterministic. Functions
+[mathematically](../maths/relations.md#functions) deterministic. Functions
 in many imperative languages are more accurately described as
 procedures, because they do not satisfy the definition of a mathematical
 function. Pure functions are guaranteed to return the same value across
