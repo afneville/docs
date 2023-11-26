@@ -106,11 +106,11 @@ current_plot, neighbour_plots, solution_plot, converged = init_hill_climbing()
 current_solution = -4
 
 anim = animation.FuncAnimation(fig=fig, func=hill_climb, frames=11, interval=500)
-anim.save('../animations/optimal.gif')
+anim.save('../../animations/optimal.gif')
 ```
 
 ![Optimal Hill
-Climbing](../res/animations/optimal.gif){#fig:optimalhillclimbing
+Climbing](../../res/animations/optimal.gif){#fig:optimalhillclimbing
 .nocaption}
 
 Applied to more complicated problems, hill climbing may not find a
@@ -132,11 +132,11 @@ current_plot, neighbour_plots, solution_plot, converged = init_hill_climbing()
 current_solution = 1
 
 anim = animation.FuncAnimation(fig=fig, func=hill_climb, frames=7, interval=500)
-anim.save('../animations/local_maxima.gif')
+anim.save('../../animations/local_maxima.gif')
 ```
 
 ![Sub-optimal Hill
-Climbing](../res/animations/local_maxima.gif){#fig:sub-optimalhillclimbing
+Climbing](../../res/animations/local_maxima.gif){#fig:sub-optimalhillclimbing
 .nocaption}
 
 ```python
@@ -160,10 +160,10 @@ current_plot, neighbour_plots, solution_plot, converged = init_hill_climbing()
 current_solution = 1
 
 anim = animation.FuncAnimation(fig=fig, func=hill_climb, frames=7, interval=500)
-anim.save('../animations/plateau.gif')
+anim.save('../../animations/plateau.gif')
 ```
 
-![Plateau](../res/animations/plateau.gif){#fig:plateau .nocaption}
+![Plateau](../../res/animations/plateau.gif){#fig:plateau .nocaption}
 
 # Simulated Annealing
 
@@ -250,9 +250,9 @@ def animate_simulated_annealing(frame):
 anim = animation.FuncAnimation(fig=fig,
                                func=animate_simulated_annealing,
                                frames=2000, interval=20)
-anim.save('../animations/simulated_annealing.gif')
+anim.save('../../animations/simulated_annealing.gif')
 ```
 
 ![Simulated
-Annealing](../res/animations/simulated_annealing.gif){#fig:simulated_annealing
+Annealing](../../res/animations/simulated_annealing.gif){#fig:simulated_annealing
 .nocaption}

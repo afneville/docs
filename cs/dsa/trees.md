@@ -12,7 +12,7 @@ between the root and any other node. Trees are generally depicted with
 the root node at the top and all other nodes arranged into discrete
 levels as in figure [@fig:general_tree].
 
-![A general tree](../res/general_tree.svg){#fig:general_tree}
+![A general tree](../../res/general_tree.svg){#fig:general_tree}
 
 A tree is composed of _nodes_ which contain data and references to other
 connected nodes. A node in a tree may have any number of connected
@@ -66,7 +66,7 @@ pointer to the list of its children and a second pointer to its next
 sibling.
 
 ![A general tree as a sibling
-list](../res/sibling_list.svg){#fig:sibling_list}
+list](../../res/sibling_list.svg){#fig:sibling_list}
 
 # Binary Trees
 
@@ -85,7 +85,7 @@ specific accessor:
 - `rightbinarytree(T) -> T`
 - `valuebinarytree(T) -> E`
 
-![A binary tree](../res/binary_tree.svg){#fig:binary_tree}
+![A binary tree](../../res/binary_tree.svg){#fig:binary_tree}
 
 A binary tree or any _N_-ary tree can be implemented as a sibling list,
 but this is usually unnecessary if the maximum number of children is
@@ -95,7 +95,7 @@ point to the right child rather than the list of children and the next
 sibling, as was the case before.
 
 ![A binary tree as an
-array](../res/binary_tree_linked.svg){#fig:binary_tree_sibling_list}
+array](../../res/binary_tree_linked.svg){#fig:binary_tree_sibling_list}
 
 For fast access and traversal without repeated dereferencing, values can
 be added to a position in an array. The children of each node are
@@ -106,7 +106,7 @@ the array is dynamic, and is wasteful if the leaves are found at
 different levels.
 
 ![A binary tree as an
-array](../res/binary_tree_array.svg){#fig:binary_tree_array}
+array](../../res/binary_tree_array.svg){#fig:binary_tree_array}
 
 # Binary Search Trees
 
@@ -123,7 +123,7 @@ the flattened left subtree and the value of the root in that order
 (recursively).
 
 ![A flattened binary search
-tree](../res/small_bst.svg){#fig:binary_search_tree}
+tree](../../res/small_bst.svg){#fig:binary_search_tree}
 
 ## Node Deletion
 
@@ -139,10 +139,10 @@ has two children (figure [@fig:bst_delete_2_children]):
   exists.
 
 ![Deleting node $x$ with zero or one
-children](../res/bst_delete_0_1_children.svg){#fig:bst_delete_0_1_children}
+children](../../res/bst_delete_0_1_children.svg){#fig:bst_delete_0_1_children}
 
 ![Deleting node $x$ with two
-children](../res/bst_delete_2_children.svg){#fig:bst_delete_2_children}
+children](../../res/bst_delete_2_children.svg){#fig:bst_delete_2_children}
 
 ## Verifying Binary Search Trees
 
@@ -180,4 +180,4 @@ Search, insert and delete on a binary search tree with $n$ nodes are
 $O(\log n)$ in the average case and $O(n)$ in the worst case.
 
 ![Best and wort cases for a binary search
-tree](../res/bst_cases.svg){#fig:bst_cases}
+tree](../../res/bst_cases.svg){#fig:bst_cases}

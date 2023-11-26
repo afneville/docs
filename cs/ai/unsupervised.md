@@ -79,7 +79,7 @@ ax.scatter(z_score_standardise_feature(np.mean(X[:, 0]), np.std(X[:, 0]), X[:, 0
 
 ```
 
-![Normalisation](../res/unsupervised_5_1.png){#fig:normalisation
+![Normalisation](../../res/unsupervised_5_1.png){#fig:normalisation
 .nocaption}
 
 # Minkowski distance
@@ -189,10 +189,10 @@ def animate_k_means(frame):
         ax.scatter(c_k[:,0], c_k[:,1], c=[i for i in range(5)], s=10, marker='s', edgecolors="black", cmap=mpl.colors.ListedColormap(colors))
 
 anim = animation.FuncAnimation(fig=fig, func=animate_k_means, frames=9, interval=1000)
-anim.save('../animations/k_means.gif')
+anim.save('../../animations/k_means.gif')
 ```
 
-![Optimal K-means](../res/animations/k_means.gif){#fig:optimalkmeans
+![Optimal K-means](../../res/animations/k_means.gif){#fig:optimalkmeans
 .nocaption}
 
 K-Means is not optimal. The algorithm may not generate ideal cluster
@@ -201,5 +201,5 @@ evaluating clustering algorithms and finding more optimal solutions
 exist.
 
 ![Sub-optimal
-K-means](../res/animations/sub_optimal_k_means.gif){#fig:suboptimalkmeans
+K-means](../../res/animations/sub_optimal_k_means.gif){#fig:suboptimalkmeans
 .nocaption}

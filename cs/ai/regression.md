@@ -150,7 +150,7 @@ ax.scatter(x,y, s=1)
 ax.plot(x, f(w_1, x, w_0), 'red')
 ```
 
-![Linear Regression](../res/regression_11_1.png){#fig:regression_11_1
+![Linear Regression](../../res/regression_11_1.png){#fig:regression_11_1
 .nocaption}
 
 ## Deterministic Gradient Descent
@@ -196,10 +196,10 @@ def animate(epoch):
         ax.plot(x, f(w_1, x, w_0), 'green')
 
 anim = animation.FuncAnimation(fig=fig, func=animate, frames=25, interval=10)
-anim.save('../animations/epochs.gif')
+anim.save('../../animations/epochs.gif')
 ```
 
-![Linear Regression](../res/animations/epochs.gif){#fig:animation
+![Linear Regression](../../res/animations/epochs.gif){#fig:animation
 .nocaption}
 
 ## Mini-batch Gradient Descent
@@ -235,7 +235,7 @@ ax.scatter(x,y, s=1)
 ax.plot(x, f(w_1, x, w_0), 'purple')
 ```
 
-![Linear Regression](../res/regression_19_1.png){#fig:regression_19_1
+![Linear Regression](../../res/regression_19_1.png){#fig:regression_19_1
 .nocaption}
 
 # Multivariable Linear Regression
@@ -297,7 +297,7 @@ ax.scatter(X,y, s=1)
 ax.plot([Z[i][1] for i in range(Z.shape[0])], [h(W, Z[i]) for i in range(Z.shape[0])], 'lightblue')
 ```
 
-![Linear Regression](../res/regression_23_1.png){#fig:regression_23_1
+![Linear Regression](../../res/regression_23_1.png){#fig:regression_23_1
 .nocaption}
 
 A regression problem in which the input vector has two dimensions - the
@@ -334,7 +334,7 @@ ax.plot([Z[i][1] for i in range(Z.shape[0])],
         color='magenta')
 ```
 
-![Linear Regression](../res/regression_25_1.png){#fig:regression_25_1
+![Linear Regression](../../res/regression_25_1.png){#fig:regression_25_1
 .nocaption}
 
 # Non-linear Regression
@@ -350,5 +350,5 @@ fig, ax = new_plot()
 ax.scatter(x,y, s=1)
 ```
 
-![Linear Regression](../res/regression_27_1.png){#fig:regression_27_1
+![Linear Regression](../../res/regression_27_1.png){#fig:regression_27_1
 .nocaption}

@@ -69,7 +69,7 @@ perceiving, while an agent\'s _percept sequence_ is the history of all
 the information the agent has perceived. The behaviour of an agent is
 given by the _agent function_ which maps all possible percept sequences
 (an infinite list) to an action, an example of a
-[mathematical function](../maths/set_theory.org::*Functions). The binary
+[mathematical function](../../maths/set_theory.org::*Functions). The binary
 relation which constitutes the agent function is an external model of an
 agent\'s behaviour. The action taken by an agent at any point is
 determined by a concrete _agent program_, rather than a mathematical
@@ -104,7 +104,7 @@ FUNCTION simple-reflex-agent(percept) -> action:
 ```
 
 ![The structure of a reflex
-agent](../res/simple-reflex-agent.svg "simple-reflex-agent")
+agent](../../res/simple-reflex-agent.svg "simple-reflex-agent")
 
 ## Models and Goals
 
@@ -128,7 +128,7 @@ FUNCTION model-based-reflex-agent(percept) -> action:
 ```
 
 ![The structure of a model-based
-agent](../res/model-based-reflex-agent.svg "model-based-agent")
+agent](../../res/model-based-reflex-agent.svg "model-based-agent")
 
 Basic reflex agents implement a form of _if-then_ behaviour, dictated by
 the rules that relate the agent\'s current understanding of the
@@ -141,7 +141,7 @@ about desirable _goal_ states. These agents combine the transition model
 with the current state to select actions which achieve the chosen goal.
 
 ![The structure of a goal-based
-agent](../res/goal-based-model-based-agent.svg "model-based-agent")
+agent](../../res/goal-based-model-based-agent.svg "model-based-agent")
 
 An agent\'s _utility function_ is an internalisation of the performance
 measure. While many action sequences may satisfy a goal, utility-based
@@ -156,7 +156,7 @@ is able to assess the desirability of a state resulting from an action
 in the current state, using its utility function.
 
 ![The structure of a Utility-based
-agent](../res/utility-based-model-based-agent.svg "model-based-agent")
+agent](../../res/utility-based-model-based-agent.svg "model-based-agent")
 
 ## Learning Agents
 

@@ -20,7 +20,7 @@ _index_ $i$ and the indexing notation $a[i]$. Indexing usually begins
 from 0, so the valid indices for this list are $0 \ldots 7$, as seen in
 figure [@fig:array].
 
-![An array and its indices](../res/array.svg){#fig:array}
+![An array and its indices](../../res/array.svg){#fig:array}
 
 Each element may be accessed _sequentially_ by incrementing or
 decrementing the index as required, or at random by taking any index -
@@ -184,7 +184,7 @@ second of each two-cell is a reference to the next node, not the first
 cell of the next node, as is often depicted.
 
 ![An abstract graphical linked list
-illustration](../res/abstract_llist.svg){#fig:abstract_llist}
+illustration](../../res/abstract_llist.svg){#fig:abstract_llist}
 
 In any implementation, the nodes of a linked list are themselves a type,
 in most cases hidden from the external interface of a linked list. The
@@ -239,7 +239,7 @@ to illustrating linked lists, evident in figures [@fig:abstract_llist]
 and [@fig:llist].
 
 ![A more concrete linked list
-illustration](../res/llist.svg){#fig:llist}
+illustration](../../res/llist.svg){#fig:llist}
 
 In keeping with the inductive type definition, it is unnecessary to
 illustrate both nodes and a dedicated list object. It is still possible
@@ -258,13 +258,13 @@ other than the first element, in which case this change is helpful. This
 is called a _circular_ linked list.
 
 ![A circular linked
-list](../res/circular_llist.svg){#fig:circular_llist}
+list](../../res/circular_llist.svg){#fig:circular_llist}
 
 A _queue_ is a linked list with an additional two-cell pointing to the
 front and rear nodes.
 
 ![A linked list with start and rear
-pointer](../res/queue_llist.svg){#fig:queue_llist}
+pointer](../../res/queue_llist.svg){#fig:queue_llist}
 
 A node could contain a pointer for the next and previous nodes, called a
 _doubly-linked_ or _double linked_ list. If the list additionally
@@ -272,7 +272,7 @@ implements the circular property, it can behave as a queue (the rear
 pointer is the previous node of the start).
 
 ![A circular doubly-linked
-list](../res/double_circular_llist.svg){#fig:double_circular_llist}
+list](../../res/double_circular_llist.svg){#fig:double_circular_llist}
 
 # Dynamic Arrays
 
@@ -292,7 +292,7 @@ order $O(n)$, the array must be reallocated to make space for more
 elements. Figure [@fig:array_list] depicts the growth of a dynamic
 array, reallocation is indicated with an arrow.
 
-![Reallocation of an array list](../res/array_list.svg){#fig:array_list}
+![Reallocation of an array list](../../res/array_list.svg){#fig:array_list}
 
 Using an array to implement a data structure has the potential to make
 insert/remove/access operations faster, although there are drawbacks
@@ -340,7 +340,7 @@ example, the whole process mutates a single stack, which is explicitly
 depicted in the figure.
 
 ![Stack operations, push and
-pop](../res/stack_push_pop.svg){#fig:stack_push_pop}
+pop](../../res/stack_push_pop.svg){#fig:stack_push_pop}
 
 It is also possible to implement a stack as an array. Items are added
 and removed from the rear. The rear position is calculated from the size
@@ -353,7 +353,7 @@ result in a state known as _stack overflow_. A dynamic array stack
 implementation can be used to avoid this condition.
 
 ![Stack implemented as an
-array](../res/stack_array.svg){#fig:stack_array}
+array](../../res/stack_array.svg){#fig:stack_array}
 
 # Queue
 
@@ -387,7 +387,7 @@ the rear and dequeue from the front, illustrated in figure
 [@fig:queue_enqueue_dequeue].
 
 ![Queue operations, enqueue and
-dequeue](../res/queue_enqueue_dequeue.svg){#fig:queue_enqueue_dequeue}
+dequeue](../../res/queue_enqueue_dequeue.svg){#fig:queue_enqueue_dequeue}
 
 A queue can be implemented as an array, with three additional variables:
 `front`, `size` and `capacity`. So that the bounds of the array are not
@@ -416,7 +416,7 @@ different portions of the array. The front pointer is indicated with an
 arrow.
 
 ![Queue implemented as a circular
-array](../res/circular_array.svg){#fig:circular_queue}
+array](../../res/circular_array.svg){#fig:circular_queue}
 
 An example implementation of a queue with a circular array contains four
 functions, two conditionals `isemptyqueue` and `isfullqueue`, a
