@@ -4,9 +4,12 @@ author: Alexander Neville
 date: 2023-10-20
 ---
 
-An expression is any piece of code which returns or _yields_ a value.
-All computation in Haskell and more generally any functional language is
-conducted by evaluating these expressions. Every expression has a type.
+Haskell is a purely functional programming language. An expression in
+Haskell is a piece of code which returns or _yields_ a value. All
+computation in Haskell is conducted by evaluating these expressions.
+Every expression in Haskell has an associated type. Whilst _strict_, the
+type of a value or expression may inferred by the compiler; Haskell code
+need not be explicitly typed.
 
 # Functions & Syntactic Features
 
@@ -23,7 +26,7 @@ surrounding it with brackets.
 
 The mathematical operators are not special syntactic elements, they are
 simply functions. Operators have their own fixity, precedence and
-associative rules. Precedence can be made explicit with brackets. The
+associativity rules. Precedence can be made explicit with brackets. The
 following expression evaluates to 14.
 
 ```hs
@@ -402,7 +405,26 @@ ghci> :k Maybe Int
 Maybe Int :: *
 ```
 
-# Functor Typeclass
+# Monads
+
+Polymorphism is one very good way of achieving generality in Haskell.
+Abstracting common design patterns into a typeclass which a type can
+implement can also be of benefit. _Functors_ capture the concept of
+mapping a function over constituent values of a type, _applicatives_
+make function application more expressive over types and _monads_
+introduce the possibility of effectful programming.
+
+## Functors
+
+A _functor_ is an eponymous member of the functor typeclass. A functor
+is sometimes referred to as a _container_, but _computational context_
+is more accurate. A type constructor must have one type parameter to be
+made a functor. Type constructors with higher arity may be partially
+applied, of course.
+
+A functor captures the concept of mapping a function over a parametrised
+type. Instances of `Functor` must implement the `fmap` function, which
+has the type `(a -> b) -> f a -> f b`.
 
 ```hs
 data Tree a = Empty | Tree (Tree a) a (Tree a)
@@ -416,3 +438,58 @@ instance Functor Tree where
 ```hs
 fmap (+1) $ Tree (Tree (Tree Empty 1 Empty) 2 Empty) 3 (Empty)
 ```
+
+The `fmap` function has an infix notation: `<$>`.
+
+## Applicative
+
+Functors have the obvious limitation of supporting only unary functions.
+It is possible apply a function expecting more than one argument over
+multiple structures by applying each partially applied function
+manually, but this is not ideal.
+
+```hs
+fmap (\f -> f 2) (fmap (+) [1..5])
+```
+
+Members of the applicative typeclass support two functions: `pure` and
+the infix `<*>` operator. The latter has the type
+`f (a -> b) -> f a -> f b` - it accepts functions wrapped in a context
+alongside arguments wrapped in the same context. The role of `pure` is
+to lift a value into a default minimal context, having the type
+`a -> f a`. Here are some examples:
+
+```hs
+pure (+) <*> Nothing <*> Just 4   -- Nothing
+pure (+) <*> Just 3 <*> Just 4    -- Just 7
+Just (+) <*> Just 3 <*> Just 4    -- Just 7
+pure (+) <*> [3] <*> [4]          -- [7]
+pure (+) <*> [3] <*> [4,5]        -- [7,8]
+[(+)] <*> [1,2,3] <*> [4,5,6]     -- [5,6,7,6,7,8,7,8,9]
+pure (*) <*> [1,2,3] <*> [2]      -- [2,4,6]
+(*) <$> [1,2,3] <*> [2]           -- [2,4,6]
+```
+
+Mapping a function over a functor yields a functor containing partially
+applied functions - this can be used in an applicative way.
+
+## Monad
+
+The applicative type class allows a pure function to be applied to
+potentially effectful (contextual) arguments, but falters when the
+function itself is similarly effectful (e.g. a function of type
+`a -> f b` is not supported by the applicative typeclass).
+
+The monad typeclass is defined by two functions: `return` and the bind
+operator `>>=`. They have the types:
+
+```hs
+return :: a -> m a
+(>>=)  :: m a -> (a -> m b) -> m b
+```
+
+The `return` function serves the same purpose as `pure` - to insert a
+value into a minimal context. The _bind_ operator takes the underlying
+value of the monad and applies the function argument to it, which should
+put the value back into the context. `>>=` can be said to pass a
+_non-monadic_ value to a function within a monad.
