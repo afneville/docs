@@ -4,7 +4,7 @@ date: 2023-06-25
 title: Shell Scripting
 ---
 
-A Shell script is a program that is executed by a shell. Shells operate
+A shell script is a program that is executed by a shell. Shells operate
 as command line interpreters; scripts are an automated method of issuing
 sequential commands to a shell. Shell scripts are plain text files and
 are not compiled before they are executed. They must, however, have
