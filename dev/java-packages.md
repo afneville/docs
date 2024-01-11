@@ -1,7 +1,7 @@
 ---
 title: Working with Java Packages
 author: Alexander Neville
-date: 2024-01-10
+date: 2024-01-11
 description:
   An overview of the concepts and conventions that govern Java packages.
 path: dev/java-packages
@@ -34,31 +34,24 @@ Consider this project layout:
 The classes `One` and `Two` belong to the `example` package; they both
 contain a package statement and reside in a correspondingly named
 directory. In this case, the relative path of the source files matches
-the _fully-qualified_ name of the classes, a situation permissible
+the _fully-qualified_ name of the classes - permissible
 because the present working directory is conventionally an entry in the
 [classpath](#classpath).
 
-**example/One.java**
-
 ```java
+// example/One.java
 package example;
-/**
- * One
- */
+
 public class One {
     public static void func() {
         System.out.println("example.One");
     }
 }
-```
 
-**example/Two.java**
 
-```java
+// example/Two.java
 package example;
-/**
- * Two
- */
+
 public class Two {
     public static void func() {
         System.out.println("example.Two");
@@ -73,9 +66,7 @@ worth noting that any class that does not explicitly belong to a
 particular package is assigned to a default unnamed package.
 
 ```java
-/**
- * Main
- */
+// Main.Java
 public class Main {
     public static void main(String[] args) {
         example.One.func();
@@ -96,9 +87,7 @@ the two.
 ```java
 import example.One;
 import static example.Two.func;
-/**
- * Main
- */
+
 public class Main {
     public static void main(String[] args) {
         One.func();
@@ -216,8 +205,8 @@ Java packages, despite how it may appear, are not structured
 hierarchically. Apparent _subpackages_ are entirely distinct packages,
 the naming convention only serves an organisational purpose.
 
-Extending the earlier example, a package named `example.further` is
-introduced alongside the other sources.
+Extending the example seen earlier, a package named `example.further` is
+introduced alongside the other sources:
 
 ```text
 .
@@ -231,7 +220,8 @@ introduced alongside the other sources.
 
 It is not unusual to replicate the package directory structure and
 define the package sources elsewhere, updating the classpath
-accordingly.
+accordingly. In many cases, the development of a single package could be
+treated as a separate project.
 
 ```text
 .
@@ -247,13 +237,10 @@ accordingly.
 
 In either case, the contents of the source file are unchanged.
 
-**example/further/Three.java**
-
 ```java
+// (libs/)example/further/Three.java
 package example.further;
-/**
- * Three
- */
+
 public class Three {
     public static void func() {
         System.out.println("example.further.Three");
@@ -261,7 +248,7 @@ public class Three {
 }
 ```
 
-Similarly, the method of accessing the package contents is unaffected by
+Similarly, the means of accessing the package member is unaffected by
 whichever directory layout is elected. Splitting the packages into
 separate directories demonstrates how Java packages are independent of
 the underlying hierarchical file system. Both import statements in the
@@ -272,9 +259,7 @@ members.
 ```java
 import example.*;
 import example.further.*; // required
-/**
- * Main
- */
+
 public class Main {
     public static void main(String[] args) {
         One.func();
@@ -286,7 +271,7 @@ public class Main {
 
 # Creating a Distributable JAR File
 
-Java's package mechanism permits modularisation, organisation and reuse.
+Java's package mechanism facilitates modularisation, organisation and reuse.
 Useful packages can be distributed and used by others so long as they
 can be located via the classpath. Consider this package:
 
