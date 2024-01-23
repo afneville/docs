@@ -1,7 +1,9 @@
 ---
 author: Alexander Neville
-date: 2023-06-25
+date: 2024-01-15
 title: Shell Scripting
+description: An introduction to shell scripting.
+path: dev/unix/shell
 ---
 
 A shell script is a program that is executed by a shell. Shells operate
@@ -20,9 +22,7 @@ script and obscures or abstracts details such as the intended
 interpreter.
 
 The interpreter specified in the directive may be a compiled executable
-or another script following the same pattern.
-
-Common examples include:
+or another script following the same pattern. Common examples include:
 
 - `#!/bin/sh`
 - `#!/bin/bash`

@@ -127,10 +127,10 @@ output. It is always possible to encode a signature later with
 ```language-plaintext
 $ ls
 message.txt
-$ gpg --default-key contact@alexneville.co.uk --sign message.txt
-gpg: using "contact@alexneville.co.uk" as default secret key for signing
+$ gpg --default-key contact@afneville.com --sign message.txt
+gpg: using "contact@afneville.com" as default secret key for signing
 Please enter the passphrase to unlock the OpenPGP secret key:
-"Alexander Neville <contact@alexneville.co.uk>"
+"Alexander Neville <contact@afneville.com>"
 255-bit EDDSA key, ID 97BAC3EFF6C6C53D,
 created 2023-06-11.
 
@@ -156,8 +156,8 @@ noisiest authorities insisted on its being received, for good or for
 evil, in the superlative degree of comparison only.
 gpg: Signature made Thu 20 Jul 2023 10:25:16 BST
 gpg:                using EDDSA key 6526651FCB32C82BB3A6449C97BAC3EFF6C6C53D
-gpg:                issuer "contact@alexneville.co.uk"
-gpg: Good signature from "Alexander Neville <contact@alexneville.co.uk>" [ultimate]
+gpg:                issuer "contact@afneville.com"
+gpg: Good signature from "Alexander Neville <contact@afneville.com>" [ultimate]
 Primary key fingerprint: 6526 651F CB32 C82B B3A6  449C 97BA C3EF F6C6 C53D
 ```
 
@@ -170,8 +170,8 @@ which appends the ASCII armoured signature to the end of the plain text
 file (notice the header appended to the start of the file).
 
 ```language-plaintext
-$ gpg --default-key contact@alexneville.co.uk --clearsign message.txt
-gpg: using "contact@alexneville.co.uk" as default secret key for signing
+$ gpg --default-key contact@afneville.com --clearsign message.txt
+gpg: using "contact@afneville.com" as default secret key for signing
 $ cat message.txt.asc
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
@@ -203,13 +203,13 @@ for a detached signature is `.sig`. The armoured detached signature is
 identical to the signature added to the end of the clearsigned file.
 
 ```language-plaintext
-$ gpg --default-key contact@alexneville.co.uk --detach-sign message.txt
+$ gpg --default-key contact@afneville.com --detach-sign message.txt
 $ ls
 message.txt message.txt.sig
-$ gpg --default-key contact@alexneville.co.uk --detach-sign --armour message.txt
+$ gpg --default-key contact@afneville.com --detach-sign --armour message.txt
 $ ls
 message.txt  message.txt.asc  message.txt.sig
-gpg: using "contact@alexneville.co.uk" as default secret key for signing
+gpg: using "contact@afneville.com" as default secret key for signing
 $ cat message.txt.asc
 -----BEGIN PGP SIGNATURE-----
 
@@ -231,14 +231,14 @@ $ gpg --verify message.txt.sig
 gpg: assuming signed data in 'message.txt'
 gpg: Signature made Thu 20 Jul 2023 10:50:07 BST
 gpg:                using EDDSA key 6526651FCB32C82BB3A6449C97BAC3EFF6C6C53D
-gpg:                issuer "contact@alexneville.co.uk"
-gpg: Good signature from "Alexander Neville <contact@alexneville.co.uk>" [ultimate]
+gpg:                issuer "contact@afneville.com"
+gpg: Good signature from "Alexander Neville <contact@afneville.com>" [ultimate]
 Primary key fingerprint: 6526 651F CB32 C82B B3A6  449C 97BA C3EF F6C6 C53D
 $ gpg --verify message.txt.sig message.txt
 gpg: Signature made Thu 20 Jul 2023 10:50:07 BST
 gpg:                using EDDSA key 6526651FCB32C82BB3A6449C97BAC3EFF6C6C53D
-gpg:                issuer "contact@alexneville.co.uk"
-gpg: Good signature from "Alexander Neville <contact@alexneville.co.uk>" [ultimate]
+gpg:                issuer "contact@afneville.com"
+gpg: Good signature from "Alexander Neville <contact@afneville.com>" [ultimate]
 Primary key fingerprint: 6526 651F CB32 C82B B3A6  449C 97BA C3EF F6C6 C53D
 ```
 
@@ -272,18 +272,18 @@ key. I'll use the public key of another of my public email addresses for
 this example.
 
 ```language-plaintext
-$ gpg --recipient dev@alexneville.co.uk --encrypt message.txt
+$ gpg --recipient git@afneville.com --encrypt message.txt
 $ ls
 message.txt  message.txt.gpg
 $ gpg --decrypt message.txt.gpg
 Please enter the passphrase to unlock the OpenPGP secret key:
-"Alexander Neville <dev@alexneville.co.uk>"
+"Alexander Neville <git@afneville.com>"
 255-bit ECDH key, ID C0E91A549735460F,
 created 2023-06-11 (main key ID 545E6C5AC1F2BFE1).
 
 Passphrase:
 gpg: encrypted with 255-bit ECDH key, ID C0E91A549735460F, created 2023-06-11
-      "Alexander Neville <dev@alexneville.co.uk>"
+      "Alexander Neville <git@afneville.com>"
 It was the best of times, it was the worst of times, it was the age of
 wisdom, it was the age of foolishness, it was the epoch of belief, it
 was the epoch of incredulity, it was the season of Light, it was the
@@ -301,13 +301,13 @@ by the sender. Using two of my own key pairs, I can send myself an
 encrypted message - very secure!
 
 ```language-plaintext
-$ gpg --default-key contact@alexneville.co.uk --recipient dev@alexneville.co.uk --encrypt --sign message.txt
-gpg: using "contact@alexneville.co.uk" as default secret key for signing
+$ gpg --default-key contact@afneville.com --recipient git@afneville.com --encrypt --sign message.txt
+gpg: using "contact@afneville.com" as default secret key for signing
 $ ls
 message.txt  message.txt.gpg
 $ gpg --decrypt message.txt.gpg
 gpg: encrypted with 255-bit ECDH key, ID C0E91A549735460F, created 2023-06-11
-      "Alexander Neville <dev@alexneville.co.uk>"
+      "Alexander Neville <git@afneville.com>"
 It was the best of times, it was the worst of times, it was the age of
 wisdom, it was the age of foolishness, it was the epoch of belief, it
 was the epoch of incredulity, it was the season of Light, it was the
@@ -319,7 +319,7 @@ noisiest authorities insisted on its being received, for good or for
 evil, in the superlative degree of comparison only.
 gpg: Signature made Thu 20 Jul 2023 13:50:23 BST
 gpg:                using EDDSA key 6526651FCB32C82BB3A6449C97BAC3EFF6C6C53D
-gpg:                issuer "contact@alexneville.co.uk"
-gpg: Good signature from "Alexander Neville <contact@alexneville.co.uk>" [ultimate]
+gpg:                issuer "contact@afneville.com"
+gpg: Good signature from "Alexander Neville <contact@afneville.com>" [ultimate]
 Primary key fingerprint: 6526 651F CB32 C82B B3A6  449C 97BA C3EF F6C6 C53D
 ```
