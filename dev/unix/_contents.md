@@ -6,3 +6,4 @@ title: Unix Operating Systems
 - [Assembly Programming](/dev/unix/assembly.md)
 - [Program Compilation](/dev/unix/compilation.md)
 - [Writing Makefiles](/dev/unix/makefiles.md)
+- [Building a Project with CMake](/dev/unix/cmake.md)
