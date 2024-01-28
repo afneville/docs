@@ -6,7 +6,7 @@ path: dev/unix/assembly
 description: An introduction to programming in Intel x86 assembly.
 ---
 
-Assembly languages include the panoply of low-level
+Assembly languages include the panoply of low-level,
 architecture-specific systems languages. There is no single assembly
 language specification, though such languages generally have in common a
 sequential structure and an immediate correspondence between their
@@ -156,9 +156,9 @@ This program performs an infinite loop.
 
 # Comparisons & Conditional Jumps
 
-Used with jump commands, comparisons introduce complex flow control
-into assembly programs. Comparisons are always drawn between one
-register and either a literal operand or another register.
+Used with jump commands, comparisons introduce complex flow control into
+assembly programs. Comparisons are always drawn between one register and
+either a literal operand or another register.
 
 ```asm
 cmp r15, 37
@@ -192,10 +192,10 @@ common conditional jump commands:
 A system call is a request made of the operating system kernel to
 service the program. The nature and identity of these calls are
 operating system dependent. In an assembly language program, a system
-call will also have parameters. Operands are passed to the
-kernel by placing them in a number of registers, specified in the table
-below. The ID of the system call is placed in the register `rax` and the
-list of operands should be placed in order in the subsequent registers.
+call will also have parameters. Operands are passed to the kernel by
+placing them in a number of registers, specified in the table below. The
+ID of the system call is placed in the register `rax` and the list of
+operands should be placed in order in the subsequent registers.
 
 :::{.wrap-table}
 
@@ -221,8 +221,8 @@ trap into the kernel.
 
 Oft-encountered x86 assemblers for the Linux platform include GNU AS and
 NASM. The first step in assembling an executable is producing the object
-code. Here, the `-f` flag and `elf64` option set the format of the output
-executable to the 64 bit _Executable and Linkable Format_.
+code. Here, the `-f` flag and `elf64` option set the format of the
+output executable to the 64 bit _Executable and Linkable Format_.
 
 ```shell
 nasm -f elf64 -o example.o example.asm
@@ -313,8 +313,8 @@ Hello, World!
 ## Conditional Statements
 
 Here is an example of a conditional statement. The contents of `r15` and
-`r14` are set to 1 and 3 respectively. The contents of the two registers are
-compared and the program will jump _conditionally_.
+`r14` are set to 1 and 3 respectively. The contents of the two registers
+are compared and the program will jump _conditionally_.
 
 ```{.asm .gnuassembler .s}
 section .data
@@ -462,8 +462,8 @@ Assembled and executed, this program outputs:
 
 ## Print a String
 
-Along the same lines as the last example, this example prints a string - the length of which
-is not determined at compile time.
+Along the same lines as the last example, this example prints a string -
+the length of which is not determined at compile time.
 
 ```{.asm .gnuassembler .s}
 section .data

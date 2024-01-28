@@ -494,7 +494,7 @@ The most often-used automatic variables are listed here.
   the recipe to be run in a rule with multiple targets.
 - `$<`: The name of the first prerequisite.
 - `$^` The names of all the prerequisites, separated by spaces.
-- `$^` The names of all the prerequisites newer than the target,
+- `$?` The names of all the prerequisites newer than the target,
   separated by spaces.
 - `$|` The names of all the order-only prerequisites, separated by
   spaces.

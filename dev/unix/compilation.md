@@ -117,7 +117,7 @@ file is unsurprisingly considered best practice.
 # Compiler
 
 GCC refers to the compilation step as _compilation proper_ to avoid
-confusion this step with the whole build process. Compilation transforms
+confusing this step with the whole build process. Compilation transforms
 preprocessed C source code into assembly. The `-S` flag instructs GCC to
 stop at the assembly step, after compilation (proper).
 
