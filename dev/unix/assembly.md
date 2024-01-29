@@ -4,6 +4,7 @@ author: Alexander Neville
 date: 2024-01-23
 path: dev/unix/assembly
 description: An introduction to programming in Intel x86 assembly.
+image-meta: nasm-logo.png
 ---
 
 Assembly languages include the panoply of low-level,
