@@ -5,6 +5,7 @@ title: Writing Makefiles
 description: A guide to using and understanding the make utility.
 path: dev/unix/makefiles
 image-meta: gnu-logo.png
+image-meta-credit: https://www.gnu.org/graphics/
 ---
 
 _Make_ is a utility designed to automatically rebuild parts of a program

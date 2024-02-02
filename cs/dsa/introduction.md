@@ -1,7 +1,7 @@
 ---
 author: Alexander Neville
 date: 2023-01-03
-title: Introduction to DSA
+title: Data Structures & Algorithms
 ---
 
 There is an important distinction between the abstract, theoretical

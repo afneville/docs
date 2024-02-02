@@ -5,6 +5,7 @@ title: Shell Scripting
 description: An introduction to shell scripting.
 path: dev/unix/shell
 image-meta: bash-logo.png
+image-meta-credit: https://github.com/odb/official-bash-logo
 ---
 
 A shell script is a program that is executed by a shell. Shells operate

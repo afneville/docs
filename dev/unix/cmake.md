@@ -5,6 +5,7 @@ date: 2024-01-28
 description: A guide to using and understanding the CMake utility.
 path: dev/unix/cmake
 image-meta: cmake-logo.png
+image-meta-credit: https://cmake.org/
 ---
 
 CMake is a widely used build automation tool for C and C++ projects.

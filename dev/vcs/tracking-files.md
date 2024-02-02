@@ -1,7 +1,11 @@
 ---
 author: Alexander Neville
 date: 2023-02-23
-title: Tracking Repository Changes
+title: Tracking Files with Git
+description:
+  Staging files and creating commits with git.
+image-meta: git-logo.png
+image-meta-credit: https://git-scm.com/downloads/logos
 ---
 
 Git exposes a set of commands for checking the status of the repository

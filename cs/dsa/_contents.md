@@ -2,8 +2,8 @@
 title: Data Structures & Algorithms
 ---
 
-- [Introduction](/cs/dsa/introduction.md)
+- [DSA & ADTs](/cs/dsa/introduction.md)
+- [Performance & Complexity](/cs/dsa/complexity.md)
 - [Lists](/cs/dsa/lists.md)
 - [Trees](/cs/dsa/trees.md)
-- [Performance and Complexity](/cs/dsa/complexity.md)
-- [Searching and Sorting](/cs/dsa/search-sort.md)
+- [Searching & Sorting](/cs/dsa/search-sort.md)

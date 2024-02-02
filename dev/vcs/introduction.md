@@ -2,6 +2,10 @@
 author: Alexander Neville
 date: 2023-02-21
 title: Introduction to Git
+description:
+  An introduction to the disributed version control system git.
+image-meta: git-logo.png
+image-meta-credit: https://git-scm.com/downloads/logos
 ---
 
 A version control system records changes made to a file or set of files,
@@ -89,6 +93,33 @@ man git-<command>
 All git commits have the `-h` flag which concisely shows usage options,
 rather than the complete manual page.
 
+# Aliases
+
+Short aliases for common commands can be defined by git itself, using
+`git config`; these aliases can optionally be made global, with the
+`--global` command. Sometimes even shorter shell aliases are preferred.
+The git operation to perform is specified in quotes. External commands
+are prefaced with a `!`.
+
+```text
+$ git config alias.unstage 'restore --staged'
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+$ git unstage README.md
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
 # Creating a Git Repository
 
 To create a git repository, a `.git` directory must be created in a
@@ -109,7 +140,7 @@ information for that project. The clone command also _checks out_ a copy
 of the current version to the working directory.
 
 ```text
-git clone https://github.com/alexanderneville/docs <local-directory>
+git clone https://github.com/afneville/docs <local-directory>
 ```
 
 # References

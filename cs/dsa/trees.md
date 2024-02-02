@@ -1,7 +1,7 @@
 ---
 author: Alexander Neville
 date: 2023-01-09
-title: Tree ADT
+title: Trees
 ---
 
 A tree data structure models the abstract tree type. A conceptual tree

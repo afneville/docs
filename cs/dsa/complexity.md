@@ -1,7 +1,7 @@
 ---
 author: Alexander Neville
 date: 2023-01-12
-title: Performance and Complexity
+title: Performance & Complexity
 ---
 
 The _performance_ of an algorithm refers to its resource usage: memory

@@ -1,7 +1,11 @@
 ---
 author: Alexander Neville
 date: 2023-03-29
-title: Local Branches
+title: Local Git Branches
+description:
+  Managing divergent history and conflict resolution with git branches.
+image-meta: git-logo.png
+image-meta-credit: https://git-scm.com/downloads/logos
 ---
 
 A branch in git is simply a lightweight pointer to a commit. Branches

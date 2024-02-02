@@ -1,36 +1,35 @@
 ---
 author: Alexander Neville
 date: 2023-06-01
-title: Artificial Intelligence
+title: Introduction to AI
 ---
 
 _Artificial intelligence_ is the study or creation of machine algorithms
 which may make observations and inferences in order to perform
-actionable decision making, as a human or animal might. In wider society
-_Machine learning_ and AI are two often conflated terms. ML is generally
-considered to be a specific discipline of AI, concerned with improving
-an algorithm\'s performance using past experience. This is not an
-article about ML.
+actionable decision making, as a human or animal might. In wider
+society, _Machine learning_ and AI are two often conflated terms. ML is
+generally considered to be a specific discipline of AI, concerned with
+improving an algorithm\'s performance using past experience.
 
 # Philosophy of AI
 
-There is not a universal consensus on definition of AI (which is a
-relatively ambiguous term), an issue revolving around the meaning of
+There is not a universal consensus on the definition of AI (which is a
+relatively ambiguous term), a dispute revolving around the meaning of
 _intelligence_. It could be argued that the explicit goal of artificial
 intelligence is to simulate human performance. If a more abstract form
 of intelligence - artificial or otherwise - is adopted, then AI is not
 required to simulate human performance at all. Philosophy and logic
 attempt to codify the laws of thought; rationality and correct reasoning
 according to these rules could be achieved by a human or artificially by
-a machine. In some cases intelligence is said to be an internal
+a machine. In some cases, intelligence is said to be an internal
 property, as in a thought process or the reasoning employed, while in
 others it is evidenced in outward behaviour. These two conditions form
 four common interpretations of AI:
 
-- Thinking as a human.
-- Acting as a human.
-- Thinking rationally.
-- Acting rationally.
+- _Thinking as a human_
+- _Acting as a human_
+- _Thinking rationally_
+- _Acting rationally_
 
 The _Turing test_ is passed if a human evaluator is unable to tell apart
 a human and AI algorithm through interrogation. The effectiveness, or
@@ -38,9 +37,9 @@ outward intelligence, of the algorithm is measured by its ability to
 generate human like responses (its behaviour), independent of the
 underlying thought process. Many academics additionally agree that the
 most pragmatic approach to AI is not simulating the human thought
-process directly. The commonly cited analogy is that _artificial flight_
+process directly. The often cited analogy is that _artificial flight_
 was not achieved by imitating the flight of birds exactly (Russell &
-Norvig (2021)). Thus, artificial intelligence is widely agreed to be the
+Norvig 2021). Thus, artificial intelligence is widely agreed to be the
 study and creation of algorithms capable of _acting rationally_, or
 working to reach the best possible outcome. Sometimes this is called the
 _standard model_ for AI.

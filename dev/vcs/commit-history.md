@@ -1,7 +1,11 @@
 ---
 author: Alexander Neville
 date: 2023-03-15
-title: The Commit History
+title: The Git Commit History
+description:
+  Examining and manipulating the commit history.
+image-meta: git-logo.png
+image-meta-credit: https://git-scm.com/downloads/logos
 ---
 
 Reviewing the history of a project is possible with the `git log`

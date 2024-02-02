@@ -1,7 +1,10 @@
 ---
-title: Remotes Repositories & Branches
+title: Remote Git Repositories & Branches
 author: Alexander Neville
 date: 2023-09-26
+description: Managing git branches in a distributed environment.
+image-meta: git-logo.png
+image-meta-credit: https://git-scm.com/downloads/logos
 ---
 
 In a collaborative setting, remote repositories allow multiple

@@ -2,6 +2,10 @@
 author: Alexander Neville
 date: 2023-02-21
 title: Git Rebase
+description:
+  Replaying a range of commits onto a different ancestor.
+image-meta: git-logo.png
+image-meta-credit: https://git-scm.com/downloads/logos
 ---
 
 Rebasing is an alternative strategy to merging branches with a merge
