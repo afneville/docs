@@ -1,21 +1,20 @@
 ---
 author: Alexander Neville
 date: 2023-01-03
-title: Data Structures & Algorithms
+title: DSA & ADTs
 ---
 
-There is an important distinction between the abstract, theoretical
-nature of algorithms and real-world computer programs. The same is true
-of the relationship between _concrete data structures_ and _abstract
-data types_. An _algorithm_ is a sequence of instructions for solving a
-problem. There is not a single specification nor one formal language for
-writing and interpreting algorithms, they are an abstract concept. The
-role of a _data structure_ is to manage how a program's information is
-stored and accessed. _Concrete_ data structures implement the _abstract
-data types_. For any program, the algorithms it implements and the
-organisation of its data are important components of the solution.
+There is an important distinction to be drawn between the abstract,
+theoretical nature of algorithms and real-world computer programs. The
+same is true of the relationship between _concrete data structures_ and
+_abstract data types_. For any program, the algorithms it implements and
+the organisation of its data are important components of its solution.
 
 # Algorithms
+
+An _algorithm_ is a sequence of instructions for solving a problem.
+There is neither a single specification nor one formal language for
+writing and interpreting algorithms; they are an abstract concept.
 
 If a computer is to execute the steps of an algorithm, the algorithm in
 question must be _implemented_ in a computer program. Programs are
@@ -35,7 +34,7 @@ pseudocode is often used as an abstract method for describing algorithms
 in a way that preserves some focus on the implementation and conveys
 more detail.
 
-# Data Types and Structures
+# Data Types
 
 In computer programming, a data type is a set of possible values and
 supported operations for a given piece of data. Many languages include a
@@ -48,6 +47,8 @@ language may be similar or dissimilar to those of another. Primitive
 types may also be referred to as atomic, basic, fundamental or built-in.
 All other types, including data structures (which are types) are said to
 be user-defined.
+
+# Abstract Data Types
 
 An Abstract Data Type is defined more loosely by the set of supported
 operations on it, or in other words its interface, rather than its
@@ -70,3 +71,15 @@ implementation. Such inductive approaches to abstract type definition
 are more correct in the mathematical sense, at the cost of being less
 useful types in programming. Languages such as Java provide very
 different, more substantial ADT definitions.
+
+# Data Structures
+
+_Data structures_ are responsible for the organisation and management of
+a program's information. _Concrete_ data structures are said to
+implement abstract data types. A data structure is a data type in its
+own right and in practice concrete types with substantial interfaces are
+presented in place of minimal ADT interfaces. In other cases, data
+structures are used implicitly to provide the mechanisms of a more
+abstract interface. An ADT may be implemented by one of many data
+structures and some useful data structures can be used to implement many
+ADTs.
