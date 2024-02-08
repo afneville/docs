@@ -8,6 +8,16 @@ image-meta: nasm-logo.png
 image-meta-credit: https://nasm.us/
 ---
 
+<!-- Assembly languages include the panoply of low-level,
+architecture-specific systems languages. There is no single assembly
+language specification, though such languages generally have in common a
+sequential structure and an immediate correspondence between their
+mnemonic or abbreviated assembly instructions and the architecture’s
+machine code instructions. I have written some example programs,
+demonstrating some of the most fundamental concepts of Intel x86
+assembly.
+-->
+
 Assembly languages include the panoply of low-level,
 architecture-specific systems languages. There is no single assembly
 language specification, though such languages generally have in common a
