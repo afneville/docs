@@ -2,6 +2,8 @@
 title: Haskell Programming
 author: Alexander Neville
 date: 2023-10-20
+image-meta: haskell-logo.png
+image-meta-credit: https://commons.wikimedia.org/wiki/File:Haskell-Logo.svg
 ---
 
 Haskell is a purely functional programming language. An expression in

@@ -5,7 +5,7 @@ date: 2024-01-23
 path: dev/unix/assembly
 description: An introduction to programming in Intel x86 assembly.
 image-meta: nasm-logo.png
-image-meta-credit: https://nasm.us/
+image-meta-credit: https://commons.wikimedia.org/wiki/File:Netwide_Assembler.svg
 ---
 
 <!-- Assembly languages include the panoply of low-level,
