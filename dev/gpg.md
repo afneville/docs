@@ -2,6 +2,7 @@
 author: Alexander Neville
 date: 2024-02-11
 title: GnuPG Usage
+description: A guide to using the GnuPG utilitiy.
 image-meta: gnupg-logo.png
 image-meta-credit: https://commons.wikimedia.org/wiki/File:Gnupg_logo.svg
 ---
@@ -110,8 +111,9 @@ _authenticity_ in addition to the _integrity_ of the file.
 
 There are many different methods and options for signing a file with
 GnuPG. As before, the output can be in raw binary format, or armoured
-ASCII. For this example, the first paragraph of Charles Dickens' _A Tale
-of Two Cities_ is saved in the file `message.txt`.
+ASCII. To provide some text for this example, the first paragraph of
+Charles Dickens' _A Tale of Two Cities_ is saved in the file
+`message.txt`.
 
 ```text
 It was the best of times, it was the worst of times, it was the age of
@@ -151,7 +153,7 @@ message.txt  message.txt.gpg
 
 The file created by `--sign` is raw, but not encrypted. It can be
 verified by any recipient with the author's public key. The original
-file can be viewed with the `--decrypt` command.
+file can be viewed with the `--decrypt` option.
 
 ```text
 $ gpg --decrypt message.txt.gpg
@@ -267,7 +269,7 @@ $ ls
 message.txt  message.txt.gpg
 ```
 
-To decrypt an encrypted file, use the `--decrypt` command.
+To decrypt an encrypted file, use the `--decrypt` option.
 
 # Asymmetric Encryption
 
@@ -324,6 +326,6 @@ gpg: Good signature from "Alexander Neville <contact@afneville.com>" [ultimate]
 Primary key fingerprint: BB30 2E2E 1E84 6017 3DD8  69A0 E584 CD0E 64E2 6B84
 ```
 
-In these examples the _trust_ level of the keys is _ultimate_ as they
+In these examples, the _trust_ level of the keys is _ultimate_ as they
 were both created by the author. By default, imported keys will not have
 this level of trust.
