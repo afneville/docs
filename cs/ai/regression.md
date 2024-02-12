@@ -76,11 +76,11 @@ The loss for a single training example is a measure of how bad the
 current model is. Mean square loss is appropriate as it always returns a
 positive value.
 
-$$g(w_0, w_1) = (h_{\mathbf{w}}(x) - y)^2$$
+$$L(\mathbf{w}) = (h_{\mathbf{w}}(x) - y)^2$$
 
 Average loss over many examples:
 
-$$g(w_0, w_1) = \frac{1}{N}\sum_{n=1}^{N}(h_{\mathbf{w}}(x_n) - y_n)^2$$
+$$L(\mathbf{w}) = \frac{1}{N}\sum_{n=1}^{N}(h_{\mathbf{w}}(x_n) - y_n)^2$$
 
 These two functions, expressed in code:
 
@@ -253,8 +253,8 @@ corresponding element in $x$, $x_j$:
 
 $$h_\mathbf{w}(\mathbf{x}_j) = \mathbf{w^{T}x_j} = \sum_{i = 0}^{n}w_ix_{j,i}$$
 
-With this assignment, the partial derivative of the loss function with
-respect to each $w$ is the same.
+With the assignment of the value 1 to $x_0$, the partial derivative of
+the loss function with respect to each $w_i$ has the same form.
 
 $$w_i \leftarrow w_i - \alpha \sum_j(h_{\mathbf{w}}(\mathbf{x}_j) - y_j) \times x_{j,i}$$
 

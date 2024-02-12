@@ -38,7 +38,7 @@ function_, returning the classification of the input, rather than a real
 value, as in regression. If the data set is linearly separable, the
 _percepton learning rule_ will converge on an exact solution.
 
-$$w_i \leftarrow w_i - \alpha (h_{\mathbf{w}}(\mathbf{x}) - y_j) \times x_{i}$$
+$$w_i \leftarrow w_i - \alpha (h_{\mathbf{w}}(\mathbf{x}) - y) \times x_{i}$$
 
 # Sigmoid Function
 
@@ -86,28 +86,29 @@ function always returns a value between 0 and 1, _cross-entropy_ cost is
 preferred.
 
 $$
-L(\mathbf{w}) = \begin{cases} - \log(h*{\mathbf{w}}(\mathbf{x})), &
-\text{if } y = 1 \\ - \log(1-h*{\mathbf{w}}(\mathbf{x})), & \text{if } y
+L(\mathbf{w}) = \begin{cases} - \log(h_{\mathbf{w}}(\mathbf{x})), &
+\text{if } y = 1 \\ - \log(1-h_{\mathbf{w}}(\mathbf{x})), & \text{if } y
 = 0 \end{cases}
 $$
 
 This can be expressed in a single expression as:
 
 $$
-L(\mathbf{w}) = -(y\log(h*{\mathbf{w}}(\mathbf{x})) +
-(1-y)\log(1-h*{\mathbf{w}}(\mathbf{x})))
+L(\mathbf{w}) = -(y\log(h_{\mathbf{w}}(\mathbf{x})) +
+(1-y)\log(1-h_{\mathbf{w}}(\mathbf{x})))
 $$
 
 The average cost over many examples:
 
-$$g(\mathbf{w}) = -\frac{1}{N}\sum_n^N (y_{n}\log(h_{\mathbf{w}}(\mathbf{x}_n)) + (1-y_n)\log(1-h_{\mathbf{w}}(\mathbf{x}_n)))$$
+$$L(\mathbf{w}) = -\frac{1}{N}\sum_n^N (y_{n}\log(h_{\mathbf{w}}(\mathbf{x}_n)) + (1-y_n)\log(1-h_{\mathbf{w}}(\mathbf{x}_n)))$$
 
 The derivative of the cross-entropy cost function:
 
-$$\nabla g(\mathbf{w}) = -\frac{1}{N}\sum_n^N (y_{n} - h_{\mathbf{w}}(\mathbf{x}_n)\times \mathbf{x}_n$$
+$$\nabla L(\mathbf{w}) = -\frac{1}{N}\sum_n^N (y_{n} - h_{\mathbf{w}}(\mathbf{x}_n))\times \mathbf{x}_n$$
 
-The weight update rule:
-$$\mathbf{w}_i \leftarrow \mathbf{w}_i + \alpha\sum_n^N (y_{n} - h_{\mathbf{w}}(\mathbf{x}_n)\times \mathbf{x}_{n,i}$$
+The weight update rule for each $w$ in $\mathbf{w}$:
+
+$$w_i \leftarrow w_i + \alpha\sum_n^N (y_{n} - h_{\mathbf{w}}(\mathbf{x}_n))\times x_{n,i}$$
 
 With theses expressions, it is possible to perform _logistic
 regression_, and update the weights of the underlying function to redraw
