@@ -7,7 +7,7 @@ image-meta: gnupg-logo.png
 image-meta-credit: https://commons.wikimedia.org/wiki/File:Gnupg_logo.svg
 ---
 
-_GnuPG_, the _GNU privacy guard_, is a free and open source
+_GnuPG_, the _GNU Privacy Guard_, is a free and open source
 implementation of the _OpenPGP_ specification. OpenPGP itself is an IETF
 standard based on _Pretty Good Privacy_ (PGP).
 
@@ -64,8 +64,9 @@ gpg-connect-agent reloadagent /bye
 # Create and Manage Keys
 
 GnuPG keys can be created _quickly_ (providing only a user id and
-password) or interactively (specifying the key algorithm and optionally
-adding comments). Add the `--expert` option to enable newer ECC ciphers.
+password) or _interactively_ (specifying the key algorithm and
+optionally adding comments). Add the `--expert` option to enable newer
+ECC ciphers.
 
 ```text
 gpg --quick-generate-key
