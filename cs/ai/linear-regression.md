@@ -6,7 +6,10 @@ title: Linear Regression
 
 Regression applies to learning problems in which the output is real
 valued and continuous (outputs do not fit into discrete categories).
-First, import the required modules.
+
+# Initialisation
+
+A handful of modules are required for the subsequent examples.
 
 ```python
 import matplotlib as mpl
@@ -19,12 +22,10 @@ import math
 %matplotlib inline
 ```
 
-# Convenience Functions
-
 Use the `make_regression` function of scikit learn to generate a sample
 dataset with a single feature (see _univariate_ below). Return the
 coefficient and recreate the linear function from which the dataset is
-generated. Also wrap matplotlib OOP style API calls in a special
+generated. Also, wrap matplotlib OOP style API calls in a special
 function that returns a set of axes with the preferred configuration.
 
 ```python
@@ -58,11 +59,11 @@ function with a vector of inputs is called _multivariable_ or even
 _multivariate_, despite having just one dependent variable.
 
 A simple linear function $h$ with one independent value is of the form
-$y=mx+c$, or in data science $y=w_1x+w_0$. The vector $\mathbf{w}$ is
-the vector of weights: $\langle w_0, w_1 \rangle$. The function of $x$
-with weights $\mathbf{w}$ is:
+$y=mx+c$, or in data science notation $y=w_1x+w_0$. The vector
+$\mathbf{w}$ is the vector of weights: $\langle w_0, w_1 \rangle$. The
+function of $x$ with weights $\mathbf{w}$ is:
 
-$$h_{\mathbf{w}}=w_1x+w_0$$
+$$h_{\mathbf{w}}=w_0+w_1x$$
 
 The ambition with linear regression is to calculate the values of the
 weights in $\mathbf{w}$ so that $h$ approximates the relationship
@@ -242,21 +243,23 @@ ax.plot(x, f(w_1, x, w_0), 'purple')
 
 Multivariable linear regression applies to problems where each
 independent variable in the training dataset is a _n_-variable vector,
-rather than a single value.
+rather than a single value, denoted
+$\mathbf{x} = \langle x_1 \ldots x_n \rangle$.
 
-$$h_\mathbf{w}(\mathbf{x}_j) = w_0 + w_ix_{j,1} + \cdots +w_nx_{j,n} = w_0 + \sum_{i=1}^{n}w_ix_{j,i}$$
+$$h_\mathbf{w}(\mathbf{x}) = w_0 + w_ix_{1} + \cdots +w_nx_{n} = w_0 + \sum_{i=1}^{n}w_ix_{i}$$
 
 The weight $w_0$ is the intercept. The function $h_\mathbf{w}$ can be
-simplified by introducing a new variable $x_0$ with the value 1, making
-$h_\mathbf{w}$ the product of the transposed weight vector with each
-corresponding element in $x$, $x_j$:
+simplified by introducing a new variable $x_0$ with the value $1$,
+making $h_\mathbf{w}$ the product of the transposed weight vector with
+each corresponding element in $x$, $x_j$:
 
-$$h_\mathbf{w}(\mathbf{x}_j) = \mathbf{w^{T}x_j} = \sum_{i = 0}^{n}w_ix_{j,i}$$
+$$h_\mathbf{w}(\mathbf{x}) = \mathbf{w^{T}x} = \sum_{i = 0}^{n}w_ix_{i}$$
 
-With the assignment of the value 1 to $x_0$, the partial derivative of
-the loss function with respect to each $w_i$ has the same form.
+With the assignment of the value $1$ to $x_0$, the partial derivative of
+the loss function with respect to each $w_i$ has the same form. This is
+known as the _percepton learning rule_.
 
-$$w_i \leftarrow w_i - \alpha \sum_j(h_{\mathbf{w}}(\mathbf{x}_j) - y_j) \times x_{j,i}$$
+$$w_i \leftarrow w_i - \alpha (h_{\mathbf{w}}(\mathbf{x}) - y) \times x_{i}$$
 
 To solve this problem, create some utility functions and rewrite the
 stochastic gradient descent algorithm to handle an _n_-dimensional input
@@ -339,8 +342,8 @@ ax.plot([Z[i][1] for i in range(Z.shape[0])],
 
 # Non-linear Regression
 
-Here is an example of how you might generate some data for the
-non-linear version of this problem.
+Here is an example of how some sample data for the non-linear version of
+this problem could be generated.
 
 ```python
 x = np.arange(-10, 10, 0.1)
