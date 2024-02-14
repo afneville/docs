@@ -1,11 +1,19 @@
 ---
 author: Alexander Neville
 date: 2023-06-01
-title: Optimisation
+title: Optimisation Algorhtims
 ---
 
-Optimisation problems search for the best (optimal) or a good solution
-to a problem, satisfying constraints.
+Optimisation algorithms search for the optimal or, failing that,
+a good solution to a problem, all the while satisfying constraints. The optimal
+solution to a problem may be prohibitively difficult to calculate
+exactly, in which case an optimisation algorithm will attempt to improve
+upon a candidate solution.
+
+# Initialisation
+
+A handful of modules and convenience functions are required for the
+subsequent examples.
 
 ```python
 import matplotlib as mpl
@@ -116,7 +124,7 @@ Climbing](../../res/animations/optimal.gif){#fig:optimalhillclimbing
 Applied to more complicated problems, hill climbing may not find a
 perfect solution as it can become _trapped_ in a local maxima. It is
 unable to traverse the search space to find better solutions. Sometimes
-this is not a problem, as a sub-optimal solution may be adequate.The
+this is not a problem, as a sub-optimal solution may be adequate. The
 following examples illustrate this problem.
 
 ```python
