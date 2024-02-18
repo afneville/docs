@@ -7,3 +7,5 @@ title: Maths
 - [Set Theory](/maths/set-theory.md)
 - [Mathematical Relations](/maths/relations.md)
 - [Linear Algebra](/maths/linear-algebra.md)
+- [Probability Theory](/maths/probability-theory.md)
+- [Information Theory](/maths/information-theory.md)

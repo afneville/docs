@@ -1,7 +1,7 @@
 ---
 title: Probability Theory
 author: Alexander Neville
-date: 2024-02-16
+date: 2024-02-17
 ---
 
 The _probability_ of an event is a measure of how likely it is to occur,
@@ -21,7 +21,7 @@ will occur.
 
 In probability theory, an _experiment_ is a repeatable procedure with a
 set of _outcomes_. An experiment with more than one outcome is known as
-a _random experiment_, as opposed to a _deterministic experiment_ which
+a _random experiment_, as opposed to a _deterministic experiment_, which
 has a single outcome. The occurrence of an outcome could entail the
 occurrence of any number of _events_, which are sets of outcomes.
 
@@ -98,7 +98,7 @@ The realisation of a random variable is called an _observation_. As a
 random variable is a function over the sample space, an observation is
 an element of the image of the random variable $x = X(\omega)$, where
 $\omega \in \Omega$. Observations are conventionally denoted with
-lower-case letters.
+lowercase letters.
 
 If $S$ is subset of the measurable set $S \subseteq E$ and a random
 variable $X$ is defined over a probability space, then the probability
@@ -149,8 +149,8 @@ $$F_{X}(x) = \mathrm{P}(X \le x)$$
 
 # Conditional Probability
 
-The conditional probability of an event is its probability in the
-knowledge that another event has occurred.
+The conditional probability of an event $A$ is its probability in the
+knowledge that another event $B$ has occurred.
 
 $$\mathrm{P}(A | B) = \dfrac{\mathrm{P}(A \cap B)}{\mathrm{P}(B)}$$
 
@@ -212,9 +212,9 @@ respectively.
   background-color: var(--bg-secondary);
 }
 
-.joint-probability thead tr:nth-child(1) th:nth-child(1) {
-  background-color: var(--bg-main) !important;
-}
+/* .joint-probability thead tr:nth-child(1) th:nth-child(1) { */
+/*   background-color: var(--bg-main) !important; */
+/* } */
 
 th,
 td {
@@ -243,14 +243,19 @@ is given by:
 
 $$p_{X,Y}(x,y) = \mathrm{P}(X = x | Y = y)\mathrm{P}(Y=y) = \mathrm{P}(Y = y | X = x)\mathrm{P}(X=x)$$
 
+
+## Chain Rule of Probability
+
 In the general case, the joint probability of $n$ events is given by the
 _chain rule_ of probability:
 
 $$p_{X_1,\ldots,X_n}(x_1,\ldots,x_n) =$$
+
 $$\mathrm{P}(X_n = x_n | X_1 = x_1, \ldots, X_{n-1} = x_{n-1}) \times$$
+
 $$\mathrm{P}(X_{n-1} = x_{n-1} | X_1 = x_1, \ldots, X_{n-1} = x_{n-2}) \times$$
-$$\ldots$$ $$\mathrm{P}(X_{2} = x_{2} | X_1 = x_1) \times$$
-$$\mathrm{P}(X_{1} = x_{1})$$
+
+$$\ldots$$ $$\mathrm{P}(X_{2} = x_{2} | X_1 = x_1) \times \mathrm{P}(X_{1} = x_{1})$$
 
 # Bayes' Theorem
 
@@ -259,7 +264,6 @@ updating uncertain _prior_ probability with evidence to calculate the _posterior
 probability.
 
 $$\text{Posterior} = \dfrac{\text{Likelihood} \times \text{Prior}}{\text{Evidence}}$$
-
 $$\mathrm{P}(A | B) = \dfrac{\mathrm{P}(B | A)\mathrm{P}(A)}{\mathrm{P}(B)}$$
 
 Bayes' Theorem can be derived from the definition of conditional
