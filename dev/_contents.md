@@ -8,3 +8,4 @@ title: Development
 - [Haskell Programming](/dev/haskell.md)
 - [Emacs Initialisation](/dev/emacs.md)
 - [Working with Java Packages](/dev/java-packages.md)
+- [Asynchronous & Concurrent Programming](/dev/concurrency.md)
