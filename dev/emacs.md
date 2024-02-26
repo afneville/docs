@@ -512,7 +512,7 @@ than many `(add-hook 'org-mode-hook ...)` expressions.
         ))
 ```
 
-Call the set-up function when Org mode is loaded.
+Call the setup function when Org mode is loaded.
 
 ```lisp
 (require 'org-indent)
@@ -606,7 +606,7 @@ characters.
                            (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
 ```
 
-Ensure latex blocks are highlighted, but keep the default text
+Ensure LaTeX blocks are highlighted, but keep the default text
 background.
 
 ```lisp
@@ -720,7 +720,7 @@ relevant sections of the Org Manual:
 
 Very simply, the export function can be used to convert a single org
 document to some other format and the publish utility can convert many
-files to some format by using an export.
+files to some format by using an exporter.
 
 ## Setup
 
@@ -769,7 +769,7 @@ Set some default variables for both exporters.
   )
 ```
 
-In Org mode it is possible to nest sections deeply, but in HTML and
+In Org mode, it is possible to nest sections deeply, but in HTML and
 LaTeX the number of available heading levels is limited. In HTML, the
 tags `h1, ..., h6` are available, with `h1` being used for the document
 title, leaving a maximum of 5 levels. In the default LaTeX _article_
@@ -999,19 +999,15 @@ given as an example.
    <script src=\"/res/script.js\" defer></script>")
 ```
 
-The preamble is the HTML inserted at the beginning of each HTML
-document. This includes the site header.
+The _preamble_ and _postamble_ are inserted at the beginning and end of
+the generated document respectively.
 
 ```lisp
 (setq org-html-preamble
   "<header>
    <!-- ... -->
    </header>")
-```
 
-<!-- <p></p> -->
-
-```lisp
 (setq org-html-postamble
   "<footer>
    <!-- ... -->

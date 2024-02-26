@@ -10,8 +10,8 @@ Haskell is a purely functional programming language. An expression in
 Haskell is a piece of code which returns or _yields_ a value. All
 computation in Haskell is conducted by evaluating these expressions.
 Every expression in Haskell has an associated type. Whilst _strict_, the
-type of a value or expression may be inferred by the compiler; Haskell
-code need not be explicitly typed.
+Haskell compiler is able to infer the type of a value or expression and
+consequently Haskell code need not be explicitly typed.
 
 # Functions & Syntactic Features
 

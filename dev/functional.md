@@ -1,14 +1,16 @@
 ---
 title: Functional Programming
 author: Alexander Neville
-date: 2023-10-17
+date: 2024-02-24
+image-meta: lambda.png
+image-meta-credit: https://commons.wikimedia.org/wiki/File:Lambda_lc.svg
 ---
 
 Functional programming is a _programming paradigm_. A paradigm is a
-broad characterisation of a language and its features. The functional
-programming paradigm falls into the category of _declarative_ languages,
+broad characterisation of a language and its features. Functional
+programming languages belong to the category of _declarative_ languages,
 in which the program is more a description of computation than a
-sequential set of instructions (which would be described as imperative).
+sequential set of instructions as in an imperative language.
 
 Functions in functional programming are considered _first-class_;
 functions can be passed to and returned from other functions and bound
@@ -18,16 +20,16 @@ the fundamental method of computation. A _higher-order_ function simply
 takes a function as an argument or returns a function. Support for
 higher-order functions implies that functions are first-class objects.
 
-Many languages which are not inherently functional draw inspiration from
-functional programming. It is common to see functions treated as first
-class objects.
+Many languages that are not inherently functional draw inspiration from
+the functional programming paradigm. It is common to see functions
+treated as first-class objects in otherwise imperative languages.
 
 # Purely Functional Programming
 
 Purely functional programming is a subset of the functional programming
 paradigm, in which functions are _pure_ or
-[mathematically](../maths/relations.md#functions) deterministic. Functions
-in many imperative languages are more accurately described as
+[mathematically](../maths/relations.md#functions) deterministic.
+Functions in many imperative languages are more accurately described as
 procedures, because they do not satisfy the definition of a mathematical
 function. Pure functions are guaranteed to return the same value across
 repeated invocations with consistent arguments. The computation of the
@@ -36,14 +38,14 @@ function does not manipulate any state or cause side-effects.
 
 # Currying
 
-A _n_-ary function can take all of its arguments at once, packed into a
-tuple. Alternative a function of high arity can be translated into a
-sequence of unary functions, a technique known as _currying_. If $( )$
-brackets are used to denote function application, the function $f$
-taking three arguments would be transformed into a unary function $g$
-returning a new unary function that accepts one argument and returning
-another unary function which finally returns the result of the entire
-computation of $f$.
+An _n_-ary function could admit all of its arguments at once, packed
+into a tuple. Alternatively, a function of high arity can be translated
+into a sequence of unary functions, a technique known as _currying_. If
+$(\ldots)$ brackets are used to denote function application, the
+function $f$ accepting three arguments would be transformed into a unary
+function $g$ returning a unary function that returns another unary
+function that finally returns the result of the entire computation of
+$f$.
 
 $$f(x,y,z) \implies g(x)(y)(z)$$
 
@@ -55,11 +57,10 @@ argument could be a tuple containing multiple values).
 
 # Partial Application
 
-It is very useful that a language curries functions with multiple
-arguments as it facilitates _partial application_ - the same can be
-achieved with the use of _closures_.
-
-In the case of a curried function, simply passing fewer than the full
+The currying of a function with multiple arguments as a feature of a
+programming language is very useful as it facilitates _partial
+application_. The same can be achieved with the use of _closures_. In
+the case of a curried function, simply passing fewer than the full
 number of arguments to a function will return a partially applied
 function with bound values and lower arity than the initial function.
 Haskell supports curried functions and function application is written
@@ -101,4 +102,4 @@ y = i(2) # y = 6
 Generally, variables in functional programming are immutable. The value
 of a variable cannot be modified once defined. Consequently, every
 occurrence of a variable in a functional program can be replaced with
-its value - a situation referred to as referential transparency.
+its value - a situation referred to as _referential transparency_.
