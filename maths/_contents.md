@@ -1,5 +1,5 @@
 ---
-title: Maths
+title: Mathematics
 ---
 
 - [Number Systems](/maths/number-systems.md)

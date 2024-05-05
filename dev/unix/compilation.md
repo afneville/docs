@@ -16,7 +16,7 @@ GCC manual page makes this clear:
 
 When GCC is invoked with the path to a C source file, it will attempt to
 produce an executable, unless it is passed optional flags to change the
-default behaviour. The Build can be interrupted at any of three stages
+default behaviour. The build can be interrupted at any of three stages
 (besides full compilation):
 
 - `-E`: Run preprocessor only, do not compile.

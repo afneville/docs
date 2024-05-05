@@ -76,7 +76,7 @@ The _relative entropy_ or _Kullback–Leibler divergence_ is a measure of
 the difference of two probability distributions are. Relative entropy is
 not a distance metric as it is not symmetric.
 
-$$D_{\mathrm{KL}}(P \Vert Q) = -\sum_{x_i \in \mathcal{X}} P(x_i)\log\left(\dfrac{P(x)}{Q(x)}\right)$$
+$$D_{\mathrm{KL}}(P \Vert Q) = -\sum_{x_i \in \mathcal{X}} P(x_i)\log\left(\dfrac{Q(x_i)}{P(x_i)}\right)$$
 
 # Mutual Information
 
@@ -84,7 +84,7 @@ The mutual information of two events is the relative entropy or log
 difference of the joint entropy and the product of the marginal
 probabilities of both events.
 
-$$\mathrm{I}(Y;X) = -\sum_{x_i \in \mathcal{X}} \sum_{y_i \in \mathcal{Y}} p(x_i, y_i)\log\left(\dfrac{p(x_i,y_i)}{p(x_i)p(y_i)}\right)$$
+$$\mathrm{I}(Y;X) = \sum_{x_i \in \mathcal{X}} \sum_{y_i \in \mathcal{Y}} p(x_i, y_i)\log\left(\dfrac{p(x_i,y_i)}{p(x_i)p(y_i)}\right)$$
 
 Mutual information may also be defined in terms of the joint entropy and
 the sum of the marginal entropies:
