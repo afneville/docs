@@ -140,7 +140,11 @@ $$
 
 This can be expressed in a single expression as:
 
-$$P(Y = y | \mathbf{w},\mathbf{x}) = h_{\mathbf{w}}(\mathbf{x})^y (1-h_{\mathbf{w}}(\mathbf{x}))^{1-y}$$
+$$\mathcal{L}(\mathbf{w} | y; \mathbf{x}) = P(Y = y | \mathbf{w},\mathbf{x}) = h_{\mathbf{w}}(\mathbf{x})^y (1-h_{\mathbf{w}}(\mathbf{x}))^{1-y}$$
+
+Over many examples:
+
+$$\mathcal{L}(\mathbf{w} | Y; \mathbf{X}) = P(Y | \mathbf{w},\mathbf{X}) = \prod_n^N h_{\mathbf{w}}(\mathbf{x}_n)^{y_n} (1-h_{\mathbf{w}}(\mathbf{x}_n))^{1-y_n}$$
 
 Maximising this value, the likelihood, will fit the model to the
 observations, through it is more common to minimise the negative
@@ -153,7 +157,7 @@ $$
 
 The average cost over many examples:
 
-$$L(\mathbf{w}) = -\frac{1}{N}\sum_n^N (y_{n}\log(h_{\mathbf{w}}(\mathbf{x}_n)) + (1-y_n)\log(1-h_{\mathbf{w}}(\mathbf{x}_n)))$$
+$$L(\mathbf{w}) = -\sum_n^N (y_{n}\log(h_{\mathbf{w}}(\mathbf{x}_n)) + (1-y_n)\log(1-h_{\mathbf{w}}(\mathbf{x}_n)))$$
 
 The derivative of the cross-entropy cost function:
 
